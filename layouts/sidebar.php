@@ -49,12 +49,6 @@
                                 <span class="hide-menu">Master Data</span>
                             </li>
                             <li class="sidebar-item">
-                                <a class="sidebar-link" href="./menu.html" aria-expanded="false">
-                                    <iconify-icon icon="solar:menu-dots-square-line-duotone"></iconify-icon>
-                                    <span class="hide-menu">Menu</span>
-                                </a>
-                            </li>
-                            <li class="sidebar-item">
                                 <a class="sidebar-link has-arrow" href="#" aria-expanded="false">
                                     <iconify-icon icon="solar:menu-dots-square-line-duotone"></iconify-icon>
                                     <span class="hide-menu">Menu</span>
