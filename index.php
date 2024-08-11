@@ -10,42 +10,42 @@ switch ($_GET['page']) {
         break;
     
     case 'mejaData':
-        include('./meja/mejaRead.php');
+        include('./pages/meja/mejaRead.php');
         break;
     case 'mejaCreate':
-        include('./meja/mejaCreate.php');
+        include('./pages/meja/mejaCreate.php');
         break;
     case 'mejaUpdate':
-        include('./meja/mejaUpdate.php');
+        include('./pages/meja/mejaUpdate.php');
         break;
     case 'mejaDelete':
-        include('./meja/mejaDelete.php');
+        include('./pages/meja/mejaDelete.php');
         break;
 
     case 'pelangganData':
-        include('./pelanggan/pelangganRead.php');
+        include('./pages/pelanggan/pelangganRead.php');
         break;
     case 'pelangganCreate':
-        include('./pelanggan/pelangganCreate.php');
+        include('./pages/pelanggan/pelangganCreate.php');
         break;
     case 'pelangganUpdate':
-        include('./pelanggan/pelangganUpdate.php');
+        include('./pages/pelanggan/pelangganUpdate.php');
         break;
     case 'pelangganDelete':
-        include('./pelanggan/pelangganDelete.php');
+        include('./pages/pelanggan/pelangganDelete.php');
         break;
 
     case 'reservasiData':
-        include('./reservasi/reservasiRead.php');
+        include('./pages/reservasi/reservasiRead.php');
         break;
     case 'reservasiCreate':
-        include('./reservasi/reservasiCreate.php');
+        include('./pages/reservasi/reservasiCreate.php');
         break;
     case 'reservasiUpdate':
-        include('./reservasi/reservasiUpdate.php');
+        include('./pages/reservasi/reservasiUpdate.php');
         break;
     case 'reservasiDelete':
-        include('./reservasi/reservasiDelete.php');
+        include('./pages/reservasi/reservasiDelete.php');
         break;
 
     default:
