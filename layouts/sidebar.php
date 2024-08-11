@@ -61,7 +61,27 @@
                                         </a>
                                     </li>
                                     <li class="sidebar-item">
-                                        <a class="sidebar-link" href="?pageCreate">
+                                        <a class="sidebar-link" href="?page=mejaCreate">
+                                            <span class="icon-small"></span>
+                                            <span class="hide-menu">Tambah Data</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="sidebar-item">
+                                <a class="sidebar-link has-arrow" href="#" aria-expanded="false">
+                                    <iconify-icon icon="solar:users-group-rounded-line-duotone"></iconify-icon>
+                                    <span class="hide-menu">Pelanggan</span>
+                                </a>
+                                <ul aria-expanded="false" class="collapse first-level">
+                                    <li class="sidebar-item">
+                                        <a class="sidebar-link" href="?page=pelangganData">
+                                            <span class="icon-small"></span>
+                                            <span class="hide-menu">Data Pelanggan</span>
+                                        </a>
+                                    </li>
+                                    <li class="sidebar-item">
+                                        <a class="sidebar-link" href="?page=pelangganCreate">
                                             <span class="icon-small"></span>
                                             <span class="hide-menu">Tambah Data</span>
                                         </a>
