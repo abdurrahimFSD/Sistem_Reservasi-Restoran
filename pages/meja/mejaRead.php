@@ -32,12 +32,12 @@
             <!-- Start Card Header -->
             <div class="card card-body">
                 <div class="row">
-                    <div class="col-md-4 col-xl-3">
+                    <div class="col-md-6">
                         <h3 class="mb-0">
                             <iconify-icon icon="solar:bedside-table-2-line-duotone" class="align-middle ms-1 me-1"></iconify-icon> <span class="align-middle">Daftar Meja</span>
                         </h3>
                     </div>
-                    <div class="col-md-8 col-xl-9 text-end d-flex justify-content-md-end justify-content-center mt-3 mt-md-0">
+                    <div class="col-md-6 text-end d-flex justify-content-md-end justify-content-center mt-3 mt-md-0">
                         <a href="javascript:void(0)" id="btn-add-data" class="btn btn-primary d-flex align-items-center">
                             <iconify-icon icon="fluent:add-24-filled" class="text-white me-1 fs-5"></iconify-icon> Tambah Data
                         </a>
