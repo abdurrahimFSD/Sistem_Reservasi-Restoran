@@ -50,20 +50,20 @@
                             </li>
                             <li class="sidebar-item">
                                 <a class="sidebar-link has-arrow" href="#" aria-expanded="false">
-                                    <iconify-icon icon="solar:menu-dots-square-line-duotone"></iconify-icon>
-                                    <span class="hide-menu">Menu</span>
+                                    <iconify-icon icon="solar:bedside-table-2-line-duotone"></iconify-icon>
+                                    <span class="hide-menu">Meja</span>
                                 </a>
                                 <ul aria-expanded="false" class="collapse first-level">
                                     <li class="sidebar-item">
-                                        <a class="sidebar-link" href="#">
+                                        <a class="sidebar-link" href="?page=mejaData">
                                             <span class="icon-small"></span>
-                                            <span class="hide-menu">Sub Menu</span>
+                                            <span class="hide-menu">Data Meja</span>
                                         </a>
                                     </li>
                                     <li class="sidebar-item">
-                                        <a class="sidebar-link" href="#">
+                                        <a class="sidebar-link" href="?pageCreate">
                                             <span class="icon-small"></span>
-                                            <span class="hide-menu">Sub Menu</span>
+                                            <span class="hide-menu">Tambah Data</span>
                                         </a>
                                     </li>
                                 </ul>
