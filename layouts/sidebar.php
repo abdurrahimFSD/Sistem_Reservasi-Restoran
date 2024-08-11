@@ -97,11 +97,11 @@
                             </li>
 
                             <!-- ---------------------------------- -->
-                            <!-- More Start -->
+                            <!-- Transaksi Start -->
                             <!-- ---------------------------------- -->
                             <li class="nav-small-cap">
                                 <iconify-icon icon="solar:menu-dots-linear" class="mini-icon"></iconify-icon>
-                                <span class="hide-menu">More</span>
+                                <span class="hide-menu">Transaksi</span>
                             </li>
                             <li class="sidebar-item">
                                 <a href="#" class="sidebar-link">
@@ -160,7 +160,7 @@
                             </li>
                             
                             <!-- ---------------------------------- -->
-                            <!-- More End -->
+                            <!-- Transaksi End -->
                             <!-- ---------------------------------- -->
 
                         </ul>
