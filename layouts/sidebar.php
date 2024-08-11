@@ -104,61 +104,25 @@
                                 <span class="hide-menu">Transaksi</span>
                             </li>
                             <li class="sidebar-item">
-                                <a href="#" class="sidebar-link">
-                                    <iconify-icon icon="solar:menu-dots-square-line-duotone"></iconify-icon>
-                                    <span class="hide-menu">Menu</span>
-                                </a>
-                            </li>
-                            <li class="sidebar-item">
                                 <a class="sidebar-link has-arrow primary-hover-bg" href="javascript:void(0)" aria-expanded="false">
-                                    <iconify-icon icon="solar:align-left-line-duotone"></iconify-icon>
-                                    <span class="hide-menu">Menu Level</span>
+                                    <iconify-icon icon="solar:card-transfer-line-duotone"></iconify-icon>
+                                    <span class="hide-menu">Reservasi</span>
                                 </a>
                                 <ul aria-expanded="false" class="collapse first-level">
                                     <li class="sidebar-item">
-                                        <a href="javascript:void(0)" class="sidebar-link">
+                                        <a href="?page=reservasiData" class="sidebar-link">
                                             <span class="icon-small"></span>
-                                            <span class="hide-menu">Level 1</span>
+                                            <span class="hide-menu">Data Reservasi</span>
                                         </a>
                                     </li>
                                     <li class="sidebar-item">
-                                        <a class="sidebar-link has-arrow" href="javascript:void(0)" aria-expanded="false">
+                                        <a href="?page=reservasiCreate" class="sidebar-link">
                                             <span class="icon-small"></span>
-                                            <span class="hide-menu">Level 1.1</span>
+                                            <span class="hide-menu">Tambah Data</span>
                                         </a>
-                                        <ul aria-expanded="false" class="collapse two-level">
-                                            <li class="sidebar-item">
-                                                <a href="javascript:void(0)" class="sidebar-link">
-                                                    <span class="icon-small"></span>
-                                                    <span class="hide-menu">Level 2</span>
-                                                </a>
-                                            </li>
-                                            <li class="sidebar-item">
-                                                <a class="sidebar-link has-arrow" href="javascript:void(0)" aria-expanded="false">
-                                                    <span class="icon-small"></span>
-                                                    <span class="hide-menu">Level 2.1</span>
-                                                </a>
-                                                
-                                                <ul aria-expanded="false" class="collapse three-level">
-                                                    <li class="sidebar-item">
-                                                        <a href="javascript:void(0)" class="sidebar-link">
-                                                            <span class="icon-small"></span>
-                                                            <span class="hide-menu">Level 3</span>
-                                                        </a>
-                                                    </li>
-                                                    <li class="sidebar-item">
-                                                        <a href="javascript:void(0)" class="sidebar-link">
-                                                            <span class="icon-small"></span>
-                                                            <span class="hide-menu">Level 3.1</span>
-                                                        </a>
-                                                    </li>
-                                                </ul>
-                                            </li>
-                                        </ul>
                                     </li>
                                 </ul>
                             </li>
-                            
                             <!-- ---------------------------------- -->
                             <!-- Transaksi End -->
                             <!-- ---------------------------------- -->
