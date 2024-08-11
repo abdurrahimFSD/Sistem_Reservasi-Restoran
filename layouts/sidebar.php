@@ -42,11 +42,11 @@
                             </li>
 
                             <!-- ---------------------------------- -->
-                            <!-- Apps Start -->
+                            <!-- Master Data Start -->
                             <!-- ---------------------------------- -->
                             <li class="nav-small-cap">
                                 <iconify-icon icon="solar:menu-dots-linear" class="mini-icon"></iconify-icon>
-                                <span class="hide-menu">Apps</span>
+                                <span class="hide-menu">Master Data</span>
                             </li>
                             <li class="sidebar-item">
                                 <a class="sidebar-link" href="./menu.html" aria-expanded="false">
@@ -75,7 +75,7 @@
                                 </ul>
                             </li>
                             <!-- ---------------------------------- -->
-                            <!-- Apps End -->
+                            <!-- Master Data End -->
                             <!-- ---------------------------------- -->
 
                             <li>
