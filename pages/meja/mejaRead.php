@@ -58,19 +58,28 @@
                             <th class="text-center">Aksi</th>
                         </thead>
                         <tbody>
+                            <?php
+                                include('./config/connection.php');
+
+                                $querySelect = "SELECT * FROM meja";
+                                $resultSelect = mysqli_query($connection, $querySelect);
+                                $no = 1;
+                                
+                                while($row = mysqli_fetch_assoc($resultSelect)) {
+                            ?>
                             <!-- start row -->
                             <tr class="search-items">
                                 <td class="text-dark">
-                                    1
+                                    <?= $no++; ?>
                                 </td>
                                 <td class="text-dark">
-                                    M01
+                                    <?= $row['no_meja']; ?>
                                 </td>
                                 <td class="text-dark">
-                                    8
+                                    <?= $row['kapasitas']; ?>
                                 </td>
                                 <td class="text-dark">
-                                    Indoor
+                                    <?= $row['posisi']; ?>
                                 </td>
                                 <td class="text-center">
                                     <div class="action-btn">
@@ -84,6 +93,7 @@
                                 </td>
                             </tr>
                             <!-- end row -->
+                            <?php } ?>
                         </tbody>
                     </table>
                 </div>
