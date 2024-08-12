@@ -54,7 +54,7 @@
                         <label for="kapasitas" class="form-label">Kapasitas</label>
                         <input type="number" class="form-control" name="kapasitas" id="kapasitas" placeholder="4" required>
                     </div>
-                    <div class="mb-3">
+                    <div class="mb-4">
                         <label for="posisi" class="form-label">Posisi</label>
                         <?php
                             include('./config/connection.php');
@@ -67,6 +67,12 @@
                             <?php } ?>
                         </select>
                     </div>
+                    <a href="?page=mejaData" class="d-inline-flex justify-content-center align-items-center btn btn-outline-secondary me-2">
+                        <iconify-icon icon="fluent:arrow-left-24-filled" class="me-1 fs-5 d-inline-flex align-items-center"></iconify-icon>Kembali
+                    </a>
+                    <button type="submit" name="mejaCreate" class="d-inline-flex justify-content-center align-items-center btn btn-primary">
+                        <iconify-icon icon="fluent:save-24-regular" class="me-1 fs-5 d-inline-flex align-items-center"></iconify-icon>Simpan
+                    </button>
                 </form>
             </div>
             <!-- ENd Card body main content -->
