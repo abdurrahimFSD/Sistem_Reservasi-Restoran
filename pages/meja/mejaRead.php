@@ -59,13 +59,12 @@
                         </thead>
                         <tbody>
                             <?php
-                                include('./config/connection.php');
+                                include('./controllers/function.php');
 
-                                $querySelect = "SELECT * FROM meja";
-                                $resultSelect = mysqli_query($connection, $querySelect);
+                                $mejaData = fetchData('meja');
                                 $no = 1;
-                                
-                                while($row = mysqli_fetch_assoc($resultSelect)) {
+
+                                foreach ($mejaData as $row) {
                             ?>
                             <!-- start row -->
                             <tr class="search-items">
