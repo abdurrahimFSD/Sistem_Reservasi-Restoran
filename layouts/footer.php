@@ -46,5 +46,9 @@
     <script src="./assets/js/theme/theme.js"></script>
     <script src="./assets/js/theme/app.min.js"></script>
     <script src="./assets/js/theme/sidebarmenu-default.js"></script>
+
+    <!-- Datatable -->
+    <script src="./assets/libs/DataTables/datatables.js"></script>
+    <script src="./assets/js/theme/datatableScript.js"></script>
 </body>
 </html>

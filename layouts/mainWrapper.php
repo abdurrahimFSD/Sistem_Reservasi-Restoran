@@ -10,6 +10,9 @@
     <!-- Core Css -->
     <link rel="stylesheet" href="./assets/css/styles.css">
 
+    <!-- Datatable -->
+    <link rel="stylesheet" href="./assets/libs/DataTables/datatables.css">
+
     <style>
         html {
             display: none; 
