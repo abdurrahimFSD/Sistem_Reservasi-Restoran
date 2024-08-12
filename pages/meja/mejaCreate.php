@@ -43,7 +43,31 @@
 
             <!-- Start Card body main content -->
             <div class="card card-body">
-
+                <h4 class="card-title">Masukkan Data Meja</h4>
+                <hr class="mb-4">
+                <form class="form-horizontal" action="">
+                    <div class="mb-3">
+                        <label for="noMeja" class="form-label">No Meja</label>
+                        <input type="text" class="form-control" name="noMeja" id="noMeja" placeholder="M01" required>
+                    </div>
+                    <div class="mb-3">  
+                        <label for="kapasitas" class="form-label">Kapasitas</label>
+                        <input type="number" class="form-control" name="kapasitas" id="kapasitas" placeholder="4" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="posisi" class="form-label">Posisi</label>
+                        <?php
+                            include('./config/connection.php');
+                            $posisi = ['Outdoor', 'Indoor'];
+                        ?>
+                        <select name="posisi" id="posisi" class="form-select text-dark" required>
+                            <option selected disabled>Pilih Posisi</option>
+                            <?php foreach($posisi as $posisiData) { ?>
+                                <option value="<?= $posisiData; ?>"><?= $posisiData; ?></option>
+                            <?php } ?>
+                        </select>
+                    </div>
+                </form>
             </div>
             <!-- ENd Card body main content -->
         </div>
