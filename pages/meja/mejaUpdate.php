@@ -49,7 +49,7 @@
                 <h4 class="card-title">Masukkan Data Meja</h4>
                 <hr class="mb-4">
                 <form class="form-horizontal" action="./controllers/process.php" method="post">
-                   
+                    <input type="hidden" name="idMeja" value="<?= $data['id_meja']; ?>">
                     <div class="mb-3">
                         <label for="noMeja" class="form-label">No Meja</label>
                         <input type="text" class="form-control" name="noMeja" id="noMeja" placeholder="M01" value="<?= $data['no_meja']; ?>" required>
