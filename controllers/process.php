@@ -1,0 +1,27 @@
+<?php
+
+include('./function.php');
+
+// Mengecek apakah form telah di submit/simpan
+if (isset($_POST['simpan'])) {
+
+    // Jika tombol simpan adalah mejaCreate
+    if ($_POST['simpan'] == 'mejaCreate') {
+        // Memanggil fungsi mejaCreate
+        $result = mejaCreate($_POST);
+
+        // Jika proses create berhasil
+        if ($result) {
+            echo "
+                <script>
+                    alert('Data meja berhasil ditambah');
+                    // Redirect ke halaman utama setelah alert
+                    window.location.href = '../index.php?page=mejaData';
+                </script>
+            ";
+        } 
+        
+    }
+}
+
+?>
