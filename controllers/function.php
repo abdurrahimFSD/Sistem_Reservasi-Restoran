@@ -56,4 +56,22 @@ if (isset($_GET['id'])) {
     $data = getMejaById($getIdMeja);
 }
 
+// Function updateMeja
+function mejaUpdate($data) {
+    global $connection;
+
+    // Ambil data meja dari array $data
+    $idMeja = $data['idMeja'];
+    $noMeja = $data['noMeja'];
+    $kapasitas = $data['kapasitas'];
+    $posisi = $data['posisi'];
+
+    // Query SQL untuk mengedit data meja
+    $queryUpdateMeja = "UPDATE meja SET no_meja='$noMeja', kapasitas='$kapasitas', posisi='$posisi' WHERE id_meja = $idMeja";
+    $resultUpdateMeja = mysqli_query($connection, $queryUpdateMeja);
+
+    // Kembalikan true jika berhasil
+    return true;
+}
+
 ?>
