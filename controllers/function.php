@@ -74,4 +74,18 @@ function mejaUpdate($data) {
     return true;
 }
 
+// Function mejaDelete
+function mejaDelete($data) {
+    global $connection;
+
+    // Ambil parameter id
+    $idMeja = $data['id'];
+
+    // Query SQL untuk menghapus data buku
+    $queryDeleteMeja = "DELETE FROM meja WHERE id_meja = $idMeja";
+    $resultDeleteMeja = mysqli_query($connection, $queryDeleteMeja);
+
+    // Kembalikan true jika berhasil
+    return true;
+}
 ?>
