@@ -45,7 +45,7 @@
             <div class="card card-body">
                 <h4 class="card-title">Masukkan Data Meja</h4>
                 <hr class="mb-4">
-                <form class="form-horizontal" action="">
+                <form class="form-horizontal" action="./controllers/process.php" method="post">
                     <div class="mb-3">
                         <label for="noMeja" class="form-label">No Meja</label>
                         <input type="text" class="form-control" name="noMeja" id="noMeja" placeholder="M01" required>
