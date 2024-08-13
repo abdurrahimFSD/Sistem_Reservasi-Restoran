@@ -38,4 +38,22 @@ if (isset($_POST['simpan'])) {
     }
 }
 
+// Mengecek apakah parameter 'id' ada di URL untuk menentukan apakah tombol hapus diklik
+if (isset($_GET['id'])) {
+    // Memanggil fungsi mejaDelete untuk menghapus data meja berdasarkan id
+    $result = mejaDelete($_GET);
+
+    // Jika proses penghapusan berhasil
+    if ($result) {
+        echo "
+            <script>
+                alert('Data meja berhasil dihapus');
+                // Redirect ke halaman utama setelah alert
+                window.location.href = '../index.php?page=mejaData';
+            </script>
+        ";
+    } 
+}
+
+
 ?>
