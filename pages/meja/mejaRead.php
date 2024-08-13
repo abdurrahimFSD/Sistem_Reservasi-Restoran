@@ -83,7 +83,7 @@
                                 </td>
                                 <td class="text-center">
                                     <div class="action-btn">
-                                        <a href="javascript:void(0)" class="d-inline-flex btn btn-sm btn-outline-warning edit">
+                                        <a href="javascript:void(0)" class="d-inline-flex btn btn-sm btn-outline-warning edit" data-bs-toggle="tooltip" data-bs-placement="top" title="Edit">
                                             <iconify-icon icon="tabler:edit" class="fs-5"></iconify-icon>
                                         </a>
                                         <a href="javascript:void(0)" class="d-inline-flex btn btn-sm btn-danger delete ms-2">
