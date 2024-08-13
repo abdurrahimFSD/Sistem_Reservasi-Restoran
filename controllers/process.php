@@ -21,6 +21,20 @@ if (isset($_POST['simpan'])) {
             ";
         } 
         
+    } elseif ($_POST['simpan'] == 'mejaUpdate') {   // Jika tombol simpan adalah mejaUpdate
+        // Memanggil fungsi mejaUpdate
+        $result = mejaUpdate($_POST);
+
+        // Jika proses update berhasil
+        if ($result) {
+            echo "
+                <script>
+                    alert('Data meja berhasil diedit');
+                    // Redirect ke halaman utama setelah alert
+                    window.location.href = '../index.php?page=mejaData';
+                </script>
+            ";
+        } 
     }
 }
 
