@@ -62,10 +62,10 @@
                             <?php
                                 include('./controllers/function.php');
 
-                                $mejaData = fetchData('meja');
+                                $pelangganData = fetchData('pelanggan');
                                 $no = 1;
 
-                                foreach ($mejaData as $row) {
+                                foreach ($pelangganData as $row) {
                             ?>
                             <!-- start row -->
                             <tr class="search-items">
