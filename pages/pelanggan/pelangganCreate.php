@@ -52,8 +52,8 @@
                         <input type="text" class="form-control" name="namaPelanggan" id="namaPelanggan" placeholder="Ahmad" required>
                     </div>
                     <div class="mb-3">  
-                        <label for="kapasitas" class="form-label">Kapasitas</label>
-                        <input type="number" class="form-control" name="kapasitas" id="kapasitas" placeholder="4" required>
+                        <label for="alamat" class="form-label">Alamat</label>
+                        <input type="text" class="form-control" name="alamat" id="alamat" placeholder="Finland" required>
                     </div>
                     <div class="mb-4">
                         <label for="posisi" class="form-label">Posisi</label>
