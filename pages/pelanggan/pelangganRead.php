@@ -39,7 +39,7 @@
                         </h3>
                     </div>
                     <div class="col-md-6 text-end d-flex justify-content-md-end justify-content-center mt-3 mt-md-0">
-                        <a href="?page=mejaCreate" id="btn-add-data" class="btn btn-primary d-inline-flex justify-content-center align-items-center">
+                        <a href="?page=pelangganCreate" id="btn-add-data" class="btn btn-primary d-inline-flex justify-content-center align-items-center">
                             <iconify-icon icon="fluent:add-24-filled" class="text-white me-1 fs-5 d-inline-flex align-items-center"></iconify-icon> Tambah Data
                         </a>
                     </div>
