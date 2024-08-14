@@ -34,8 +34,8 @@
                 <div class="row">
                     <div class="col-md-6">
                         <h3 class="mb-0 d-inline-flex justify-content-center align-items-center">
-                            <iconify-icon icon="solar:bedside-table-2-line-duotone" class="me-1 align-middle"></iconify-icon>
-                            <span class="align-middle">Daftar Meja</span>
+                            <iconify-icon icon="solar:users-group-rounded-line-duotone" class="me-1 align-middle"></iconify-icon>
+                            <span class="align-middle">Daftar Pelanggan</span>
                         </h3>
                     </div>
                     <div class="col-md-6 text-end d-flex justify-content-md-end justify-content-center mt-3 mt-md-0">
