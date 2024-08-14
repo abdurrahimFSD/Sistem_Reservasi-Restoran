@@ -107,19 +107,19 @@ function pelangganCreate($data) {
 }
 
 // Function untuk mendapatakan data pelanggan berdasarkan id_pelanggan
-function getMejaById($idMeja) {
+function getPelangganById($idPelanggan) {
     global $connection;
 
-    $query = "SELECT * FROM meja WHERE id_meja = $idMeja";
+    $query = "SELECT * FROM pelanggan WHERE id_pelanggan = $idPelanggan";
     $result = mysqli_query($connection, $query);
     $data = mysqli_fetch_assoc($result);
 
     return $data;
 }
-// Cek apakah id_meja diberikan melalui URL
+// Cek apakah id_pelanggan diberikan melalui URL
 $data = null;
 if (isset($_GET['id'])) {
-    $getIdMeja = $_GET['id'];
-    $data = getMejaById($getIdMeja);
+    $getIdPelanggan = $_GET['id'];
+    $data = getPelangganById($getIdPelanggan);
 }
 ?>
