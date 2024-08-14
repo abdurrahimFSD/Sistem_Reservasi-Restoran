@@ -55,19 +55,7 @@
                         <label for="alamat" class="form-label">Alamat</label>
                         <input type="text" class="form-control" name="alamat" id="alamat" placeholder="Finland" required>
                     </div>
-                    <div class="mb-4">
-                        <label for="posisi" class="form-label">Posisi</label>
-                        <?php
-                            include('./config/connection.php');
-                            $posisi = ['Outdoor', 'Indoor'];
-                        ?>
-                        <select name="posisi" id="posisi" class="form-select text-dark" required>
-                            <option selected disabled>Pilih Posisi</option>
-                            <?php foreach($posisi as $posisiData) { ?>
-                                <option value="<?= $posisiData; ?>"><?= $posisiData; ?></option>
-                            <?php } ?>
-                        </select>
-                    </div>
+                    
                     <a href="?page=mejaData" class="d-inline-flex justify-content-center align-items-center btn btn-outline-secondary me-2">
                         <iconify-icon icon="fluent:arrow-left-24-filled" class="me-1 fs-5 d-inline-flex align-items-center"></iconify-icon>Kembali
                     </a>
