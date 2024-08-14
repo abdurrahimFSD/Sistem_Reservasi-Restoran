@@ -1,3 +1,8 @@
+<?php
+// Include Function
+include('./controllers/function.php');
+?>
+
 <!-- Start Body Wrapper -->
 <div class="body-wrapper">
     <div class="container-fluid">
@@ -47,18 +52,18 @@
                 <h4 class="card-title">Masukkan Data Pelanggan</h4>
                 <hr class="mb-4">
                 <form class="form-horizontal" action="./controllers/process.php" method="post">
-                    <input type="hidden" name="idPelanggan">
+                    <input type="hidden" name="idPelanggan" value="<?= $data['id_pelanggan']; ?>">
                     <div class="mb-3">
                         <label for="namaPelanggan" class="form-label">Nama Pelanggan</label>
-                        <input type="text" class="form-control" name="namaPelanggan" id="namaPelanggan" placeholder="Ahmad" required>
+                        <input type="text" class="form-control" name="namaPelanggan" id="namaPelanggan" value="<?= $data['nama_pelanggan'] ?>" placeholder="Ahmad" required>
                     </div>
                     <div class="mb-3">  
                         <label for="alamat" class="form-label">Alamat</label>
-                        <input type="text" class="form-control" name="alamat" id="alamat" placeholder="Finland" required>
+                        <input type="text" class="form-control" name="alamat" id="alamat" value="<?= $data['alamat'] ?>" placeholder="Finland" required>
                     </div>
                     <div class="mb-4">
                         <label for="noTelepon" class="form-label">No Telepon</label>
-                        <input type="number" class="form-control" name="noTelepon" id="noTelepon" placeholder="081347200001" required>
+                        <input type="number" class="form-control" name="noTelepon" id="noTelepon" value="<?= $data['no_telepon'] ?>" placeholder="081347200001" required>
                     </div>
                     <a href="?page=pelangganData" class="d-inline-flex justify-content-center align-items-center btn btn-outline-secondary me-2">
                         <iconify-icon icon="fluent:arrow-left-24-filled" class="me-1 fs-5 d-inline-flex align-items-center"></iconify-icon>Kembali
