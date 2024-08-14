@@ -88,4 +88,21 @@ function mejaDelete($data) {
     // Kembalikan true jika berhasil
     return true;
 }
+
+// Function pelangganCreate
+function pelangganCreate($data) {
+    global $connection;
+
+    // Ambil data pelanggan dari array $data
+    $namaPelanggan = $data['namaPelanggan'];
+    $alamat = $data['alamat'];
+    $noTelepon = $data['noTelepon'];
+
+    // Query SQL untuk menambahkan data pelanggan baru
+    $queryPelangganCreate = "INSERT INTO pelanggan (nama_pelanggan,alamat,no_telepon) VALUES('$namaPelanggan','$alamat','$noTelepon')";
+    $resultPelangganCreate = mysqli_query($connection, $queryPelangganCreate);
+
+    // Kembalikan true jika berhasil
+    return true;
+}
 ?>
