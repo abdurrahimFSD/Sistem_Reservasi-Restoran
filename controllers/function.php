@@ -105,4 +105,21 @@ function pelangganCreate($data) {
     // Kembalikan true jika berhasil
     return true;
 }
+
+// Function untuk mendapatakan data pelanggan berdasarkan id_pelanggan
+function getMejaById($idMeja) {
+    global $connection;
+
+    $query = "SELECT * FROM meja WHERE id_meja = $idMeja";
+    $result = mysqli_query($connection, $query);
+    $data = mysqli_fetch_assoc($result);
+
+    return $data;
+}
+// Cek apakah id_meja diberikan melalui URL
+$data = null;
+if (isset($_GET['id'])) {
+    $getIdMeja = $_GET['id'];
+    $data = getMejaById($getIdMeja);
+}
 ?>

@@ -47,6 +47,7 @@
                 <h4 class="card-title">Masukkan Data Pelanggan</h4>
                 <hr class="mb-4">
                 <form class="form-horizontal" action="./controllers/process.php" method="post">
+                    <input type="hidden" name="idPelanggan">
                     <div class="mb-3">
                         <label for="namaPelanggan" class="form-label">Nama Pelanggan</label>
                         <input type="text" class="form-control" name="namaPelanggan" id="namaPelanggan" placeholder="Ahmad" required>
