@@ -35,6 +35,19 @@ if (isset($_POST['simpan'])) {
                 </script>
             ";
         } 
+    } elseif ($_POST['simpan'] == 'pelangganCreate') {  // Jika tombol simpan adalah pelangganCreate
+        // Memanggil fungsi pelangganCreate
+        $result = pelangganCreate($_POST);
+
+        // Jika proses update berhasil
+        if ($result) {
+            echo "
+                <script>
+                    alert('Data pelanggan berhasil ditambahkan');
+                    // Redirect ke halaman utama sgitetelah alert
+                    window.location.href = '../index.php?page=pelangganData';
+                </script>
+            ";
     }
 }
 
