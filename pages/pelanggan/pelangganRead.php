@@ -53,9 +53,9 @@
                     <table id="dataTables" class="table search-table align-middle text-nowrap">
                         <thead class="header-item">
                             <th>No</th>
-                            <th>No Meja</th>
-                            <th>Kapasitas</th>
-                            <th>Posisi</th>
+                            <th>Nama Pelanggan</th>
+                            <th>Alamat</th>
+                            <th>No Telepon</th>
                             <th class="text-center">Aksi</th>
                         </thead>
                         <tbody>
