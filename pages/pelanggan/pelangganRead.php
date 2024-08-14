@@ -73,13 +73,13 @@
                                     <?= $no++; ?>
                                 </td>
                                 <td class="text-dark">
-                                    <?= $row['no_meja']; ?>
+                                    <?= $row['nama_pelanggan']; ?>
                                 </td>
                                 <td class="text-dark">
-                                    <?= $row['kapasitas']; ?>
+                                    <?= $row['alamat']; ?>
                                 </td>
                                 <td class="text-dark">
-                                    <?= $row['posisi']; ?>
+                                    <?= $row['no_telepon']; ?>
                                 </td>
                                 <td class="text-center">
                                     <div class="action-btn">
