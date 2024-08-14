@@ -7,7 +7,7 @@
             <div class="row align-items-center">
                 <div class="col-12">
                     <div class="d-sm-flex align-items-center justify-space-between">
-                        <h4 class="mb-4 mb-sm-0 card-title">Tambah Data</h4>
+                        <h4 class="mb-4 mb-sm-0 card-title">Edit Data</h4>
                         <nav aria-label="breadcrumb" class="ms-auto">
                             <ol class="breadcrumb">
                                 <li class="breadcrumb-item d-flex align-items-center">
@@ -17,7 +17,7 @@
                                 </li>
                                     <iconify-icon icon="ic:sharp-keyboard-arrow-right" class="mx-1" width="26" height="26"></iconify-icon>
                                 <li class="breadcrumb-item my-auto" aria-current="page">
-                                    <span class="badge fw-medium fs-2 bg-primary-subtle text-primary"> Tambah Data </span>
+                                    <span class="badge fw-medium fs-2 bg-primary-subtle text-primary"> Edit Data </span>
                                 </li>
                             </ol>
                         </nav>
