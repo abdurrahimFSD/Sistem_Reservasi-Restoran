@@ -49,6 +49,6 @@
 
     <!-- Datatable -->
     <script src="./assets/libs/DataTables/datatables.js"></script>
-    <script src="./assets/js/theme/datatableScript.js"></script>
+    <script src="./assets/js/datatable/datatable.init.js"></script>
 </body>
 </html>
