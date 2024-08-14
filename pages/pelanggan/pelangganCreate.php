@@ -48,8 +48,8 @@
                 <hr class="mb-4">
                 <form class="form-horizontal" action="./controllers/process.php" method="post">
                     <div class="mb-3">
-                        <label for="noMeja" class="form-label">No Meja</label>
-                        <input type="text" class="form-control" name="noMeja" id="noMeja" placeholder="M01" required>
+                        <label for="namaPelanggan" class="form-label">Nama Pelanggan</label>
+                        <input type="text" class="form-control" name="namaPelanggan" id="namaPelanggan" placeholder="Ahmad" required>
                     </div>
                     <div class="mb-3">  
                         <label for="kapasitas" class="form-label">Kapasitas</label>
