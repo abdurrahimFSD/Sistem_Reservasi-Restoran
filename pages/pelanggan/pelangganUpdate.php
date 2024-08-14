@@ -35,7 +35,7 @@
                     <div class="col">
                         <h3 class="mb-0">
                             <iconify-icon icon="solar:user-plus-line-duotone" class="align-middle ms-1 me-1"></iconify-icon>
-                            <span class="align-middle">Tambah Daftar Pelanggan</span>
+                            <span class="align-middle">Edit Daftar Pelanggan</span>
                         </h3>
                     </div>
                 </div>
