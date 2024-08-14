@@ -34,7 +34,8 @@
                 <div class="row">
                     <div class="col">
                         <h3 class="mb-0">
-                            <iconify-icon icon="solar:bedside-table-2-line-duotone" class="align-middle ms-1 me-1"></iconify-icon> <span class="align-middle">Tambah Daftar Meja</span>
+                            <iconify-icon icon="solar:user-plus-line-duotone" class="align-middle ms-1 me-1"></iconify-icon>
+                            <span class="align-middle">Tambah Daftar Pelanggan</span>
                         </h3>
                     </div>
                 </div>
