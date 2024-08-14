@@ -44,10 +44,11 @@ if (isset($_POST['simpan'])) {
             echo "
                 <script>
                     alert('Data pelanggan berhasil ditambahkan');
-                    // Redirect ke halaman utama sgitetelah alert
+                    // Redirect ke halaman utama setelah alert
                     window.location.href = '../index.php?page=pelangganData';
                 </script>
             ";
+        }
     }
 }
 
