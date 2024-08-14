@@ -86,9 +86,6 @@
                                         <a href="?page=mejaUpdate&id=<?= $row['id_meja']; ?>" class="d-inline-flex btn btn-sm btn-outline-warning edit" data-bs-toggle="tooltip" data-bs-placement="top" title="Edit">
                                             <iconify-icon icon="tabler:edit" class="fs-5"></iconify-icon>
                                         </a>
-                                        <!-- <a href="javascript:void(0)" class="d-inline-flex btn btn-sm btn-danger delete ms-2" data-bs-toggle="tooltip" data-bs-placement="top" title="Hapus">
-                                            <iconify-icon icon="tabler:trash" class="fs-5"></iconify-icon>
-                                        </a> -->
                                         <a href="./controllers/process.php?id=<?= $row['id_meja']; ?>" onclick="return confirm('Apakah yakin menghapus data!')" class="d-inline-flex btn btn-sm btn-danger delete ms-2" data-bs-toggle="tooltip" data-bs-placement="top" title="Hapus">
                                             <iconify-icon icon="tabler:trash" class="fs-5"></iconify-icon>
                                         </a>
