@@ -57,7 +57,7 @@ if (isset($_POST['simpan'])) {
         if ($result) {
             echo "
                 <script>
-                    alert('Data pelanggan berhasil diedit);
+                    alert('Data pelanggan berhasil diedit');
                     // Redirect ke halaman utama setelah alert
                     window.location.href = '../index.php?page=pelangganData';
                 </script>
