@@ -91,23 +91,6 @@ function pelangganCreate($data) {
     return true;
 }
 
-// Function untuk mendapatakan data pelanggan berdasarkan id_pelanggan
-function getPelangganById($idPelanggan) {
-    global $connection;
-
-    $query = "SELECT * FROM pelanggan WHERE id_pelanggan = $idPelanggan";
-    $result = mysqli_query($connection, $query);
-    $data = mysqli_fetch_assoc($result);
-
-    return $data;
-}
-// Cek apakah id_pelanggan diberikan melalui URL
-$data = null;
-if (isset($_GET['id'])) {
-    $getIdPelanggan = $_GET['id'];
-    $data = getPelangganById($getIdPelanggan);
-}
-
 // Function pelangganUdpate
 function pelangganUpdate($data) {
     global $connection;
