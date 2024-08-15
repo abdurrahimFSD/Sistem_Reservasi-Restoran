@@ -39,11 +39,25 @@ if (isset($_POST['simpan'])) {
         // Memanggil fungsi pelangganCreate
         $result = pelangganCreate($_POST);
 
-        // Jika proses update berhasil
+        // Jika proses create berhasil
         if ($result) {
             echo "
                 <script>
                     alert('Data pelanggan berhasil ditambahkan');
+                    // Redirect ke halaman utama setelah alert
+                    window.location.href = '../index.php?page=pelangganData';
+                </script>
+            ";
+        }
+    } elseif ($_POST['simpan'] == 'pelangganUpdate') {  // Jika tombol simpan adalah pelangganUpdate
+        // Memanggil fungsi pelangganUpdate
+        $result = pelangganUpdate($_POST);
+
+         // Jika proses update berhasil
+        if ($result) {
+            echo "
+                <script>
+                    alert('Data pelanggan berhasil diedit');
                     // Redirect ke halaman utama setelah alert
                     window.location.href = '../index.php?page=pelangganData';
                 </script>
