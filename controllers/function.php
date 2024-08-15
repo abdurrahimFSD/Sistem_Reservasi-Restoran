@@ -122,4 +122,27 @@ if (isset($_GET['id'])) {
     $getIdPelanggan = $_GET['id'];
     $data = getPelangganById($getIdPelanggan);
 }
+
+// Function pelangganUdpate
+function pelangganUpdate($data) {
+    global $connection;
+
+    // Ambil data pelanggan dari array $data
+    $idPelanggan = $data['idPelanggan'];
+    $namaPelanggan = $data['namaPelanggan'];
+    $alamat = $data['alamat'];
+    $noTelepon = $data['noTelepon'];
+
+    // Query SQL untuk mengedit data pelanggan
+    $queryUpdatePelanggan = "UPDATE pelanggan SET nama_pelanggan='$namaPelanggan', alamat='$alamat', no_telepon='$noTelepon' WHERE id_pelanggan = $idPelanggan";
+    $resultUpdatePelanggan = mysqli_query($connection, $queryUpdatePelanggan);
+
+    if ($resultUpdatePelanggan) {
+        // Jika update berhasil
+        return true;
+    } else {
+        // Jika update gagal, tampilkan error
+        die("Error: " . mysqli_error($connection));
+    }
+}
 ?>
