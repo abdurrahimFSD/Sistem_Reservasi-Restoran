@@ -75,18 +75,20 @@ function mejaUpdate($data) {
 }
 
 // Function mejaDelete
-function mejaDelete($data) {
+function mejaDelete($idMeja) {
     global $connection;
 
-    // Ambil parameter id
-    $idMeja = $data['id'];
-
-    // Query SQL untuk menghapus data buku
+    // Query SQL untuk menghapus data meja
     $queryDeleteMeja = "DELETE FROM meja WHERE id_meja = $idMeja";
     $resultDeleteMeja = mysqli_query($connection, $queryDeleteMeja);
 
-    // Kembalikan true jika berhasil
-    return true;
+    if ($resultDeleteMeja) {
+        // Jika delete berhasil
+        return true;
+    } else {
+        // Jika delete gagal, tampilkan error
+        die("Error: " . mysqli_error($connection));
+    }
 }
 
 // Function pelangganCreate
@@ -142,6 +144,23 @@ function pelangganUpdate($data) {
         return true;
     } else {
         // Jika update gagal, tampilkan error
+        die("Error: " . mysqli_error($connection));
+    }
+}
+
+// Function pelangganDelete
+function pelangganDelete($idPelanggan) {
+    global $connection;
+
+    // Query SQL untuk menghapus data pelanggan
+    $queryDeletePelanggan = "DELETE FROM pelanggan WHERE id_pelanggan = $idPelanggan";
+    $resultDeletePelanggan = mysqli_query($connection, $queryDeletePelanggan);
+
+    if ($resultDeletePelanggan) {
+        // Jika delete berhasil
+        return true;
+    } else {
+        // Jika delete gagal, tampilkan error
         die("Error: " . mysqli_error($connection));
     }
 }
