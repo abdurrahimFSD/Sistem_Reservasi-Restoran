@@ -57,7 +57,7 @@ if (isset($_POST['simpan'])) {
         if ($result) {
             echo "
                 <script>
-                    alert('Data pelanggan berhasil diedit');
+                    alert('Data pelanggan berhasil diedit);
                     // Redirect ke halaman utama setelah alert
                     window.location.href = '../index.php?page=pelangganData';
                 </script>
@@ -66,21 +66,51 @@ if (isset($_POST['simpan'])) {
     }
 }
 
-// Mengecek apakah parameter 'id' ada di URL untuk menentukan apakah tombol hapus diklik
-if (isset($_GET['id'])) {
-    // Memanggil fungsi mejaDelete untuk menghapus data meja berdasarkan id
-    $result = mejaDelete($_GET);
 
-    // Jika proses penghapusan berhasil
-    if ($result) {
+// Mengecek apakah parameter 'id_meja' ada di URL untuk menghapus meja
+if (isset($_GET['id_meja'])) {
+    $resultMeja = mejaDelete($_GET['id_meja']);
+
+    // Jika proses penghapusan meja berhasil
+    if ($resultMeja) {
         echo "
             <script>
                 alert('Data meja berhasil dihapus');
-                // Redirect ke halaman utama setelah alert
+                // Redirect ke halaman meja setelah alert
                 window.location.href = '../index.php?page=mejaData';
             </script>
         ";
-    } 
+    } else {
+        echo "
+            <script>
+                alert('Gagal menghapus data meja');
+                window.history.back();
+            </script>
+        ";
+    }
+}
+
+// Mengecek apakah parameter 'id_pelanggan' ada di URL untuk menghapus pelanggan
+if (isset($_GET['id_pelanggan'])) {
+    $resultPelanggan = pelangganDelete($_GET['id_pelanggan']);
+
+    // Jika proses penghapusan pelanggan berhasil
+    if ($resultPelanggan) {
+        echo "
+            <script>
+                alert('Data pelanggan berhasil dihapus');
+                // Redirect ke halaman pelanggan setelah alert
+                window.location.href = '../index.php?page=pelangganData';
+            </script>
+        ";
+    } else {
+        echo "
+            <script>
+                alert('Gagal menghapus data pelanggan');
+                window.history.back();
+            </script>
+        ";
+    }
 }
 
 
