@@ -1,5 +1,14 @@
-<!-- Include PHP function -->
-<?php include('./controllers/function.php'); ?>
+<?php
+    include('./config/connection.php');
+
+    if (isset($_GET['id_meja'])) {
+        $idMeja = $_GET['id_meja'];
+
+        $query = "SELECT * FROM meja WHERE id_meja = '$idMeja'";
+        $result = mysqli_query($connection, $query);
+        $dataMeja = mysqli_fetch_assoc($result);
+    }
+?>
 
 <!-- Start Body Wrapper -->
 <div class="body-wrapper">
@@ -49,14 +58,14 @@
                 <h4 class="card-title">Masukkan Data Meja</h4>
                 <hr class="mb-4">
                 <form class="form-horizontal" action="./controllers/process.php" method="post">
-                    <input type="hidden" name="idMeja" value="<?= $data['id_meja']; ?>">
+                    <input type="hidden" name="idMeja" value="<?= $dataMeja['id_meja']; ?>">
                     <div class="mb-3">
                         <label for="noMeja" class="form-label">No Meja</label>
-                        <input type="text" class="form-control" name="noMeja" id="noMeja" placeholder="M01" value="<?= $data['no_meja']; ?>" required>
+                        <input type="text" class="form-control" name="noMeja" id="noMeja" placeholder="M01" value="<?= $dataMeja['no_meja']; ?>" required>
                     </div>
                     <div class="mb-3">  
                         <label for="kapasitas" class="form-label">Kapasitas</label>
-                        <input type="number" class="form-control" name="kapasitas" id="kapasitas" placeholder="4" value="<?= $data['kapasitas']; ?>" required>
+                        <input type="number" class="form-control" name="kapasitas" id="kapasitas" placeholder="4" value="<?= $dataMeja['kapasitas']; ?>" required>
                     </div>
                     <div class="mb-4">
                         <label for="posisi" class="form-label">Posisi</label>
@@ -66,7 +75,7 @@
                         <select name="posisi" id="posisi" class="form-select text-dark" required>
                             <option selected disabled>Pilih Posisi</option>
                             <?php foreach($posisi as $posisiData) { ?>
-                                <option value="<?= $posisiData; ?>" <?= ($data['posisi'] == $posisiData) ? 'selected' : ''; ?> ><?= $posisiData; ?></option>
+                                <option value="<?= $posisiData; ?>" <?= ($dataMeja['posisi'] == $posisiData) ? 'selected' : ''; ?> ><?= $posisiData; ?></option>
                             <?php } ?>
                         </select>
                     </div>
