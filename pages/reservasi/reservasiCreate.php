@@ -1,3 +1,14 @@
+<?php
+include('./config/connection.php');
+
+// Ambil data dari table meja dan pelanggan
+$queryMeja = "SELECT id_meja, no_meja FROM meja";
+$resultMeja = mysqli_query($connection, $queryMeja);
+
+$queryPelanggan = "SELECT id_pelanggan, nama_pelanggan FROM pelanggan";
+$resultPelanggan = mysqli_query($connection, $queryPelanggan);
+?>
+
 <!-- Start Body Wrapper -->
 <div class="body-wrapper">
     <div class="container-fluid">
