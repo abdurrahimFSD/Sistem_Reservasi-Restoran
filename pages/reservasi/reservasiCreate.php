@@ -64,7 +64,11 @@ $resultPelanggan = mysqli_query($connection, $queryPelanggan);
                     </div>
                     <div class="mb-3">  
                         <label for="noMeja" class="form-label">No Meja</label>
-                        <input type="text" class="form-control" name="noMeja" id="noMeja" placeholder="M01" required>
+                        <select name="noMeja" id="noMeja" class="form-select" required>
+                            <?php while ($dataMeja = mysqli_fetch_assoc($resultMeja)) { ?>
+                                <option value="<?= $dataMeja['id_meja']; ?>"> <?= $dataMeja['no_meja']; ?> </option>
+                            <?php } ?>
+                        </select>
                     </div>
                     <div class="mb-4">
                         <label for="namaPelanggan" class="form-label">Nama Pelanggan</label>
