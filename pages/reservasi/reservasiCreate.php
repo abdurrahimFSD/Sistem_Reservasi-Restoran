@@ -48,21 +48,29 @@
                 <hr class="mb-4">
                 <form class="form-horizontal" action="./controllers/process.php" method="post">
                     <div class="mb-3">
+                        <label for="tanggalReservasi" class="form-label">Tanggal Reservasi</label>
+                        <input type="date" class="form-control" name="tanggalReservasi" id="tanggalReservasi" required>
+                    </div>
+                    <div class="mb-3">  
+                        <label for="noMeja" class="form-label">No Meja</label>
+                        <input type="text" class="form-control" name="noMeja" id="noMeja" placeholder="M01" required>
+                    </div>
+                    <div class="mb-4">
                         <label for="namaPelanggan" class="form-label">Nama Pelanggan</label>
                         <input type="text" class="form-control" name="namaPelanggan" id="namaPelanggan" placeholder="Ahmad" required>
                     </div>
-                    <div class="mb-3">  
-                        <label for="alamat" class="form-label">Alamat</label>
-                        <input type="text" class="form-control" name="alamat" id="alamat" placeholder="Finland" required>
+                    <div class="mb-4">
+                        <label for="catatan" class="form-label">Catatan</label>
+                        <input type="text" class="form-control" name="catatan" id="catatan" placeholder="Makan Malam" required>
                     </div>
                     <div class="mb-4">
-                        <label for="noTelepon" class="form-label">No Telepon</label>
-                        <input type="number" class="form-control" name="noTelepon" id="noTelepon" placeholder="081347200001" required>
+                        <label for="jumlahOrang" class="form-label">Jumlah Orang</label>
+                        <input type="number" class="form-control" name="jumlahOrang" id="jumlahOrang" placeholder="4" required>
                     </div>
-                    <a href="?page=pelangganData" class="d-inline-flex justify-content-center align-items-center btn btn-outline-secondary me-2">
+                    <a href="?page=reservasiData" class="d-inline-flex justify-content-center align-items-center btn btn-outline-secondary me-2">
                         <iconify-icon icon="fluent:arrow-left-24-filled" class="me-1 fs-5 d-inline-flex align-items-center"></iconify-icon>Kembali
                     </a>
-                    <button type="submit" name="simpan" value="pelangganCreate" class="d-inline-flex justify-content-center align-items-center btn btn-primary">
+                    <button type="submit" name="simpan" value="reservasiCreate" class="d-inline-flex justify-content-center align-items-center btn btn-primary">
                         <iconify-icon icon="fluent:save-24-regular" class="me-1 fs-5 d-inline-flex align-items-center"></iconify-icon>Simpan
                     </button>
                 </form>
