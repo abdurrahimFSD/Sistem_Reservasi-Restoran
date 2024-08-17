@@ -62,12 +62,25 @@
                         </thead>
                         <tbody>
                             <?php
-                                include('./controllers/function.php');
+                                include('./config/connection.php');
 
-                                $pelangganData = fetchData('pelanggan');
+                                $queryReservasi = "SELECT 
+                                                reservasi.id_reservasi,
+                                                reservasi.tanggal_reservasi,
+                                                meja.no_meja,
+                                                pelanggan.nama_pelanggan,
+                                                reservasi.catatan,
+                                                reservasi.jumlah_orang
+                                            FROM 
+                                                reservasi
+                                            JOIN 
+                                                meja ON reservasi.meja_id = meja.id_meja
+                                            JOIN 
+                                                pelanggan ON reservasi.pelanggan_id = pelanggan.id_pelanggan;";
+                                $dataReservasi = mysqli_query($connection, $queryReservasi);
                                 $no = 1;
 
-                                foreach ($pelangganData as $row) {
+                                foreach ($dataReservasi as $row) {
                             ?>
                             <!-- start row -->
                             <tr class="search-items">
@@ -75,20 +88,26 @@
                                     <?= $no++; ?>
                                 </td>
                                 <td class="text-dark">
+                                    <?= $row['tanggal_reservasi']; ?>
+                                </td>
+                                <td class="text-dark">
+                                    <?= $row['no_meja']; ?>
+                                </td>
+                                <td class="text-dark">
                                     <?= $row['nama_pelanggan']; ?>
                                 </td>
                                 <td class="text-dark">
-                                    <?= $row['alamat']; ?>
+                                    <?= $row['catatan']; ?>
                                 </td>
                                 <td class="text-dark">
-                                    <?= $row['no_telepon']; ?>
+                                    <?= $row['jumlah_orang']; ?>
                                 </td>
                                 <td class="text-center">
                                     <div class="action-btn">
-                                        <a href="?page=pelangganUpdate&id_pelanggan=<?= $row['id_pelanggan']; ?>" class="d-inline-flex btn btn-sm btn-outline-warning edit" data-bs-toggle="tooltip" data-bs-placement="top" title="Edit">
+                                        <a href="?page=reservasiUpdate&id_reservasi=<?= $row['id_reservasi']; ?>" class="d-inline-flex btn btn-sm btn-outline-warning edit" data-bs-toggle="tooltip" data-bs-placement="top" title="Edit">
                                             <iconify-icon icon="tabler:edit" class="fs-5"></iconify-icon>
                                         </a>
-                                        <a href="./controllers/process.php?id_pelanggan=<?= $row['id_pelanggan']; ?>" onclick="return confirm('Apakah yakin menghapus data!')" class="d-inline-flex btn btn-sm btn-danger delete ms-2" data-bs-toggle="tooltip" data-bs-placement="top" title="Hapus">
+                                        <a href="./controllers/process.php?id_reservasi=<?= $row['id_reservasi']; ?>" onclick="return confirm('Apakah yakin menghapus data!')" class="d-inline-flex btn btn-sm btn-danger delete ms-2" data-bs-toggle="tooltip" data-bs-placement="top" title="Hapus">
                                             <iconify-icon icon="tabler:trash" class="fs-5"></iconify-icon>
                                         </a>
                                     </div>
