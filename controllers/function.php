@@ -130,4 +130,28 @@ function pelangganDelete($idPelanggan) {
         die("Error: " . mysqli_error($connection));
     }
 }
+
+// Function reservasiCreate
+function reservasiCreate($data) {
+    global $connection;
+
+    // Ambil data reservasi data array data
+    $tanggalReservasi = $data['tanggalReservasi'];
+    $noMeja = $data['noMeja'];
+    $namaPelanggan = $data['namaPelanggan'];
+    $catatan = $data['catatan'];
+    $jumlahOrang = $data['jumlahOrang'];
+    
+    // Query SQL untuk menambahkan data reservasi baru
+    $queryReservasiCreate = "INSERT INTO reservasi (tanggal_reservasi, meja_id, pelanggan_id, catatan, jumlah_orang) VALUES ('$tanggalReservasi', '$noMeja', '$namaPelanggan', '$catatan', '$jumlahOrang')";
+    $resultReservasiCreate = mysqli_query($connection, $queryReservasiCreate);
+
+    if ($resultReservasiCreate) {
+        // Jika create berhasil
+        return true;
+    } else {
+        // Jika delete gagal, tampilkan error
+        die("Error: " . mysqli_error($connection));
+    }
+}
 ?>
