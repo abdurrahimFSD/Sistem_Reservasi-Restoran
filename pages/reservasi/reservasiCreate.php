@@ -72,7 +72,7 @@ $resultPelanggan = mysqli_query($connection, $queryPelanggan);
                     </div>
                     <div class="mb-4">
                         <label for="namaPelanggan" class="form-label">Nama Pelanggan</label>
-                        <select name="catatan" id="catatan" class="form-select" required>
+                        <select name="namaPelanggan" id="namaPelanggan" class="form-select" required>
                             <?php while ($dataPelanggan = mysqli_fetch_assoc($resultPelanggan)) { ?>
                                 <option value="<?= $dataPelanggan['id_pelanggan']; ?>"> <?= $dataPelanggan['nama_pelanggan']; ?> </option>
                             <?php } ?>
