@@ -53,9 +53,11 @@
                     <table id="dataTables" class="table search-table align-middle text-nowrap">
                         <thead class="header-item">
                             <th>No</th>
+                            <th>Tanggal Reservasi</th>
+                            <th>No Meja</th>
                             <th>Nama Pelanggan</th>
-                            <th>Alamat</th>
-                            <th>No Telepon</th>
+                            <th>Catatan</th>
+                            <th>Jumlah Orang</th>
                             <th class="text-center">Aksi</th>
                         </thead>
                         <tbody>
