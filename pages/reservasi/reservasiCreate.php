@@ -44,7 +44,7 @@
 
             <!-- Start Card body main content -->
             <div class="card card-body">
-                <h4 class="card-title">Masukkan Data Reservasi</h4>
+                <h4 class="card-title mb-0">Masukkan Data Reservasi</h4>
                 <hr class="mb-4">
                 <form class="form-horizontal" action="./controllers/process.php" method="post">
                     <div class="mb-3">
