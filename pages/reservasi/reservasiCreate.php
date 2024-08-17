@@ -33,9 +33,9 @@
             <div class="card card-body">
                 <div class="row">
                     <div class="col">
-                        <h3 class="mb-0">
-                            <iconify-icon icon="solar:user-plus-line-duotone" class="align-middle ms-1 me-1"></iconify-icon>
-                            <span class="align-middle">Tambah Daftar Pelanggan</span>
+                        <h3 class="mb-0 d-flex align-items-center">
+                            <iconify-icon icon="solar:card-2-line-duotone" class="ms-1 me-1"></iconify-icon>
+                            <span class="align-middle">Tambah Daftar Reservasi</span>
                         </h3>
                     </div>
                 </div>
