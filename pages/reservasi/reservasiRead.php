@@ -34,12 +34,12 @@
                 <div class="row">
                     <div class="col-md-6">
                         <h3 class="mb-0 d-inline-flex justify-content-center align-items-center">
-                            <iconify-icon icon="solar:users-group-rounded-line-duotone" class="me-1 align-middle"></iconify-icon>
-                            <span class="align-middle">Daftar Pelanggan</span>
+                            <iconify-icon icon="solar:card-2-line-duotone" class="me-1 align-middle"></iconify-icon>
+                            <span class="align-middle">Daftar Reservasi</span>
                         </h3>
                     </div>
                     <div class="col-md-6 text-end d-flex justify-content-md-end justify-content-center mt-3 mt-md-0">
-                        <a href="?page=pelangganCreate" id="btn-add-data" class="btn btn-primary d-inline-flex justify-content-center align-items-center">
+                        <a href="?page=reservasiCreate" id="btn-add-data" class="btn btn-primary d-inline-flex justify-content-center align-items-center">
                             <iconify-icon icon="fluent:add-24-filled" class="text-white me-1 fs-5 d-inline-flex align-items-center"></iconify-icon> Tambah Data
                         </a>
                     </div>
