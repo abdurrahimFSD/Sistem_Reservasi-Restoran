@@ -67,6 +67,7 @@ if (isset($_GET['id_reservasi'])) {
                 <h4 class="card-title mb-0">Masukkan Data Reservasi</h4>
                 <hr class="mb-4">
                 <form class="form-horizontal" action="./controllers/process.php" method="post">
+                    <input type="hidden" name="idReservasi" value="<?= $dataReservasi['id_reservasi']; ?>">
                     <div class="mb-3">
                         <label for="tanggalReservasi" class="form-label">Tanggal Reservasi</label>
                         <input type="date" class="form-control" name="tanggalReservasi" id="tanggalReservasi" required>
