@@ -7,6 +7,15 @@ $resultMeja = mysqli_query($connection, $queryMeja);
 
 $queryPelanggan = "SELECT id_pelanggan, nama_pelanggan FROM pelanggan";
 $resultPelanggan = mysqli_query($connection, $queryPelanggan);
+
+// Ambil data reservasi berdasarkan id_reservasi
+if (isset($_GET['id_reservasi'])) {
+    $idReservasi = $_GET['id_reservasi'];
+
+    $query = "SELECT * FROM reservasi WHERE id_reservasi = $idReservasi";
+    $result = mysqli_query($connection, $query);
+    $dataReservasi = mysqli_fetch_assoc($result);
+}
 ?>
 
 <!-- Start Body Wrapper -->
