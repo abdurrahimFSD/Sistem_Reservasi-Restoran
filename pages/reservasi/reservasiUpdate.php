@@ -76,7 +76,7 @@ if (isset($_GET['id_reservasi'])) {
                         <label for="noMeja" class="form-label">No Meja</label>
                         <select name="noMeja" id="noMeja" class="form-select text-dark" required>
                             <?php while ($dataMeja = mysqli_fetch_assoc($resultMeja)) { ?>
-                                <option value="<?= $dataMeja['id_meja']; ?>"> <?= $dataMeja['no_meja']; ?> </option>
+                                <option value="<?= $dataMeja['id_meja']; ?>" <?= ($dataMeja['id_meja'] == $dataReservasi['meja_id']) ? 'selected' : ''; ?> > <?= $dataMeja['no_meja']; ?> </option>
                             <?php } ?>
                         </select>
                     </div>
@@ -84,7 +84,7 @@ if (isset($_GET['id_reservasi'])) {
                         <label for="namaPelanggan" class="form-label">Nama Pelanggan</label>
                         <select name="namaPelanggan" id="namaPelanggan" class="form-select text-dark" required>
                             <?php while ($dataPelanggan = mysqli_fetch_assoc($resultPelanggan)) { ?>
-                                <option value="<?= $dataPelanggan['id_pelanggan']; ?>"> <?= $dataPelanggan['nama_pelanggan']; ?> </option>
+                                <option value="<?= $dataPelanggan['id_pelanggan']; ?>" <?= ($dataPelanggan['id_pelanggan'] == $dataReservasi['pelanggan_id']) ? 'selected' : ''; ?> > <?= $dataPelanggan['nama_pelanggan']; ?> </option>
                             <?php } ?>
                         </select>
                     </div>
