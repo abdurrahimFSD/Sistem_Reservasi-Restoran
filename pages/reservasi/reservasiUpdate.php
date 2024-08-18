@@ -46,7 +46,7 @@ $resultPelanggan = mysqli_query($connection, $queryPelanggan);
                     <div class="col">
                         <h3 class="mb-0 d-flex align-items-center">
                             <iconify-icon icon="solar:card-2-line-duotone" class="ms-1 me-1"></iconify-icon>
-                            <span class="align-middle">Tambah Daftar Reservasi</span>
+                            <span class="align-middle">Edit Daftar Reservasi</span>
                         </h3>
                     </div>
                 </div>
