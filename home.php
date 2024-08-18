@@ -1,3 +1,12 @@
+<?php
+
+include('./controllers/function.php');
+
+// Mendapatakn total reservasi
+$totalReservasi = getTotalReservasi();
+
+?>
+
 <!-- Start Body Wrapper -->
 <div class="body-wrapper">
     <div class="container-fluid">
@@ -13,7 +22,9 @@
                                 <iconify-icon icon="tabler:calendar" class="fs-6"></iconify-icon>
                             </div>
                             <div class="align-self-center">
-                                <h4 class="card-title mb-1">80</h4>
+                                <h4 class="card-title mb-1">
+                                    <?= $totalReservasi; ?>
+                                </h4>
                                 <p class="card-subtitle">Total Reservasi</p>
                             </div>
                         </div>
