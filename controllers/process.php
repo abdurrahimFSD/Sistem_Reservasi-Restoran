@@ -141,5 +141,27 @@ if (isset($_GET['id_pelanggan'])) {
     }
 }
 
+// Mengecek apakah parameter 'id_reservasi' ada di URL untuk menghapus reservasi
+if (isset($_GET['id_reservasi'])) {
+    $resultReservasi = reservasiDelete($_GET['id_reservasi']);
+
+    // Jika proses penghapusan reservasi berhasil
+    if ($resultReservasi) {
+        echo "
+            <script>
+                alert('Data reservasi berhasil dihapus');
+                // Redirect ke halaman reservasi setelah alert
+                window.location.href = '../index.php?page=reservasiData';
+            </script>
+        ";
+    } else {
+        echo "
+            <script>
+                alert('Gagal menghapus data reservasi');
+                window.history.back();
+            </script>
+        ";
+    }
+}
 
 ?>
