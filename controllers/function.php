@@ -8,6 +8,22 @@ if (file_exists('./config/connection.php')) {
     die('Connection file not found');
 }
 
+// Function untuk mendapatakan total reservasi
+function getTotalReservasi() {
+    global $connection;
+
+    // Query SQL untuk mendapatakn total reservasi
+    $queryGetTotalReservasi = "SELECT COUNT(*) as total_reservasi FROM reservasi";
+    $resultGetTotalReservasi = mysqli_query($connection, $queryGetTotalReservasi);
+
+     if($resultGetTotalReservasi) {
+        $data = mysqli_fetch_assoc($resultGetTotalReservasi);
+        return $data['total_reservasi'];
+     } else {
+        die("Error: " . mysqli_error($connection));
+     }
+}
+
 // Function fetchData
 function fetchData($tableName) {
     global $connection;
