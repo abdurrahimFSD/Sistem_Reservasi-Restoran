@@ -70,7 +70,7 @@ if (isset($_GET['id_reservasi'])) {
                     <input type="hidden" name="idReservasi" value="<?= $dataReservasi['id_reservasi']; ?>">
                     <div class="mb-3">
                         <label for="tanggalReservasi" class="form-label">Tanggal Reservasi</label>
-                        <input type="date" class="form-control" name="tanggalReservasi" id="tanggalReservasi" required>
+                        <input type="date" class="form-control" name="tanggalReservasi" id="tanggalReservasi" value="<?= $dataReservasi['tanggal_reservasi']; ?>" required>
                     </div>
                     <div class="mb-3">  
                         <label for="noMeja" class="form-label">No Meja</label>
@@ -90,11 +90,11 @@ if (isset($_GET['id_reservasi'])) {
                     </div>
                     <div class="mb-4">
                         <label for="catatan" class="form-label">Catatan</label>
-                        <input type="text" class="form-control" name="catatan" id="catatan" placeholder="Makan Malam" required>
+                        <input type="text" class="form-control" name="catatan" id="catatan" value="<?= $dataReservasi['catatan']; ?>" placeholder="Makan Malam" required>
                     </div>
                     <div class="mb-4">
                         <label for="jumlahOrang" class="form-label">Jumlah Orang</label>
-                        <input type="number" class="form-control" name="jumlahOrang" id="jumlahOrang" placeholder="4" required>
+                        <input type="number" class="form-control" name="jumlahOrang" id="jumlahOrang" value="<?= $dataReservasi['jumlah_orang']; ?>" placeholder="4" required>
                     </div>
                     <a href="?page=reservasiData" class="d-inline-flex justify-content-center align-items-center btn btn-outline-secondary me-2">
                         <iconify-icon icon="fluent:arrow-left-24-filled" class="me-1 fs-5 d-inline-flex align-items-center"></iconify-icon>Kembali
