@@ -77,6 +77,20 @@ if (isset($_POST['simpan'])) {
                 </script>
             ";
         }
+    } elseif ($_POST['simpan'] == 'reservasiUpdate') {  // Jika tombol simpan adalah reservasiUpdate
+        // Memanggail fungsi reservasiUpdate
+        $result = reservasiUpdate($_POST);
+
+        // Jika proses update berhasil
+        if ($result) {
+            echo "
+                <script>
+                    alert('Data reservasi berhasil diedit');
+                    // Redirect ke halaman reservasiData setelah alert
+                    window.location.href = '../index.php?page=reservasiData';
+                </script>
+            ";
+        }
     }
 }
 
