@@ -179,4 +179,21 @@ function reservasiUpdate($data) {
         die("Error: " . mysqli_error($connection));
     }
 }
+
+// Function reservasiDelete
+function reservasiDelete($idReservasi) {
+    global $connection;
+
+    // Query SQL untuk menghapus data reservasi
+    $queryReservasiDelete = "DELETE FROM reservasi WHERE id_reservasi = $idReservasi";
+    $resultReservasiDelete = mysqli_query($connection, $queryReservasiDelete);
+
+    if ($resultReservasiDelete) {
+        // Jika delete berhasil
+        return true;
+    } else {
+        // Jika delete gagal, tampilkan error
+        die("Error: " . mysqli_error($connection));
+    }
+}
 ?>
