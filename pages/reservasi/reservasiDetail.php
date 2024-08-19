@@ -52,7 +52,9 @@ if ($resultGetDetail) {
 
         <div class="card card-body">
             <div class="row">
-                <table class="table table-striped table-bordered">
+                <h3>Detail Reservasi: <?= htmlspecialchars($dataReservasi['nama_pelanggan']); ?></h3>
+                <hr class="mb-4">
+                <table class="table table-hover">
                     <tbody>
                         <tr>
                             <td class="col-6 col-md-3">
