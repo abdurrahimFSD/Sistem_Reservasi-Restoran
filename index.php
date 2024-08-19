@@ -47,6 +47,9 @@ switch ($_GET['page']) {
     case 'reservasiDelete':
         include('./pages/reservasi/reservasiDelete.php');
         break;
+    case 'reservasiDetail':
+        include('./pages/reservasi/reservasiDetail.php');
+        break;
 
     default:
         include('./home.php');
