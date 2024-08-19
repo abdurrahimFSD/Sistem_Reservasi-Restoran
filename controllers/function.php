@@ -24,6 +24,24 @@ function getTotalReservasi() {
      }
 }
 
+// Function untuk mendapatkan jumlah meja yang tersedia 
+function getMejaTersedia() {
+    global $connection;
+
+    // Query SQL untuk mendapatkan jumlah meja yang tersedia
+    $queryGetMejaTersedia = "SELECT COUNT(*) as meja_tersedia
+                            FROM meja
+                            WHERE id_meja NOT IN (SELECT meja_id FROM reservasi WHERE tanggal_reservasi = CURDATE())";
+    $resultGetMejaTersedia = mysqli_query($connection, $queryGetMejaTersedia);
+
+    if ($resultGetMejaTersedia) {
+        $data = mysqli_fetch_assoc($resultGetMejaTersedia);
+        return $data['meja_tersedia'];
+    } else {
+        die("Error: " . mysqli_error($connection));
+    }
+}
+
 // Function fetchData
 function fetchData($tableName) {
     global $connection;
