@@ -1,5 +1,5 @@
 <?php
-include('./controllers/function.php');
+include('./config/connection.php');
 
 // Ambil ID reservasi dari query string
 $idReservasi = isset($_GET['id_reservasi']) ? intval($_GET['id_reservasi']) : 0;
