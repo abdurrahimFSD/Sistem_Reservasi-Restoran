@@ -217,21 +217,41 @@ function reservasiUpdate($data) {
     // Ambil data reservasi dari array $data
     $idReservasi = $data['idReservasi'];
     $tanggalReservasi = $data['tanggalReservasi'];
+    $waktuMulai = $data['waktuMulai'];
+    $waktuSelesai = $data['waktuSelesai'];
     $noMeja = $data['noMeja'];
     $namaPelanggan = $data['namaPelanggan'];
     $catatan = $data['catatan'];
     $jumlahOrang = $data['jumlahOrang'];
 
-    // Query SQL untuk mengedit data reservasi berdasarkan idReservasi
-    $queryReservasiUpdate = "UPDATE reservasi SET tanggal_reservasi='$tanggalReservasi', meja_id='$noMeja', pelanggan_id='$namaPelanggan', catatan='$catatan', jumlah_orang='$jumlahOrang' WHERE id_reservasi = $idReservasi";
-    $resultReservasiUpdate = mysqli_query($connection, $queryReservasiUpdate);
-
-    if ($resultReservasiUpdate) {
-        // Jika update berhasil
-        return true;
+    // Mengecek apakah rentang waktu bentrok dengan reservasi yang sudah ada
+    $queryCheckAvailability = "SELECT COUNT(*) as jumlah FROM reservasi WHERE meja_id = '$noMeja' AND tanggal_reservasi = '$tanggalReservasi' AND
+                                (
+                                    ('$waktuMulai' < waktu_selesai AND '$waktuSelesai' > waktu_mulai)
+                                )";
+    $resultCheckAvailability = mysqli_query($connection, $queryCheckAvailability);
+    $dataCheckAvailability = mysqli_fetch_assoc($resultCheckAvailability); 
+    if ($dataCheckAvailability['jumlah'] > 0) {
+        // Jika ada bentrok waktu, tampilkan pesan error
+        echo "
+        <script>
+            alert('Maaf, meja ini sudah dipesan pada rentang waktu yang dipilih');
+            // Redirect ke halaman reservasiCreate setelah alert
+            window.location.href = '../index.php?page=reservasiData';
+        </script>
+        ";
     } else {
-        // Jika delete gagal, tampilkan error
-        die("Error: " . mysqli_error($connection));
+        // Query SQL untuk mengedit data reservasi berdasarkan idReservasi
+        $queryReservasiUpdate = "UPDATE reservasi SET tanggal_reservasi='$tanggalReservasi', waktu_mulai='$waktuMulai', waktu_selesai='$waktuSelesai', meja_id='$noMeja', pelanggan_id='$namaPelanggan', catatan='$catatan', jumlah_orang='$jumlahOrang' WHERE id_reservasi = $idReservasi";
+        $resultReservasiUpdate = mysqli_query($connection, $queryReservasiUpdate);
+    
+        if ($resultReservasiUpdate) {
+            // Jika update berhasil
+            return true;
+        } else {
+            // Jika delete gagal, tampilkan error
+            die("Error: " . mysqli_error($connection));
+        }
     }
 }
 
