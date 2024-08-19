@@ -171,21 +171,42 @@ function reservasiCreate($data) {
 
     // Ambil data reservasi data array data
     $tanggalReservasi = $data['tanggalReservasi'];
+    $waktuMulai = $data['waktuMulai'];
+    $waktuSelesai = $data['waktuSelesai'];
     $noMeja = $data['noMeja'];
     $namaPelanggan = $data['namaPelanggan'];
     $catatan = $data['catatan'];
     $jumlahOrang = $data['jumlahOrang'];
-    
-    // Query SQL untuk menambahkan data reservasi baru
-    $queryReservasiCreate = "INSERT INTO reservasi (tanggal_reservasi, meja_id, pelanggan_id, catatan, jumlah_orang) VALUES ('$tanggalReservasi', '$noMeja', '$namaPelanggan', '$catatan', '$jumlahOrang')";
-    $resultReservasiCreate = mysqli_query($connection, $queryReservasiCreate);
 
-    if ($resultReservasiCreate) {
-        // Jika create berhasil
-        return true;
+    // Mengecek apakah rentang waktu bentrok dengan reservasi yang sudah ada
+    $queryCheckAvailability = "SELECT COUNT(*) as jumlah FROM reservasi WHERE meja_id = '$noMeja' AND tanggal_reservasi = '$tanggalReservasi' AND
+                                (
+                                    ('$waktuMulai' < waktu_selesai AND '$waktuSelesai' > waktu_mulai)
+                                )";
+    $resultCheckAvailability = mysqli_query($connection, $queryCheckAvailability);
+    $dataCheckAvailability = mysqli_fetch_assoc($resultCheckAvailability); 
+    if ($dataCheckAvailability['jumlah'] > 0) {
+        // Jika ada bentrok waktu, tampilkan pesan error
+        echo "
+        <script>
+            alert('Maaf, meja ini sudah dipesan pada rentang waktu yang dipilih');
+            // Redirect ke halaman reservasiCreate setelah alert
+            window.location.href = '../index.php?page=reservasiCreate';
+        </script>
+        ";
     } else {
-        // Jika delete gagal, tampilkan error
-        die("Error: " . mysqli_error($connection));
+        // Jika tidak bentrok, simpan data reservasi
+        $queryReservasiCreate = "INSERT INTO reservasi (tanggal_reservasi, waktu_mulai, waktu_selesai, meja_id, pelanggan_id, catatan, jumlah_orang)
+                  VALUES ('$tanggalReservasi', '$waktuMulai', '$waktuSelesai', '$noMeja', '$namaPelanggan', '$catatan', '$jumlahOrang')";
+        $resultReservasiCreate = mysqli_query($connection, $queryReservasiCreate);
+
+        if ($resultReservasiCreate) {
+            // Jika create berhasil
+            return true;
+        } else {
+            // Jika delete gagal, tampilkan error
+            die("Error: " . mysqli_error($connection));
+        }
     }
 }
 
