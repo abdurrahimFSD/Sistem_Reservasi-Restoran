@@ -62,6 +62,14 @@ $resultPelanggan = mysqli_query($connection, $queryPelanggan);
                         <label for="tanggalReservasi" class="form-label">Tanggal Reservasi</label>
                         <input type="date" class="form-control" name="tanggalReservasi" id="tanggalReservasi" required>
                     </div>
+                    <div class="mb-3">
+                        <label for="waktuMulai" class="form-label">Waktu Mulai</label>
+                        <input type="time" class="form-control" name="waktuMulai" id="waktuMulai" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="waktuSelesai" class="form-label">Waktu Selesai</label>
+                        <input type="time" class="form-control" name="waktuSelesai" id="waktuSelesai" required>
+                    </div>
                     <div class="mb-3">  
                         <label for="noMeja" class="form-label">No Meja</label>
                         <select name="noMeja" id="noMeja" class="form-select text-dark" required>
