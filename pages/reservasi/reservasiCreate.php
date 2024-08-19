@@ -2,7 +2,7 @@
 include('./config/connection.php');
 
 // Ambil data dari table meja dan pelanggan
-$queryMeja = "SELECT id_meja, no_meja FROM meja";
+$queryMeja = "SELECT id_meja, no_meja, kapasitas FROM meja";
 $resultMeja = mysqli_query($connection, $queryMeja);
 
 $queryPelanggan = "SELECT id_pelanggan, nama_pelanggan FROM pelanggan";
@@ -70,15 +70,18 @@ $resultPelanggan = mysqli_query($connection, $queryPelanggan);
                         <label for="waktuSelesai" class="form-label">Waktu Selesai</label>
                         <input type="time" class="form-control" name="waktuSelesai" id="waktuSelesai" required>
                     </div>
-                    <div class="mb-3">  
+                    <div class="mb-3">
                         <label for="noMeja" class="form-label">No Meja</label>
                         <select name="noMeja" id="noMeja" class="form-select text-dark" required>
                             <?php while ($dataMeja = mysqli_fetch_assoc($resultMeja)) { ?>
-                                <option value="<?= $dataMeja['id_meja']; ?>"> <?= $dataMeja['no_meja']; ?> </option>
+                                <option value="<?= $dataMeja['id_meja']; ?>" data-kapasitas="<?= $dataMeja['kapasitas']; ?>">
+                                    <?= $dataMeja['no_meja']; ?>
+                                </option>
                             <?php } ?>
                         </select>
-                    </div>
-                    <div class="mb-4">
+                        <div id="kapasitasMeja" class="form-text text-black-50 fs-3"></div>
+                    </div>                   
+                    <div class="mb-3">
                         <label for="namaPelanggan" class="form-label">Nama Pelanggan</label>
                         <select name="namaPelanggan" id="namaPelanggan" class="form-select text-dark" required>
                             <?php while ($dataPelanggan = mysqli_fetch_assoc($resultPelanggan)) { ?>
@@ -86,13 +89,14 @@ $resultPelanggan = mysqli_query($connection, $queryPelanggan);
                             <?php } ?>
                         </select>
                     </div>
-                    <div class="mb-4">
+                    <div class="mb-3">
                         <label for="catatan" class="form-label">Catatan</label>
                         <input type="text" class="form-control" name="catatan" id="catatan" placeholder="Makan Malam" required>
                     </div>
                     <div class="mb-4">
                         <label for="jumlahOrang" class="form-label">Jumlah Orang</label>
                         <input type="number" class="form-control" name="jumlahOrang" id="jumlahOrang" placeholder="4" required>
+                        <div id="keteranganKapasitas" class="form-text text-black-50 fs-3"></div>
                     </div>
                     <a href="?page=reservasiData" class="d-inline-flex justify-content-center align-items-center btn btn-outline-secondary me-2">
                         <iconify-icon icon="fluent:arrow-left-24-filled" class="me-1 fs-5 d-inline-flex align-items-center"></iconify-icon>Kembali
@@ -108,3 +112,48 @@ $resultPelanggan = mysqli_query($connection, $queryPelanggan);
     
 </div>
 <!-- End Body Wrapper -->
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const selectElement = document.getElementById('noMeja');
+        const jumlahOrangInput = document.getElementById('jumlahOrang');
+        const kapasitasElement = document.getElementById('kapasitasMeja');
+        const keteranganKapasitas = document.getElementById('keteranganKapasitas');
+
+        // Memperbarui kapasitas dan atribut max serta min pada input jumlah orang
+        selectElement.addEventListener('change', function() {
+            const selectedOption = this.options[this.selectedIndex];
+            const kapasitas = selectedOption.getAttribute('data-kapasitas');
+
+            // Perbarui keterangan kapasitas
+            kapasitasElement.textContent = `Kapasitas: ${kapasitas}`;
+
+            // Setel atribut max dan keterangan kapasitas pada input jumlah orang
+            jumlahOrangInput.setAttribute('max', kapasitas);
+            keteranganKapasitas.textContent = `Max ${kapasitas} Orang`;
+
+            // Reset nilai input jumlah orang jika lebih dari kapasitas
+            if (jumlahOrangInput.value > kapasitas) {
+                jumlahOrangInput.value = kapasitas;
+            }
+        });
+
+        // Validasi input jumlah orang untuk memastikan tidak melebihi kapasitas dan minimal 1
+        jumlahOrangInput.addEventListener('input', function() {
+            const max = parseInt(jumlahOrangInput.getAttribute('max'), 10);
+            const min = parseInt(jumlahOrangInput.getAttribute('min'), 10);
+
+            if (this.value > max) {
+                this.value = max;
+            } else if (this.value < min) {
+                this.value = min;
+            }
+        });
+
+        // Inisialisasi kapasitas, atribut max, dan keterangan saat halaman dimuat
+        jumlahOrangInput.setAttribute('max', '');
+        jumlahOrangInput.setAttribute('min', '1');
+        kapasitasElement.textContent = '';
+        keteranganKapasitas.textContent = '';
+    });
+</script>
