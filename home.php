@@ -2,9 +2,11 @@
 
 include('./controllers/function.php');
 
-// Mendapatakn total reservasi
+// Mendapatkan total reservasi
 $totalReservasi = getTotalReservasi();
 
+// Mendapatkan jumlah meja yang tersedia
+$mejaTersedia = getMejaTersedia(); 
 ?>
 
 <!-- Start Body Wrapper -->
@@ -39,7 +41,9 @@ $totalReservasi = getTotalReservasi();
                                 <iconify-icon icon="tabler:layout-grid" class="fs-6"></iconify-icon>
                             </div>
                             <div class="align-self-center">
-                                <h4 class="card-title mb-1">27</h4>
+                                <h4 class="card-title mb-1">
+                                    <?= $mejaTersedia; ?>
+                                </h4>
                                 <p class="card-subtitle">Meja Tersedia</p>
                             </div>
                         </div>
