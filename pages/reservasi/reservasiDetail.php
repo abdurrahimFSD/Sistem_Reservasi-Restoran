@@ -66,26 +66,34 @@ if ($resultGetDetail) {
                         </tr>
                         <tr>
                             <td class="col-6 col-md-3">
-                                <p class="mb-0 text-dark fw-bolder">Tanggal Reservasi</p>
+                                <p class="mb-0 text-dark fw-bolder">Nama Pelanggan</p>
                             </td>
                             <td class="col-6 col-md-9">
-                                <p class="mb-0 text-dark"><?= htmlspecialchars($dataReservasi['tanggal_reservasi']); ?></p>
+                                <p class="mb-0 text-dark"><?= htmlspecialchars($dataReservasi['nama_pelanggan']); ?></p>
                             </td>
                         </tr>
                         <tr>
                             <td class="col-6 col-md-3">
-                                <p class="mb-0 text-dark fw-bolder">Waktu Mulai</p>
+                                <p class="mb-0 text-dark fw-bolder">Alamat Pelanggan</p>
                             </td>
                             <td class="col-6 col-md-9">
-                                <p class="mb-0 text-dark"><?= htmlspecialchars($dataReservasi['waktu_mulai']); ?></p>
+                                <p class="mb-0 text-dark"><?= htmlspecialchars($dataReservasi['alamat']); ?></p>
                             </td>
                         </tr>
                         <tr>
                             <td class="col-6 col-md-3">
-                                <p class="mb-0 text-dark fw-bolder">Waktu Selesai</p>
+                                <p class="mb-0 text-dark fw-bolder">No Telepon Pelanggan</p>
                             </td>
                             <td class="col-6 col-md-9">
-                                <p class="mb-0 text-dark"><?= htmlspecialchars($dataReservasi['waktu_selesai']); ?></p>
+                                <p class="mb-0 text-dark"><?= htmlspecialchars($dataReservasi['no_telepon']); ?></p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="col-6 col-md-3">
+                                <p class="mb-0 text-dark fw-bolder">Jumlah Orang</p>
+                            </td>
+                            <td class="col-6 col-md-9">
+                                <p class="mb-0 text-dark"><?= htmlspecialchars($dataReservasi['jumlah_orang']); ?></p>
                             </td>
                         </tr>
                         <tr>
@@ -114,26 +122,26 @@ if ($resultGetDetail) {
                         </tr>
                         <tr>
                             <td class="col-6 col-md-3">
-                                <p class="mb-0 text-dark fw-bolder">Nama Pelanggan</p>
+                                <p class="mb-0 text-dark fw-bolder">Tanggal Reservasi</p>
                             </td>
                             <td class="col-6 col-md-9">
-                                <p class="mb-0 text-dark"><?= htmlspecialchars($dataReservasi['nama_pelanggan']); ?></p>
+                                <p class="mb-0 text-dark"><?= htmlspecialchars($dataReservasi['tanggal_reservasi']); ?></p>
                             </td>
                         </tr>
                         <tr>
                             <td class="col-6 col-md-3">
-                                <p class="mb-0 text-dark fw-bolder">Alamat Pelanggan</p>
+                                <p class="mb-0 text-dark fw-bolder">Waktu Mulai</p>
                             </td>
                             <td class="col-6 col-md-9">
-                                <p class="mb-0 text-dark"><?= htmlspecialchars($dataReservasi['alamat']); ?></p>
+                                <p class="mb-0 text-dark"><?= htmlspecialchars($dataReservasi['waktu_mulai']); ?></p>
                             </td>
                         </tr>
                         <tr>
                             <td class="col-6 col-md-3">
-                                <p class="mb-0 text-dark fw-bolder">No Telepon Pelanggan</p>
+                                <p class="mb-0 text-dark fw-bolder">Waktu Selesai</p>
                             </td>
                             <td class="col-6 col-md-9">
-                                <p class="mb-0 text-dark"><?= htmlspecialchars($dataReservasi['no_telepon']); ?></p>
+                                <p class="mb-0 text-dark"><?= htmlspecialchars($dataReservasi['waktu_selesai']); ?></p>
                             </td>
                         </tr>
                         <tr>
@@ -144,14 +152,7 @@ if ($resultGetDetail) {
                                 <p class="mb-0 text-dark"><?= htmlspecialchars($dataReservasi['catatan']); ?></p>
                             </td>
                         </tr>
-                        <tr>
-                            <td class="col-6 col-md-3">
-                                <p class="mb-0 text-dark fw-bolder">Jumlah Orang</p>
-                            </td>
-                            <td class="col-6 col-md-9">
-                                <p class="mb-0 text-dark"><?= htmlspecialchars($dataReservasi['jumlah_orang']); ?></p>
-                            </td>
-                        </tr>
+
                     </tbody>
                 </table>
                 <div class="mt-3">
