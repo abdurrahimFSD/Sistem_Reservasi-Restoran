@@ -72,6 +72,14 @@ if (isset($_GET['id_reservasi'])) {
                         <label for="tanggalReservasi" class="form-label">Tanggal Reservasi</label>
                         <input type="date" class="form-control" name="tanggalReservasi" id="tanggalReservasi" value="<?= $dataReservasi['tanggal_reservasi']; ?>" required>
                     </div>
+                    <div class="mb-3">
+                        <label for="waktuMulai" class="form-label">Waktu Mulai</label>
+                        <input type="time" class="form-control" name="waktuMulai" id="waktuMulai" value="<?= $dataReservasi['waktu_mulai']; ?>" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="waktuSelesai" class="form-label">Waktu Selesai</label>
+                        <input type="time" class="form-control" name="waktuSelesai" id="waktuSelesai" value="<?= $dataReservasi['waktu_selesai']; ?>" required>
+                    </div>
                     <div class="mb-3">  
                         <label for="noMeja" class="form-label">No Meja</label>
                         <select name="noMeja" id="noMeja" class="form-select text-dark" required>
