@@ -85,6 +85,7 @@ $resultPelanggan = mysqli_query($connection, $queryPelanggan);
                     <div class="mb-3">
                         <label for="namaPelanggan" class="form-label">Nama Pelanggan</label>
                         <select name="namaPelanggan" id="namaPelanggan" class="form-select text-dark" required>
+                            <option value="" selected disabled>Pilih Nama Pelanggan</option>
                             <?php while ($dataPelanggan = mysqli_fetch_assoc($resultPelanggan)) { ?>
                                 <option value="<?= $dataPelanggan['id_pelanggan']; ?>"> <?= $dataPelanggan['nama_pelanggan']; ?> </option>
                             <?php } ?>
