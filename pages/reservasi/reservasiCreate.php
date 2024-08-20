@@ -73,6 +73,7 @@ $resultPelanggan = mysqli_query($connection, $queryPelanggan);
                     <div class="mb-3">
                         <label for="noMeja" class="form-label">No Meja</label>
                         <select name="noMeja" id="noMeja" class="form-select text-dark" required>
+                            <option value="" disabled selected >Pilih No Meja</option> <!-- Opsi default -->
                             <?php while ($dataMeja = mysqli_fetch_assoc($resultMeja)) { ?>
                                 <option value="<?= $dataMeja['id_meja']; ?>" data-kapasitas="<?= $dataMeja['kapasitas']; ?>">
                                     <?= $dataMeja['no_meja']; ?>
