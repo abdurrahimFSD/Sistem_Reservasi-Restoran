@@ -80,7 +80,7 @@ $resultPelanggan = mysqli_query($connection, $queryPelanggan);
                                 </option>
                             <?php } ?>
                         </select>
-                        <div id="kapasitasMeja" class="form-text text-black-50 fs-3"></div>
+                        <div id="kapasitasMeja" class="form-text fs-3"></div>
                     </div>                   
                     <div class="mb-3">
                         <label for="namaPelanggan" class="form-label">Nama Pelanggan</label>
@@ -98,7 +98,7 @@ $resultPelanggan = mysqli_query($connection, $queryPelanggan);
                     <div class="mb-4">
                         <label for="jumlahOrang" class="form-label">Jumlah Orang</label>
                         <input type="number" class="form-control" name="jumlahOrang" id="jumlahOrang" placeholder="4" required>
-                        <div id="keteranganKapasitas" class="form-text text-black-50 fs-3"></div>
+                        <div id="keteranganKapasitas" class="form-text fs-3"></div>
                     </div>
                     <a href="?page=reservasiData" class="d-inline-flex justify-content-center align-items-center btn btn-outline-secondary me-2">
                         <iconify-icon icon="fluent:arrow-left-24-filled" class="me-1 fs-5 d-inline-flex align-items-center"></iconify-icon>Kembali
