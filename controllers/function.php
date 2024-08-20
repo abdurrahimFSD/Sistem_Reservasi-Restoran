@@ -58,6 +58,22 @@ function getTotalPelanggan() {
     }
 }
 
+// Function untuk mendapatkan jumlah reservasi hari ini
+function getReservasiHariIni() {
+    global $connection;
+
+    // Query SQL untuk mendapatkan jumlah reservasi hari ini
+    $queryGetReservasiHariIni = "SELECT COUNT(*) as total_reservasi_hari_ini FROM reservasi WHERE tanggal_reservasi = CURDATE()";
+    $resultGetResevasiHariIni = mysqli_query($connection, $queryGetReservasiHariIni);
+
+    if ($resultGetResevasiHariIni) {
+        $data = mysqli_fetch_assoc($resultGetResevasiHariIni);
+        return $data['total_reservasi_hari_ini'];
+    } else {
+        die("Error: ". mysqli_error($connection));
+    }
+}
+
 // Function fetchData
 function fetchData($tableName) {
     global $connection;
