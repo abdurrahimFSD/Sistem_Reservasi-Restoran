@@ -2,7 +2,7 @@
 include('./config/connection.php');
 
 // Ambil data dari table meja dan pelanggan
-$queryMeja = "SELECT id_meja, no_meja FROM meja";
+$queryMeja = "SELECT id_meja, no_meja, kapasitas FROM meja";
 $resultMeja = mysqli_query($connection, $queryMeja);
 
 $queryPelanggan = "SELECT id_pelanggan, nama_pelanggan FROM pelanggan";
@@ -84,9 +84,12 @@ if (isset($_GET['id_reservasi'])) {
                         <label for="noMeja" class="form-label">No Meja</label>
                         <select name="noMeja" id="noMeja" class="form-select text-dark" required>
                             <?php while ($dataMeja = mysqli_fetch_assoc($resultMeja)) { ?>
-                                <option value="<?= $dataMeja['id_meja']; ?>" <?= ($dataMeja['id_meja'] == $dataReservasi['meja_id']) ? 'selected' : ''; ?> > <?= $dataMeja['no_meja']; ?> </option>
+                                <option value="<?= $dataMeja['id_meja']; ?>" <?= ($dataMeja['id_meja'] == $dataReservasi['meja_id']) ? 'selected' : ''; ?> data-kapasitas="<?= $dataMeja['kapasitas']; ?>" >
+                                    <?= $dataMeja['no_meja']; ?> 
+                                </option>
                             <?php } ?>
                         </select>
+                        <div id="kapasitasMeja" class="form-text text-black-50 fs-3"></div>
                     </div>
                     <div class="mb-4">
                         <label for="namaPelanggan" class="form-label">Nama Pelanggan</label>
