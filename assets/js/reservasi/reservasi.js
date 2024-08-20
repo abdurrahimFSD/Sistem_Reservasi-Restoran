@@ -27,9 +27,16 @@ document.addEventListener('DOMContentLoaded', function() {
         const max = parseInt(jumlahOrangInput.getAttribute('max'), 10);
         const min = parseInt(jumlahOrangInput.getAttribute('min'), 10);
 
-        if (this.value > max) {
+        // Izinkan nilai kosong
+        if (this.value === '') {
+            return;
+        }
+
+        // Validasi input jumlah orang
+        const currentValue = parseInt(this.value, 10);
+        if (currentValue > max) {
             this.value = max;
-        } else if (this.value < min) {
+        } else if (currentValue < min) {
             this.value = min;
         }
     });
