@@ -60,7 +60,7 @@
                             include('./config/connection.php');
                             $posisi = ['Outdoor', 'Indoor'];
                         ?>
-                        <select name="posisi" id="posisi" class="form-select text-dark" required>
+                        <select name="posisi" id="posisi" class="form-select" required>
                             <option selected disabled>Pilih Posisi</option>
                             <?php foreach($posisi as $posisiData) { ?>
                                 <option value="<?= $posisiData; ?>"><?= $posisiData; ?></option>
