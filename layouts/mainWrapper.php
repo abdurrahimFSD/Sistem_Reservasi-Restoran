@@ -8,7 +8,7 @@
     <title>APP Admin Dashboard</title>
     
     <!-- Core Css -->
-    <link rel="stylesheet" href="./assets/css/styles.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
 
     <!-- Datatable -->
     <link rel="stylesheet" href="./assets/libs/DataTables/datatables.css">
