@@ -10,6 +10,9 @@ $mejaTersedia = getMejaTersedia();
 
 // Mendapatkan total pelanggan
 $totalPelanggan = getTotalPelanggan();
+
+// Mendapatkan jumlah reservasi hari ini
+$reservasiHariIni = getReservasiHariIni();
 ?>
 
 <!-- Start Body Wrapper -->
@@ -78,7 +81,9 @@ $totalPelanggan = getTotalPelanggan();
                                 <iconify-icon icon="tabler:clock" class="fs-6"></iconify-icon>
                             </div>
                             <div class="align-self-center">
-                                <h4 class="card-title mb-1">87</h4>
+                                <h4 class="card-title mb-1">
+                                    <?= $reservasiHariIni; ?>
+                                </h4>
                                 <p class="card-subtitle">Reservasi Hari Ini</p>
                             </div>
                         </div>
