@@ -106,6 +106,7 @@ if (isset($_GET['id_reservasi'])) {
                     <div class="mb-4">
                         <label for="jumlahOrang" class="form-label">Jumlah Orang</label>
                         <input type="number" class="form-control" name="jumlahOrang" id="jumlahOrang" value="<?= $dataReservasi['jumlah_orang']; ?>" placeholder="4" required>
+                        <div id="keteranganKapasitas" class="form-text text-black-50 fs-3"></div>
                     </div>
                     <a href="?page=reservasiData" class="d-inline-flex justify-content-center align-items-center btn btn-outline-secondary me-2">
                         <iconify-icon icon="fluent:arrow-left-24-filled" class="me-1 fs-5 d-inline-flex align-items-center"></iconify-icon>Kembali
