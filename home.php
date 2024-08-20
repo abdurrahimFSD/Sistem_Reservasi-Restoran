@@ -7,6 +7,9 @@ $totalReservasi = getTotalReservasi();
 
 // Mendapatkan jumlah meja yang tersedia
 $mejaTersedia = getMejaTersedia(); 
+
+// Mendapatkan total pelanggan
+$totalPelanggan = getTotalPelanggan();
 ?>
 
 <!-- Start Body Wrapper -->
@@ -58,7 +61,9 @@ $mejaTersedia = getMejaTersedia();
                                 <iconify-icon icon="tabler:users" class="fs-6"></iconify-icon>
                             </div>
                             <div class="align-self-center">
-                                <h4 class="card-title mb-1">379</h4>
+                                <h4 class="card-title mb-1">
+                                    <?= $totalPelanggan; ?>
+                                </h4>
                                 <p class="card-subtitle">Total Pelanggan</p>
                             </div>
                         </div>
