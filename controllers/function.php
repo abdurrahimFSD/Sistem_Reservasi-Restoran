@@ -42,6 +42,22 @@ function getMejaTersedia() {
     }
 }
 
+// Function untuk mendapatkan total pelanggan
+function getTotalPelanggan() {
+    global $connection;
+
+    // Query SQL untuk mendapatkan total pelanggan
+    $queryGetTotalPelanggan = "SELECT COUNT(*) as total_pelanggan FROM pelanggan";
+    $resultGetTotalPelanggan = mysqli_query($connection, $queryGetTotalPelanggan);
+
+    if ($resultGetTotalPelanggan) {
+        $data = mysqli_fetch_assoc($resultGetTotalPelanggan);
+        return $data['total_pelanggan'];
+    } else {
+        die("Error: ". mysqli_error($connection));
+    }
+}
+
 // Function fetchData
 function fetchData($tableName) {
     global $connection;
