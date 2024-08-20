@@ -50,5 +50,8 @@
     <!-- Datatable -->
     <script src="./assets/libs/DataTables/datatables.js"></script>
     <script src="./assets/js/datatable/datatable.init.js"></script>
+
+    <!-- Reservasi -->
+    <script src="./assets/js/reservasi/reservasi.js"></script>
 </body>
 </html>
