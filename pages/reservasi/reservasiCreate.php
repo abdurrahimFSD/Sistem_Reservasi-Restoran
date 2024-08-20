@@ -72,7 +72,7 @@ $resultPelanggan = mysqli_query($connection, $queryPelanggan);
                     </div>
                     <div class="mb-3">
                         <label for="noMeja" class="form-label">No Meja</label>
-                        <select name="noMeja" id="noMeja" class="form-select text-dark" required>
+                        <select name="noMeja" id="noMeja" class="form-select" required>
                             <option value="" disabled selected >Pilih No Meja</option> <!-- Opsi default -->
                             <?php while ($dataMeja = mysqli_fetch_assoc($resultMeja)) { ?>
                                 <option value="<?= $dataMeja['id_meja']; ?>" data-kapasitas="<?= $dataMeja['kapasitas']; ?>">
@@ -84,7 +84,7 @@ $resultPelanggan = mysqli_query($connection, $queryPelanggan);
                     </div>                   
                     <div class="mb-3">
                         <label for="namaPelanggan" class="form-label">Nama Pelanggan</label>
-                        <select name="namaPelanggan" id="namaPelanggan" class="form-select text-dark" required>
+                        <select name="namaPelanggan" id="namaPelanggan" class="form-select" required>
                             <option value="" selected disabled>Pilih Nama Pelanggan</option>
                             <?php while ($dataPelanggan = mysqli_fetch_assoc($resultPelanggan)) { ?>
                                 <option value="<?= $dataPelanggan['id_pelanggan']; ?>"> <?= $dataPelanggan['nama_pelanggan']; ?> </option>
