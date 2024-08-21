@@ -1,7 +1,6 @@
 <?php
 
 include('./function.php');
-include('./alert.php');
 
 // Mengecek apakah form telah di submit/simpan
 if (isset($_POST['simpan'])) {
@@ -13,14 +12,10 @@ if (isset($_POST['simpan'])) {
 
         // Jika proses create berhasil
         if ($result) {
-            echo "
-                <script>
-                    alert('Data meja berhasil ditambah');
-                    // Redirect ke halaman utama setelah alert
-                    window.location.href = '../index.php?page=mejaData';
-                </script>
-            ";
-        } 
+            header("Location: ../index.php?page=mejaCreate&status=successMejaCreate");
+        } else {
+            header("Location: ../index.php?page=mejaCreate&status=errorMejaCreate");
+        }
         
     } elseif ($_POST['simpan'] == 'mejaUpdate') {   // Jika tombol simpan adalah mejaUpdate
         // Memanggil fungsi mejaUpdate
