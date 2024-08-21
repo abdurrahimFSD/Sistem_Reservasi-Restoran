@@ -48,7 +48,7 @@
     <script src="./assets/js/theme/sidebarmenu-default.js"></script>
 
     <!-- Sweetalert -->
-    <script src="../assets/libs/sweetalert/sweetalert2.all.min.js"></script>
+    <script src="./assets/libs/sweetalert/sweetalert2.all.min.js"></script>
 
     <!-- Datatable -->
     <script src="./assets/libs/DataTables/datatables.js"></script>
