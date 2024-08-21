@@ -10,10 +10,6 @@
     <!-- Core Css -->
     <link rel="stylesheet" href="./assets/css/style.css">
 
-    <!-- Sweetalert -->
-    <link rel="stylesheet" href="./assets/libs/sweetalert/sweetalert2.min.css">
-    <script src="./assets/libs/sweetalert/sweetalert2.all.min.js"></script>
-
     <!-- Datatable -->
     <link rel="stylesheet" href="./assets/libs/DataTables/datatables.css">
 
