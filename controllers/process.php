@@ -1,6 +1,7 @@
 <?php
 
 include('./function.php');
+include('./alert.php');
 
 // Mengecek apakah form telah di submit/simpan
 if (isset($_POST['simpan'])) {
