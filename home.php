@@ -21,7 +21,6 @@ $reservasiHariIni = getReservasiHariIni();
 
         <!-- Dashboard Header -->
         <div class="row">
-            
             <div class="col-lg-3 col-md-6">
                 <div class="card border-bottom border-primary">
                     <div class="card-body">
@@ -90,12 +89,8 @@ $reservasiHariIni = getReservasiHariIni();
                     </div>
                 </div>
             </div>
-
         </div>
-
-      
+ 
     </div>
 </div>
 <!-- End Body Wrapper -->
-
-        
