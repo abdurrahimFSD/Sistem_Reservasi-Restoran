@@ -57,7 +57,7 @@
             <div class="card card-body">
                 <h4 class="card-title">Masukkan Data Meja</h4>
                 <hr class="mb-4">
-                <form class="form-horizontal" action="./controllers/process.php" method="post">
+                <form id="mejaUpdateForm" class="form-horizontal" action="./controllers/process.php" method="post">
                     <input type="hidden" name="idMeja" value="<?= $dataMeja['id_meja']; ?>">
                     <div class="mb-3">
                         <label for="noMeja" class="form-label">No Meja</label>
@@ -82,7 +82,8 @@
                     <a href="?page=mejaData" class="d-inline-flex justify-content-center align-items-center btn btn-outline-secondary me-2">
                         <iconify-icon icon="fluent:arrow-left-24-filled" class="me-1 fs-5 d-inline-flex align-items-center"></iconify-icon>Kembali
                     </a>
-                    <button type="submit" name="simpan" value="mejaUpdate" class="d-inline-flex justify-content-center align-items-center btn btn-primary">
+                    <input type="hidden" name="simpan" value="mejaUpdate">
+                    <button type="button" id="simpanButton" class="d-inline-flex justify-content-center align-items-center btn btn-primary">
                         <iconify-icon icon="fluent:save-24-regular" class="me-1 fs-5 d-inline-flex align-items-center"></iconify-icon>Simpan
                     </button>
                 </form>
@@ -93,3 +94,41 @@
     
 </div>
 <!-- End Body Wrapper -->
+
+<!-- Alert -->
+<script>
+document.getElementById('simpanButton').addEventListener('click', function() {
+    Swal.fire({
+        title: 'Apakah anda ingin menyimpan perubahan ini?',
+        showCancelButton: true, // Menampilkan tombol "Cancel"
+        confirmButtonText: 'Simpan', // Tombol "Simpan"
+        cancelButtonText: 'Batal', // Tombol "Batal"
+    }).then((result) => {
+        if (result.isConfirmed) {
+            // Jika pengguna mengkonfirmasi "Simpan", kirim formulir melalui AJAX
+            const form = document.getElementById('mejaUpdateForm');
+            const formData = new FormData(form);
+
+            fetch('./controllers/process.php', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.text())
+            .then(response => {
+                if (response === 'successMejaUpdate') {
+                    Swal.fire('Tersimpan!', '', 'success').then(() => {
+                        window.location.href = './index.php?page=mejaData';
+                    });
+                } else if (response === 'errorMejaUpdate') {
+                    Swal.fire('Gagal!', 'Data meja gagal diedit', 'error');
+                }
+            })
+            .catch(error => {
+                Swal.fire('Gagal!', 'Terjadi kesalahan', 'error');
+            });
+        } else if (result.isDismissed) {
+            Swal.fire('Perubahan dibatalkan', '', 'info');
+        }
+    });
+});
+</script>
