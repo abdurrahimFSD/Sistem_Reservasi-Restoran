@@ -23,14 +23,10 @@ if (isset($_POST['simpan'])) {
 
         // Jika proses update berhasil
         if ($result) {
-            echo "
-                <script>
-                    alert('Data meja berhasil diedit');
-                    // Redirect ke halaman utama setelah alert
-                    window.location.href = '../index.php?page=mejaData';
-                </script>
-            ";
-        } 
+            echo 'successMejaUpdate';
+        } else {
+            echo 'errorMejaUpdate';
+        }
     } elseif ($_POST['simpan'] == 'pelangganCreate') {  // Jika tombol simpan adalah pelangganCreate
         // Memanggil fungsi pelangganCreate
         $result = pelangganCreate($_POST);
