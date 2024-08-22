@@ -97,12 +97,25 @@ function mejaCreate($data) {
     $kapasitas = $data['kapasitas'];
     $posisi = $data['posisi'];
 
+    // Mengecek apakah no meja sudah ada
+    $queryCekNoMeja = "SELECT * FROM meja WHERE no_meja = '$noMeja'";
+    $resultCekNoMeja = mysqli_query($connection, $queryCekNoMeja);
+    if (mysqli_num_rows($resultCekNoMeja) > 0) {
+        // Jika no meja sudah ada, ambil no meja yg duplikat
+        $existingMeja = mysqli_fetch_assoc($resultCekNoMeja);
+        return 'duplicateNoMeja:' .$existingMeja['no_meja'];
+    }
+    
     // Query SQL untuk menambahkan data meja baru
     $queryCreateMeja = "INSERT INTO meja (no_meja, kapasitas, posisi) VALUES ('$noMeja', '$kapasitas', '$posisi')";
     $resultCreateMeja = mysqli_query($connection, $queryCreateMeja);
 
     // Kembalikan true jika berhasil
-    return true;
+    if ($resultCreateMeja) {
+        return 'success';
+    } else {
+        return 'error';
+    }
 }
 
 // Function updateMeja
