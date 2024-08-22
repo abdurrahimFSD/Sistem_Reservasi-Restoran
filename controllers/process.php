@@ -93,20 +93,9 @@ if (isset($_GET['id_meja'])) {
 
     // Jika proses penghapusan meja berhasil
     if ($resultMeja) {
-        echo "
-            <script>
-                alert('Data meja berhasil dihapus');
-                // Redirect ke halaman meja setelah alert
-                window.location.href = '../index.php?page=mejaData';
-            </script>
-        ";
+        echo "successDelete";
     } else {
-        echo "
-            <script>
-                alert('Gagal menghapus data meja');
-                window.history.back();
-            </script>
-        ";
+        echo "errorDelete";
     }
 }
 
