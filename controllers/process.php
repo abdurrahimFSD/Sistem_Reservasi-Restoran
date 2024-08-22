@@ -11,8 +11,12 @@ if (isset($_POST['simpan'])) {
         $result = mejaCreate($_POST);
 
         // Jika proses create berhasil
-        if ($result) {
+        if ($result == 'success') {
             header("Location: ../index.php?page=mejaCreate&status=successMejaCreate");
+        } elseif (strpos($result, 'duplicateNoMeja') !== false) {
+            // Ambil no meja yang duplikat dari result
+            $noMejaDuplikat = explode(':', $result)[1];
+            header("Location: ../index.php?page=mejaCreate&status=duplicateMejaCreate&no_meja=$noMejaDuplikat");
         } else {
             header("Location: ../index.php?page=mejaCreate&status=errorMejaCreate");
         }
