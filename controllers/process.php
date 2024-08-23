@@ -47,13 +47,9 @@ if (isset($_POST['simpan'])) {
 
          // Jika proses update berhasil
         if ($result) {
-            echo "
-                <script>
-                    alert('Data pelanggan berhasil diedit');
-                    // Redirect ke halaman utama setelah alert
-                    window.location.href = '../index.php?page=pelangganData';
-                </script>
-            ";
+            echo 'successPelangganUpdate';
+        } else {
+            echo 'errorPelangganUpdate';
         }
     } elseif ($_POST['simpan'] == 'reservasiCreate') {  // Jika tombol simpan adalah reservasiCreate
         // Memanggil fungsi reservasiCreate
