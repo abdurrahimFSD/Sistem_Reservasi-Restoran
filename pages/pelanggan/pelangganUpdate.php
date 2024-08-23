@@ -58,7 +58,7 @@
             <div class="card card-body">
                 <h4 class="card-title">Masukkan Data Pelanggan</h4>
                 <hr class="mb-4">
-                <form class="form-horizontal" action="./controllers/process.php" method="post">
+                <form id="pelangganUpdateForm" class="form-horizontal" action="./controllers/process.php" method="post">
                     <input type="hidden" name="idPelanggan" value="<?= $dataPelanggan['id_pelanggan']; ?>">
                     <div class="mb-3">
                         <label for="namaPelanggan" class="form-label">Nama Pelanggan</label>
