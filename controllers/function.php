@@ -166,8 +166,12 @@ function pelangganCreate($data) {
     $queryPelangganCreate = "INSERT INTO pelanggan (nama_pelanggan,alamat,no_telepon) VALUES('$namaPelanggan','$alamat','$noTelepon')";
     $resultPelangganCreate = mysqli_query($connection, $queryPelangganCreate);
 
-    // Kembalikan true jika berhasil
-    return true;
+    // Kembalikan success jika berhasil
+    if ($resultPelangganCreate) {
+        return 'success';
+    } else {
+        return 'error';
+    }
 }
 
 // Function pelangganUdpate
