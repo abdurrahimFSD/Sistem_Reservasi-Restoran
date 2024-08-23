@@ -36,14 +36,10 @@ if (isset($_POST['simpan'])) {
         $result = pelangganCreate($_POST);
 
         // Jika proses create berhasil
-        if ($result) {
-            echo "
-                <script>
-                    alert('Data pelanggan berhasil ditambahkan');
-                    // Redirect ke halaman utama setelah alert
-                    window.location.href = '../index.php?page=pelangganData';
-                </script>
-            ";
+        if ($result == 'success') {
+            header("Location: ../index.php?page=pelangganCreate&status=successPelangganCreate");
+        } else {
+            header("Location: ../index.php?page=PelangganCreate&status=errorPelangganCreate");
         }
     } elseif ($_POST['simpan'] == 'pelangganUpdate') {  // Jika tombol simpan adalah pelangganUpdate
         // Memanggil fungsi pelangganUpdate
