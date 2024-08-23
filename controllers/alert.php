@@ -43,6 +43,20 @@ if (isset($_GET['status'])) {
             });
         </script>
 <?php
+    } elseif ($_GET['status'] == 'successPelangganCreate') {
+?>
+        <script>
+            Swal.fire({
+                title: 'Berhasil!',
+                text: 'Data pelanggan berhasil ditambah',
+                icon: 'success'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    window.location.href = './index.php?page=pelangganData';
+                }
+            });
+        </script>
+<?php
     }
 }
 ?>
