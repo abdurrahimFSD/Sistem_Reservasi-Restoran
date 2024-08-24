@@ -117,7 +117,7 @@
                     }
                 })
                 .catch(error => {
-                    Swal.fire('Gagal', 'Terjadi Kesalaha', 'error');
+                    Swal.fire('Gagal', 'Terjadi Kesalahan', 'error');
                 });
             } else if (result.isDismissed) {
                 Swal.fire('Perubahan dibatalkan', '', 'info');
