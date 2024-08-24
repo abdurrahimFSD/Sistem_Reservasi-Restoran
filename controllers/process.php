@@ -67,13 +67,9 @@ if (isset($_POST['simpan'])) {
 
         // Jika proses update berhasil
         if ($result) {
-            echo "
-                <script>
-                    alert('Data reservasi berhasil diedit');
-                    // Redirect ke halaman reservasiData setelah alert
-                    window.location.href = '../index.php?page=reservasiData';
-                </script>
-            ";
+            echo 'successReservasiUpdate';
+        } else {
+            echo 'errorReservasiUpdate';
         }
     }
 }
