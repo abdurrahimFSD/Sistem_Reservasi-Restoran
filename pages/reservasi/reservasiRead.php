@@ -128,3 +128,40 @@
     
 </div>
 <!-- End Body Wrapper -->
+
+<!-- Alert delete reservasi -->
+<script>
+    function confirmDelete(idReservasi) {
+        Swal.fire({
+            title: "Hapus?",
+            text: "Apakah yakin menghapus data ini?",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#3085d6",
+            cancelButtonColor: "#d33",
+            confirmButtonText: "Ya, hapus!",
+            cancelButtonText: 'Batal'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                fetch(`./controllers/process.php?id_reservasi=${idReservasi}`)
+                    .then(response => response.text())
+                    .then(response => {
+                        if (response === 'successDelete') {
+                            Swal.fire({
+                                title: "Dihapus!",
+                                text: "Data reservasi berhasil dihapus",
+                                icon: "success"
+                            }).then(() => {
+                                window.location.href = './index.php?page=reservasiData';
+                            });
+                        } else if (response === 'errorDelete') {
+                            Swal.fire("Gagal", "Data reservasi gagal dihapus", "error");
+                        }
+                    })
+                    .catch(error => {
+                        Swal.fire("Gagal", "Terjadi kesalahan", "error");
+                    });
+            }
+        });
+    }
+</script>
