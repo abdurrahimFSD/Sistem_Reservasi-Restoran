@@ -249,12 +249,11 @@ function reservasiCreate($data) {
                   VALUES ('$tanggalReservasi', '$waktuMulai', '$waktuSelesai', '$noMeja', '$namaPelanggan', '$catatan', '$jumlahOrang')";
         $resultReservasiCreate = mysqli_query($connection, $queryReservasiCreate);
 
+        // Kembalikan success jika berhasil
         if ($resultReservasiCreate) {
-            // Jika create berhasil
-            return true;
+            return 'success';
         } else {
-            // Jika delete gagal, tampilkan error
-            die("Error: " . mysqli_error($connection));
+            return 'error';
         }
     }
 }
