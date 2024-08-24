@@ -101,20 +101,9 @@ if (isset($_GET['id_pelanggan'])) {
 
     // Jika proses penghapusan pelanggan berhasil
     if ($resultPelanggan) {
-        echo "
-            <script>
-                alert('Data pelanggan berhasil dihapus');
-                // Redirect ke halaman pelanggan setelah alert
-                window.location.href = '../index.php?page=pelangganData';
-            </script>
-        ";
+        echo "successDelete";
     } else {
-        echo "
-            <script>
-                alert('Gagal menghapus data pelanggan');
-                window.history.back();
-            </script>
-        ";
+        echo "errorDelete";
     }
 }
 
