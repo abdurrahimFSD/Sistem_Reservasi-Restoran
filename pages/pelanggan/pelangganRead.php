@@ -86,7 +86,7 @@
                                         <a href="?page=pelangganUpdate&id_pelanggan=<?= $row['id_pelanggan']; ?>" class="d-inline-flex btn btn-sm btn-outline-warning edit" data-bs-toggle="tooltip" data-bs-placement="top" title="Edit">
                                             <iconify-icon icon="tabler:edit" class="fs-5"></iconify-icon>
                                         </a>
-                                        <a href="javascript:void(0);" onclick="confirmDelete('<?= $row['id_meja']; ?>')" class="d-inline-flex btn btn-sm btn-danger delete ms-2" data-bs-toggle="tooltip" data-bs-placement="top" title="Hapus">
+                                        <a href="javascript:void(0);" onclick="confirmDelete('<?= $row['id_pelanggan']; ?>')" class="d-inline-flex btn btn-sm btn-danger delete ms-2" data-bs-toggle="tooltip" data-bs-placement="top" title="Hapus">
                                             <iconify-icon icon="tabler:trash" class="fs-5"></iconify-icon>
                                         </a>
                                     </div>
@@ -104,3 +104,40 @@
     
 </div>
 <!-- End Body Wrapper -->
+
+<!-- Alert delete pelanggan -->
+<script>
+    function confirmDelete(idPelanggan) {
+        Swal.fire({
+            title: "Hapus?",
+            text: "Apakah anda yakin menghapus data ini?",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#3085d6",
+            cancelButtonColor: "#d33",
+            confirmButtonText: "Ya, hapus!",
+            cancelButtonText: 'Batal'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                fetch(`./controllers/process.php?id_pelanggan=${idPelanggan}`)
+                    .then(response => response.text())
+                    .then(response => {
+                        if (response === 'successDelete') {
+                            Swal.fire({
+                                title: "Dihapus!",
+                                text: "Data pelanggan berhasil dihapus.",
+                                icon: "success"
+                            }).then(() => {
+                                window.location.href = './index.php?page=pelangganData';
+                            });
+                        } else if (response === 'errorDelete') {
+                            Swal.fire("Gagal!", "Data pelanggan gagal dihapus.", "error");
+                        }
+                    })
+                    .catch(error => {
+                        Swal.fire("Gagal!", "Terjadi kesalahan.", "error");
+                    });
+            }
+        });
+    }
+</script>
