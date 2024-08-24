@@ -105,20 +105,9 @@ if (isset($_GET['id_reservasi'])) {
 
     // Jika proses penghapusan reservasi berhasil
     if ($resultReservasi) {
-        echo "
-            <script>
-                alert('Data reservasi berhasil dihapus');
-                // Redirect ke halaman reservasi setelah alert
-                window.location.href = '../index.php?page=reservasiData';
-            </script>
-        ";
+        echo "successDelete";
     } else {
-        echo "
-            <script>
-                alert('Gagal menghapus data reservasi');
-                window.history.back();
-            </script>
-        ";
+        echo "errorDelete";
     }
 }
 
