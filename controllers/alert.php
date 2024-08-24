@@ -57,6 +57,20 @@ if (isset($_GET['status'])) {
             });
         </script>
 <?php
+    } elseif ($_GET['status'] == 'successReservasiCreate') {
+?>
+        <script>
+            Swal.fire({
+                title: 'Berhasil!',
+                text: 'Data reservasi berhasil ditambah',
+                icon: 'success'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    window.location.href = './index.php?page=reservasiData';
+                }
+            })
+        </script>
+<?php        
     }
 }
 ?>
