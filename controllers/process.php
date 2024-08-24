@@ -55,15 +55,11 @@ if (isset($_POST['simpan'])) {
         // Memanggil fungsi reservasiCreate
         $result = reservasiCreate($_POST);
 
-         // Jika proses create berhasil
-         if ($result) {
-            echo "
-                <script>
-                    alert('Data reservasi berhasil ditambahkan');
-                    // Redirect ke halaman reservasiData setelah alert
-                    window.location.href = '../index.php?page=reservasiData';
-                </script>
-            ";
+        // Jika proses create berhasil
+        if ($result) {
+            header("Location: ../index.php?page=reservasiCreate&status=successReservasiCreate");
+        } else {
+            header("Location: ../index.php?page=reservasiCreate&status=errorReservasiCreate");
         }
     } elseif ($_POST['simpan'] == 'reservasiUpdate') {  // Jika tombol simpan adalah reservasiUpdate
         // Memanggail fungsi reservasiUpdate
