@@ -110,7 +110,7 @@
                                         <a href="?page=reservasiUpdate&id_reservasi=<?= $row['id_reservasi']; ?>" class="d-inline-flex btn btn-sm btn-outline-warning edit mx-2" data-bs-toggle="tooltip" data-bs-placement="top" title="Edit">
                                             <iconify-icon icon="tabler:edit" class="fs-5"></iconify-icon>
                                         </a>
-                                        <a href="./controllers/process.php?id_reservasi=<?= $row['id_reservasi']; ?>" onclick="return confirm('Apakah yakin menghapus data!')" class="d-inline-flex btn btn-sm btn-danger delete" data-bs-toggle="tooltip" data-bs-placement="top" title="Hapus">
+                                        <a href="javascript:void(0)" onclick="confirmDelete('<?= $row['id_reservasi']; ?>')"  class="d-inline-flex btn btn-sm btn-danger delete" data-bs-toggle="tooltip" data-bs-placement="top" title="Hapus">
                                             <iconify-icon icon="tabler:trash" class="fs-5"></iconify-icon>
                                         </a>
                                     </div>
