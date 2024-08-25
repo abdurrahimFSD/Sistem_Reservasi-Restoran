@@ -274,14 +274,8 @@ function reservasiUpdate($data) {
     $resultCheckAvailability = mysqli_query($connection, $queryCheckAvailability);
     $dataCheckAvailability = mysqli_fetch_assoc($resultCheckAvailability); 
     if ($dataCheckAvailability['jumlah'] > 0) {
-        // Jika ada bentrok waktu, tampilkan pesan error
-        echo "
-        <script>
-            alert('Maaf, meja ini sudah dipesan pada rentang waktu yang dipilih');
-            // Redirect ke halaman reservasiCreate setelah alert
-            window.location.href = '../index.php?page=reservasiData';
-        </script>
-        ";
+        // Jika ada bentrok waktu, return bentrokWaktu
+        return 'bentrokWaktu';
     } else {
         // Query SQL untuk mengedit data reservasi berdasarkan idReservasi
         $queryReservasiUpdate = "UPDATE reservasi SET tanggal_reservasi='$tanggalReservasi', waktu_mulai='$waktuMulai', waktu_selesai='$waktuSelesai', meja_id='$noMeja', pelanggan_id='$namaPelanggan', catatan='$catatan', jumlah_orang='$jumlahOrang' WHERE id_reservasi = $idReservasi";
