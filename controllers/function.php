@@ -235,14 +235,8 @@ function reservasiCreate($data) {
     $resultCheckAvailability = mysqli_query($connection, $queryCheckAvailability);
     $dataCheckAvailability = mysqli_fetch_assoc($resultCheckAvailability); 
     if ($dataCheckAvailability['jumlah'] > 0) {
-        // Jika ada bentrok waktu, tampilkan pesan error
-        echo "
-        <script>
-            alert('Maaf, meja ini sudah dipesan pada rentang waktu yang dipilih');
-            // Redirect ke halaman reservasiCreate setelah alert
-            window.location.href = '../index.php?page=reservasiCreate';
-        </script>
-        ";
+        // Jika ada bentrok waktu, return bentrokWaktu
+        return 'bentrokWaktu';
     } else {
         // Jika tidak bentrok, simpan data reservasi
         $queryReservasiCreate = "INSERT INTO reservasi (tanggal_reservasi, waktu_mulai, waktu_selesai, meja_id, pelanggan_id, catatan, jumlah_orang)
