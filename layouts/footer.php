@@ -53,5 +53,8 @@
 
     <!-- Reservasi -->
     <script src="./assets/js/reservasi/reservasi.js"></script>
+
+    <!-- Alert update -->
+    <script src="./components/alert/alertUpdate.js"></script>
 </body>
 </html>
