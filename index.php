@@ -56,6 +56,5 @@ switch ($_GET['page']) {
 }
 
 include('./layouts/footer.php');
-include('./controllers/alert.php');
 ?>
 
