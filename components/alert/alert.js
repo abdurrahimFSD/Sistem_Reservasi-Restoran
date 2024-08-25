@@ -1,6 +1,7 @@
 // Mengecek apakah URL mengandung parameter status
 const urlParams = new URLSearchParams(window.location.search);
 const status = urlParams.get('status');
+const noMejaDuplikat = urlParams.get('no_meja');
 
 // Kode alert untuk create
 if (status === 'successMejaCreate') {
@@ -31,6 +32,16 @@ if (status === 'successMejaCreate') {
     }).then((result) => {
         if (result.isConfirmed) {
             window.location.href = './index.php?page=reservasiData';
+        }
+    });
+} else if (status === 'duplicateMejaCreate' && noMejaDuplikat) {
+    Swal.fire({
+        title: 'Gagal!',
+        text: `No Meja ${noMejaDuplikat} sudah ada, tidak boleh sama!`,
+        icon: 'warning'
+    }).then((result) => {
+        if (result.isConfirmed) {
+            history.back();
         }
     });
 }
