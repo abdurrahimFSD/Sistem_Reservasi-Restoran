@@ -283,7 +283,7 @@ function reservasiUpdate($data) {
     
         if ($resultReservasiUpdate) {
             // Jika update berhasil
-            return true;
+            return 'success';
         } else {
             // Jika delete gagal, tampilkan error
             die("Error: " . mysqli_error($connection));
