@@ -1,21 +1,7 @@
 <?php
 if (isset($_GET['status'])) {
 
-    if ($_GET['status'] == 'successMejaCreate') {
-?>
-        <script>
-            Swal.fire({
-                title: 'Berhasil!',
-                text: 'Data meja berhasil ditambah',
-                icon: 'success'
-            }).then((result) => {
-                if (result.isConfirmed) {
-                    window.location.href = './index.php?page=mejaData';
-                }
-            });
-        </script>
-<?php
-    } elseif ($_GET['status'] == 'duplicateMejaCreate' && isset($_GET['no_meja'])) {
+    if ($_GET['status'] == 'duplicateMejaCreate' && isset($_GET['no_meja'])) {
 ?>
         <script>
             Swal.fire({
@@ -29,48 +15,6 @@ if (isset($_GET['status'])) {
             });
         </script>
 <?php
-    } elseif ($_GET['status'] == 'errorMejaCreate') {
-?>
-        <script>
-            Swal.fire({
-                title: 'Gagal!',
-                text: 'Data meja gagal ditambah',
-                icon: 'error'
-            }).then((result) => {
-                if (result.isConfirmed) {
-                    window.location.href = './index.php?page=mejaCreate';
-                }
-            });
-        </script>
-<?php
-    } elseif ($_GET['status'] == 'successPelangganCreate') {
-?>
-        <script>
-            Swal.fire({
-                title: 'Berhasil!',
-                text: 'Data pelanggan berhasil ditambah',
-                icon: 'success'
-            }).then((result) => {
-                if (result.isConfirmed) {
-                    window.location.href = './index.php?page=pelangganData';
-                }
-            });
-        </script>
-<?php
-    } elseif ($_GET['status'] == 'successReservasiCreate') {
-?>
-        <script>
-            Swal.fire({
-                title: 'Berhasil!',
-                text: 'Data reservasi berhasil ditambah',
-                icon: 'success'
-            }).then((result) => {
-                if (result.isConfirmed) {
-                    window.location.href = './index.php?page=reservasiData';
-                }
-            })
-        </script>
-<?php        
     } elseif ($_GET['status'] == 'bentrokWaktu') {
 ?>
         <script>
