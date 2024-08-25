@@ -68,7 +68,7 @@ if (isset($_POST['simpan'])) {
         $result = reservasiUpdate($_POST);
 
         // Jika proses update berhasil
-        if ($result) {
+        if ($result == 'success') {
             echo 'successReservasiUpdate';
         } else {
             echo 'errorReservasiUpdate';
