@@ -112,7 +112,7 @@ if (isset($_GET['id_reservasi'])) {
                         <iconify-icon icon="fluent:arrow-left-24-filled" class="me-1 fs-5 d-inline-flex align-items-center"></iconify-icon>Kembali
                     </a>
                     <input type="hidden" name="simpan" value="reservasiUpdate">
-                    <button type="button" id="simpanButton" class="d-inline-flex justify-content-center align-items-center btn btn-primary">
+                    <button type="button" id="simpanReservasiUpdate" class="d-inline-flex justify-content-center align-items-center btn btn-primary">
                         <iconify-icon icon="fluent:save-24-regular" class="me-1 fs-5 d-inline-flex align-items-center"></iconify-icon>Simpan
                     </button>
                 </form>
@@ -123,41 +123,3 @@ if (isset($_GET['id_reservasi'])) {
     
 </div>
 <!-- End Body Wrapper -->
-
-<!-- Alert reservasiUpdate -->
-<script>
-    document.getElementById('simpanButton').addEventListener('click', function() {
-        Swal.fire({
-            title: 'Apakah anda ingin menyimpan perubahan ini?',
-            showCancelButton: true,
-            confirmButtonText: 'Simpan',
-            cancelButtonText: 'Batal',
-        }).then((result) => {
-            if (result.isConfirmed) {
-                // Jika user mengkonfirmasi 'Simpan', kirim form melalui AJAX
-                const form = document.getElementById('reservasiUpdateForm');
-                const formData = new FormData(form);
-
-                fetch('./controllers/process.php', {
-                    method: 'POST',
-                    body: formData
-                })
-                .then(response => response.text())
-                .then(response => {
-                    if (response === 'successReservasiUpdate') {
-                        Swal.fire('Tersimpan!', '', 'success').then(() => {
-                            window.location.href = './index.php?page=reservasiData';
-                        });
-                    } else if (response === 'errorReservasiUpdate') {
-                        Swal.fire('Gagal', 'Data reservasi gagal diedit', 'error');
-                    }
-                })
-                .catch(error => {
-                    Swal.fire('Gagal', 'Terjadi Kesalahan', 'error');
-                });
-            } else if (result.isDismissed) {
-                Swal.fire('Perubahan dibatalkan', '', 'info');
-            }
-        });
-    });
-</script>
