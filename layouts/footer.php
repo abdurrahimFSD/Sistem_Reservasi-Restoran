@@ -54,7 +54,9 @@
     <!-- Reservasi -->
     <script src="./assets/js/reservasi/reservasi.js"></script>
 
-    <!-- Alert update -->
-    <script src="./components/alert/alertUpdate.js"></script>
+    <!-- Alert -->
+    <script src="./components/alert/alertMeja.js"></script>
+    <script src="./components/alert/alertPelanggan.js"></script>
+    <script src="./components/alert/alertReservasi.js"></script>
 </body>
 </html>
