@@ -44,6 +44,16 @@ if (status === 'successMejaCreate') {
             history.back();
         }
     });
+} else if (status === 'bentrokWaktu') {
+    Swal.fire({
+        title: 'Gagal!',
+        text: 'Maaf, meja ini sudah dipesan pada rentang waktu yang dipilih',
+        icon: 'error'
+    }).then((result) => {
+        if (result.isConfirmed) {
+            history.back();
+        }
+    });
 }
 
 // Kode alert untuk update
