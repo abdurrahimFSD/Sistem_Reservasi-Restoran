@@ -1,3 +1,41 @@
+// Mengecek apakah URL mengandung parameter status
+const urlParams = new URLSearchParams(window.location.search);
+const status = urlParams.get('status');
+
+// Kode alert untuk create
+if (status === 'successMejaCreate') {
+    Swal.fire({
+        title: 'Berhasil!',
+        text: 'Data meja berhasil ditambah',
+        icon: 'success'
+    }).then((result) => {
+        if (result.isConfirmed) {
+            window.location.href = './index.php?page=mejaData';
+        }
+    });
+} else if (status === 'successPelangganCreate') {
+    Swal.fire({
+        title: 'Berhasil!',
+        text: 'Data pelanggan berhasil ditambah',
+        icon: 'success'
+    }).then((result) => {
+        if (result.isConfirmed) {
+            window.location.href = './index.php?page=pelangganData';
+        }
+    });
+} else if (status === 'successReservasiCreate') {
+    Swal.fire({
+        title: 'Berhasil!',
+        text: 'Data reservasi berhasil ditambah',
+        icon: 'success'
+    }).then((result) => {
+        if (result.isConfirmed) {
+            window.location.href = './index.php?page=reservasiData';
+        }
+    });
+}
+
+// Kode alert untuk update
 if (document.getElementById('simpanMejaUpdate')) {
     document.getElementById('simpanMejaUpdate').addEventListener('click', function() {
         Swal.fire({
