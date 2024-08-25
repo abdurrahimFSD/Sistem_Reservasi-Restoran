@@ -71,6 +71,20 @@ if (isset($_GET['status'])) {
             })
         </script>
 <?php        
+    } elseif ($_GET['status'] == 'bentrokWaktu') {
+?>
+        <script>
+            Swal.fire({
+                title: 'Gagal!',
+                text: 'Maaf, meja ini sudah dipesan pada rentang waktu yang dipilih',
+                icon: 'error'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    history.back();
+                }
+            })
+        </script>
+<?php
     }
 }
 ?>
