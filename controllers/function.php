@@ -132,8 +132,12 @@ function mejaUpdate($data) {
     $queryUpdateMeja = "UPDATE meja SET no_meja='$noMeja', kapasitas='$kapasitas', posisi='$posisi' WHERE id_meja = $idMeja";
     $resultUpdateMeja = mysqli_query($connection, $queryUpdateMeja);
 
-    // Kembalikan true jika berhasil
-    return true;
+    // Kembalikan success jika berhasil
+    if ($resultUpdateMeja) {
+        return 'success';
+    } else {
+        return 'error';
+    }
 }
 
 // Function mejaDelete
