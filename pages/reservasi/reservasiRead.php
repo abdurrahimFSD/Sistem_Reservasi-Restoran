@@ -110,7 +110,7 @@
                                         <a href="?page=reservasiUpdate&id_reservasi=<?= $row['id_reservasi']; ?>" class="d-inline-flex btn btn-sm btn-outline-warning edit mx-2" data-bs-toggle="tooltip" data-bs-placement="top" title="Edit">
                                             <iconify-icon icon="tabler:edit" class="fs-5"></iconify-icon>
                                         </a>
-                                        <a href="javascript:void(0)" onclick="confirmDelete('<?= $row['id_reservasi']; ?>')"  class="d-inline-flex btn btn-sm btn-danger delete" data-bs-toggle="tooltip" data-bs-placement="top" title="Hapus">
+                                        <a href="#" id="deleteButtonPelanggan" onclick="confirmDelete('<?= $row['id_reservasi']; ?>', 'reservasi')"  class="d-inline-flex btn btn-sm btn-danger delete" data-bs-toggle="tooltip" data-bs-placement="top" title="Hapus">
                                             <iconify-icon icon="tabler:trash" class="fs-5"></iconify-icon>
                                         </a>
                                     </div>
@@ -130,7 +130,7 @@
 <!-- End Body Wrapper -->
 
 <!-- Alert delete reservasi -->
-<script>
+<!-- <script>
     function confirmDelete(idReservasi) {
         Swal.fire({
             title: "Hapus?",
@@ -164,4 +164,4 @@
             }
         });
     }
-</script>
+</script> -->
