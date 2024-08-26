@@ -17,7 +17,7 @@ if (isset($_POST['simpan'])) {
             // Ambil no meja yang duplikat dari result
             $noMejaDuplikat = explode(':', $result)[1];
             header("Location: ../index.php?page=mejaCreate&status=duplicateMejaCreate&no_meja=$noMejaDuplikat");
-        } else {
+        } elseif ($result == 'error') {
             header("Location: ../index.php?page=mejaCreate&status=errorMejaCreate");
         }
         
