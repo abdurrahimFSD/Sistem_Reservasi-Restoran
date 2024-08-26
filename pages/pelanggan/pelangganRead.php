@@ -86,7 +86,7 @@
                                         <a href="?page=pelangganUpdate&id_pelanggan=<?= $row['id_pelanggan']; ?>" class="d-inline-flex btn btn-sm btn-outline-warning edit" data-bs-toggle="tooltip" data-bs-placement="top" title="Edit">
                                             <iconify-icon icon="tabler:edit" class="fs-5"></iconify-icon>
                                         </a>
-                                        <a href="javascript:void(0);" onclick="confirmDelete('<?= $row['id_pelanggan']; ?>')" class="d-inline-flex btn btn-sm btn-danger delete ms-2" data-bs-toggle="tooltip" data-bs-placement="top" title="Hapus">
+                                        <a href="#" id="deleteButtonPelanggan" onclick="confirmDelete('<?= $row['id_pelanggan']; ?>', 'pelanggan')" class="d-inline-flex btn btn-sm btn-danger delete ms-2" data-bs-toggle="tooltip" data-bs-placement="top" title="Hapus">
                                             <iconify-icon icon="tabler:trash" class="fs-5"></iconify-icon>
                                         </a>
                                     </div>
@@ -106,7 +106,7 @@
 <!-- End Body Wrapper -->
 
 <!-- Alert delete pelanggan -->
-<script>
+<!-- <script>
     function confirmDelete(idPelanggan) {
         Swal.fire({
             title: "Hapus?",
@@ -140,4 +140,4 @@
             }
         });
     }
-</script>
+</script> -->
