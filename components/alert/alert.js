@@ -6,7 +6,7 @@ const noMejaDuplikat = urlParams.get('no_meja');
 // Kode alert untuk create
 if (status === 'successMejaCreate') {
     Swal.fire({
-        title: 'Berhasil!',
+        title: 'Berhasil',
         text: 'Data meja berhasil ditambah',
         icon: 'success'
     }).then((result) => {
@@ -16,7 +16,7 @@ if (status === 'successMejaCreate') {
     });
 } else if (status === 'successPelangganCreate') {
     Swal.fire({
-        title: 'Berhasil!',
+        title: 'Berhasil',
         text: 'Data pelanggan berhasil ditambah',
         icon: 'success'
     }).then((result) => {
@@ -26,7 +26,7 @@ if (status === 'successMejaCreate') {
     });
 } else if (status === 'successReservasiCreate') {
     Swal.fire({
-        title: 'Berhasil!',
+        title: 'Berhasil',
         text: 'Data reservasi berhasil ditambah',
         icon: 'success'
     }).then((result) => {
