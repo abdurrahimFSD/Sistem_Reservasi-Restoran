@@ -26,9 +26,9 @@ if (isset($_POST['simpan'])) {
         $result = mejaUpdate($_POST);
 
         // Jika proses update berhasil
-        if ($result) {
+        if ($result == 'success') {
             echo 'successMejaUpdate';
-        } else {
+        } elseif ($result == 'error') {
             echo 'errorMejaUpdate';
         }
     } elseif ($_POST['simpan'] == 'pelangganCreate') {  // Jika tombol simpan adalah pelangganCreate
