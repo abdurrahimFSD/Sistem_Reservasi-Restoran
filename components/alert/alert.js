@@ -54,6 +54,16 @@ if (status === 'successMejaCreate') {
             history.back();
         }
     });
+} else if (status === 'errorMejaCreate') {
+    Swal.fire({
+        title: 'Gagal',
+        text: 'Data meja gagal ditambah',
+        icon: 'error'
+    }).then((result) => {
+        if (result.isConfirmed) {
+            history.back();
+        }
+    });
 }
 
 
