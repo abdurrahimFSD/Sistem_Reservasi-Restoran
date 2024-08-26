@@ -104,6 +104,7 @@ function mejaCreate($data) {
         // Jika no meja sudah ada, ambil no meja yg duplikat
         $existingMeja = mysqli_fetch_assoc($resultCekNoMeja);
         return 'duplicateNoMeja:' .$existingMeja['no_meja'];
+        exit();
     }
     
     // Query SQL untuk menambahkan data meja baru
