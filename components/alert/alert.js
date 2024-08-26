@@ -163,3 +163,68 @@ if (document.getElementById('simpanMejaUpdate')) {
         });
     });
 }
+
+// Kode alert untuk delete
+if (document.getElementById('deleteButtonMeja') || 
+    document.getElementById('deleteButtonPelanggan') || 
+    document.getElementById('deleteButtonReservasi')) {
+    
+    function confirmDelete(id, type) {
+        let url, successMessage, errorMessage, redirectPage;
+
+        switch (type) {
+            case 'meja':
+                url = `./controllers/process.php?id_meja=${id}`;
+                successMessage = "Data meja berhasil dihapus.";
+                errorMessage = "Data meja gagal dihapus.";
+                redirectPage = './index.php?page=mejaData';
+                break;
+            case 'pelanggan':
+                url = `./controllers/process.php?id_pelanggan=${id}`;
+                successMessage = "Data pelanggan berhasil dihapus.";
+                errorMessage = "Data pelanggan gagal dihapus.";
+                redirectPage = './index.php?page=pelangganData';
+                break;
+            case 'reservasi':
+                url = `./controllers/process.php?id_reservasi=${id}`;
+                successMessage = "Data reservasi berhasil dihapus.";
+                errorMessage = "Data reservasi gagal dihapus.";
+                redirectPage = './index.php?page=reservasiData';
+                break;
+            default:
+                return;
+        }
+
+        Swal.fire({
+            title: "Hapus?",
+            text: "Apakah Anda yakin menghapus data ini?",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#3085d6",
+            cancelButtonColor: "#d33",
+            confirmButtonText: "Ya, hapus!",
+            cancelButtonText: 'Batal'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                fetch(url)
+                    .then(response => response.text())
+                    .then(response => {
+                        if (response === 'successDelete') {
+                            Swal.fire({
+                                title: "Dihapus!",
+                                text: successMessage,
+                                icon: "success"
+                            }).then(() => {
+                                window.location.href = redirectPage;
+                            });
+                        } else if (response === 'errorDelete') {
+                            Swal.fire("Gagal!", errorMessage, "error");
+                        }
+                    })
+                    .catch(error => {
+                        Swal.fire("Gagal!", "Terjadi kesalahan.", "error");
+                    });
+            }
+        });
+    }
+}
