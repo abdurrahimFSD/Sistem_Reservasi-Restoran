@@ -86,7 +86,7 @@
                                         <a href="?page=mejaUpdate&id_meja=<?= $row['id_meja']; ?>" class="d-inline-flex btn btn-sm btn-outline-warning edit" data-bs-toggle="tooltip" data-bs-placement="top" title="Edit">
                                             <iconify-icon icon="tabler:edit" class="fs-5"></iconify-icon>
                                         </a>
-                                        <a href="javascript:void(0);" onclick="confirmDelete('<?= $row['id_meja']; ?>')" class="d-inline-flex btn btn-sm btn-danger delete ms-2" data-bs-toggle="tooltip" data-bs-placement="top" title="Hapus">
+                                        <a href="#" id="deleteButtonMeja" onclick="confirmDelete('<?= $row['id_meja']; ?>', 'meja')" class="d-inline-flex btn btn-sm btn-danger delete ms-2" data-bs-toggle="tooltip" data-bs-placement="top" title="Hapus">
                                             <iconify-icon icon="tabler:trash" class="fs-5"></iconify-icon>
                                         </a>
                                     </div>
@@ -104,40 +104,3 @@
     
 </div>
 <!-- End Body Wrapper -->
-
-<!-- Alert Delete -->
-<script>
-function confirmDelete(idMeja) {
-    Swal.fire({
-        title: "Apakah Anda yakin?",
-        text: "Data ini tidak dapat dikembalikan!",
-        icon: "warning",
-        showCancelButton: true,
-        confirmButtonColor: "#3085d6",
-        cancelButtonColor: "#d33",
-        confirmButtonText: "Ya, hapus!",
-        cancelButtonText: 'Batal'
-    }).then((result) => {
-        if (result.isConfirmed) {
-            fetch(`./controllers/process.php?id_meja=${idMeja}`)
-                .then(response => response.text())
-                .then(response => {
-                    if (response === 'successDelete') {
-                        Swal.fire({
-                            title: "Dihapus!",
-                            text: "Data meja berhasil dihapus.",
-                            icon: "success"
-                        }).then(() => {
-                            window.location.href = './index.php?page=mejaData';
-                        });
-                    } else if (response === 'errorDelete') {
-                        Swal.fire("Gagal!", "Data meja gagal dihapus.", "error");
-                    }
-                })
-                .catch(error => {
-                    Swal.fire("Gagal!", "Terjadi kesalahan.", "error");
-                });
-        }
-    });
-}
-</script>
