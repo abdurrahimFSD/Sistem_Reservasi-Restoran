@@ -93,6 +93,10 @@ function setupUpdateButton(buttonId, formId, successStatus, successRedirectPage,
                             Swal.fire('Tersimpan', successMessage, 'success').then(() => {
                                 window.location.href = `./index.php?page=${successRedirectPage}`;
                             });
+                        } else if (response.startsWith('duplicate|')) {    // Jika user memasukkan no meja yg sama
+                            const parts = response.split('|');
+                            const noMeja = parts[1]; // Mengambil nomor meja dari respons
+                            Swal.fire('Gagal', `No meja ${noMeja} sudah ada, tidak boleh sama`, 'warning');
                         } else if (response === errorStatus) {
                             Swal.fire('Gagal!', '', 'error');
                         }
