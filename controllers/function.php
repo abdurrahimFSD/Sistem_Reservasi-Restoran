@@ -104,7 +104,6 @@ function mejaCreate($data) {
         // Jika no meja sudah ada, ambil no meja yg duplikat
         $existingMeja = mysqli_fetch_assoc($resultCekNoMeja);
         return 'duplicateNoMeja:' .$existingMeja['no_meja'];
-        exit();
     }
     
     // Query SQL untuk menambahkan data meja baru
@@ -129,15 +128,24 @@ function mejaUpdate($data) {
     $kapasitas = $data['kapasitas'];
     $posisi = $data['posisi'];
 
-    // Query SQL untuk mengedit data meja
-    $queryUpdateMeja = "UPDATE meja SET no_meja='$noMeja', kapasitas='$kapasitas', posisi='$posisi' WHERE id_meja = $idMeja";
-    $resultUpdateMeja = mysqli_query($connection, $queryUpdateMeja);
+    // Mengecek apakah ada no meja yg sama
+    $queryCheckNoMeja = "SELECT COUNT(*) AS count FROM meja WHERE no_meja = '$noMeja' AND id_meja != '$idMeja'";
+    $resultCheckNoMeja = mysqli_query($connection, $queryCheckNoMeja);
+    $rowCheckNoMeja = mysqli_fetch_assoc($resultCheckNoMeja);
 
-    // Kembalikan success jika berhasil
-    if ($resultUpdateMeja) {
-        return 'success';
+    if ($rowCheckNoMeja['count'] > 0) {
+        return 'duplicate|' . $noMeja;
     } else {
-        return 'error';
+        // Query SQL untuk mengedit data meja
+        $queryUpdateMeja = "UPDATE meja SET no_meja='$noMeja', kapasitas='$kapasitas', posisi='$posisi' WHERE id_meja = $idMeja";
+        $resultUpdateMeja = mysqli_query($connection, $queryUpdateMeja);
+    
+        // Kembalikan success jika berhasil
+        if ($resultUpdateMeja) {
+            return 'success';
+        } else {
+            return 'error';
+        }
     }
 }
 
