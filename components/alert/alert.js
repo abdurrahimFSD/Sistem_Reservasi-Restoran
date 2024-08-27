@@ -169,7 +169,7 @@ if (document.getElementById('deleteButtonMeja') ||
                     .then(response => {
                         if (response === 'successDelete') {
                             Swal.fire({
-                                title: "Dihapus!",
+                                title: "Dihapus",
                                 text: successMessage,
                                 icon: "success"
                             }).then(() => {
