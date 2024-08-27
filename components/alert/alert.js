@@ -36,8 +36,8 @@ if (status === 'successMejaCreate') {
     });
 } else if (status === 'duplicateMejaCreate' && noMejaDuplikat) {
     Swal.fire({
-        title: 'Gagal!',
-        text: `No Meja ${noMejaDuplikat} sudah ada, tidak boleh sama!`,
+        title: 'Gagal',
+        text: `No Meja ${noMejaDuplikat} sudah ada, tidak boleh sama`,
         icon: 'warning'
     }).then((result) => {
         if (result.isConfirmed) {
