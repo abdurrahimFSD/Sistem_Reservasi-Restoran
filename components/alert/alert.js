@@ -154,7 +154,7 @@ if (document.getElementById('deleteButtonMeja') ||
         }
 
         Swal.fire({
-            title: "Hapus?",
+            title: "Hapus",
             text: "Apakah Anda yakin menghapus data ini?",
             icon: "warning",
             showCancelButton: true,
