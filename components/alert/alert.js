@@ -133,20 +133,20 @@ if (document.getElementById('deleteButtonMeja') ||
         switch (type) {
             case 'meja':
                 url = `./controllers/process.php?id_meja=${id}`;
-                successMessage = "Data meja berhasil dihapus.";
-                errorMessage = "Data meja gagal dihapus.";
+                successMessage = "Data meja berhasil dihapus";
+                errorMessage = "Data meja gagal dihapus";
                 redirectPage = './index.php?page=mejaData';
                 break;
             case 'pelanggan':
                 url = `./controllers/process.php?id_pelanggan=${id}`;
-                successMessage = "Data pelanggan berhasil dihapus.";
-                errorMessage = "Data pelanggan gagal dihapus.";
+                successMessage = "Data pelanggan berhasil dihapus";
+                errorMessage = "Data pelanggan gagal dihapus";
                 redirectPage = './index.php?page=pelangganData';
                 break;
             case 'reservasi':
                 url = `./controllers/process.php?id_reservasi=${id}`;
-                successMessage = "Data reservasi berhasil dihapus.";
-                errorMessage = "Data reservasi gagal dihapus.";
+                successMessage = "Data reservasi berhasil dihapus";
+                errorMessage = "Data reservasi gagal dihapus";
                 redirectPage = './index.php?page=reservasiData';
                 break;
             default:
