@@ -28,6 +28,8 @@ if (isset($_POST['simpan'])) {
         // Jika proses update berhasil
         if ($result == 'success') {
             echo 'successMejaUpdate';
+        } elseif (strpos($result, 'duplicate|') === 0) { 
+            echo $result; // Mengirimkan respons dengan format ygg sesuai ('duplicate|noMeja')
         } elseif ($result == 'error') {
             echo 'errorMejaUpdate';
         }
