@@ -48,7 +48,7 @@
     <script src="./assets/js/theme/sidebarmenu-default.js"></script>
 
     <!-- Datatable -->
-    <script src="./assets/libs/DataTables/datatables.js"></script>
+    <script src="./assets/libs/datatable/datatables.min.js"></script>
     <script src="./assets/js/datatable/datatable.init.js"></script>
 
     <!-- Reservasi -->
