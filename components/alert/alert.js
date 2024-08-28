@@ -98,6 +98,8 @@ function setupUpdateButton(buttonId, formId, successStatus, successRedirectPage,
                             const parts = response.split('|');
                             const noMeja = parts[1]; // Mengambil nomor meja dari respons
                             Swal.fire('Gagal', `No meja ${noMeja} sudah ada, tidak boleh sama`, 'warning');
+                        } else if (response === "bentrokWaktuReservasiUpdate") {
+                            Swal.fire('Gagal', 'Maaf, meja ini sudah dipesan pada rentang waktu yang dipilih', 'error');
                         } else if (response === errorStatus) {
                             Swal.fire('Gagal!', '', 'error');
                         }
