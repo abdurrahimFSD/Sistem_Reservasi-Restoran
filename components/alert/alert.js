@@ -1,7 +1,6 @@
 // Mengecek apakah URL mengandung parameter status
 const urlParams = new URLSearchParams(window.location.search);
 const status = urlParams.get('status');
-// const noMejaDuplikat = urlParams.get('no_meja');
 const noMeja = urlParams.get('no_meja');
 
 // Kode alert untuk create
