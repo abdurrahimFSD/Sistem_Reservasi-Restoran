@@ -282,7 +282,7 @@ function reservasiUpdate($data) {
     // Mengecek apakah rentang waktu bentrok dengan reservasi yang sudah ada
     $queryCheckAvailability = "SELECT COUNT(*) as jumlah FROM reservasi WHERE meja_id = '$noMeja' AND tanggal_reservasi = '$tanggalReservasi' AND
                                 (
-                                    ('$waktuMulai' < waktu_selesai AND '$waktuSelesai' > waktu_mulai)
+                                    ('$waktuMulai' <= waktu_selesai AND '$waktuSelesai' >= waktu_mulai)
                                 ) AND id_reservasi != $idReservasi";
     $resultCheckAvailability = mysqli_query($connection, $queryCheckAvailability);
     $dataCheckAvailability = mysqli_fetch_assoc($resultCheckAvailability); 
