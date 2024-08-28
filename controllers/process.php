@@ -72,6 +72,8 @@ if (isset($_POST['simpan'])) {
         // Jika proses update berhasil
         if ($result == 'success') {
             echo 'successReservasiUpdate';
+        } elseif ($result == 'bentrokWaktu') {
+            echo 'bentrokWaktuReservasiUpdate';
         } else {
             echo 'errorReservasiUpdate';
         }
