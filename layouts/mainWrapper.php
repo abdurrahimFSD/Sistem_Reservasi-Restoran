@@ -15,7 +15,7 @@
     <script src="./assets/libs/sweetalert/sweetalert2.all.min.js"></script>
 
     <!-- Datatable -->
-    <link rel="stylesheet" href="./assets/libs/DataTables/datatables.css">
+    <link rel="stylesheet" href="./assets/libs/datatable/datatables.min.css">
 
     <style>
         html {
