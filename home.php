@@ -13,6 +13,33 @@ $totalPelanggan = getTotalPelanggan();
 
 // Mendapatkan jumlah reservasi hari ini
 $reservasiHariIni = getReservasiHariIni();
+
+// Mendapatkan data untuk chart
+$reservasiBulanan = getReservasiBulanan();
+$reservasiMingguan = getReservasiMingguan();
+$reservasiKapasitas = getReservasiKapasitas();
+
+// Menyiapkan data untuk chart Tren Reservasi Bulanan
+$dataBulan = [];
+$dataTotalReservasi = [];
+
+foreach ($reservasiBulanan as $row) {
+    $dataBulan[] = $row['bulan']; // Nama bulan dengan tahun
+    $dataTotalReservasi[] = $row['total'];
+}
+
+// Menyiapkan data untuk chart Tren Reservasi Mingguan
+$dataHari = array_keys($reservasiMingguan);
+$dataTotalReservasiMingguan = array_values($reservasiMingguan);
+
+// Menyiapkan data untuk chart Reservasi Berdasarkan Kapasitas Meja
+$dataKapasitas = [];
+$dataTotalReservasiKapasitas = [];
+
+foreach ($reservasiKapasitas as $row) {
+    $dataKapasitas[] = $row['kapasitas'];
+    $dataTotalReservasiKapasitas[] = $row['total'];
+}
 ?>
 
 <!-- Start Body Wrapper -->
@@ -90,6 +117,34 @@ $reservasiHariIni = getReservasiHariIni();
                 </div>
             </div>
         </div>
+
+        <!-- Row for Charts -->
+        <div class="row mt-4">
+            <div class="col-lg-6 col-md-12">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <h5 class="card-title">Tren Reservasi</h5>
+                            <div class="form-check form-switch">
+                                <input class="form-check-input" type="checkbox" id="toggleView">
+                                <label class="form-check-label" for="toggleView">Mingguan</label>
+                            </div>
+                        </div>
+                        <canvas id="reservasiChart"></canvas>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-6 col-md-12">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Reservasi Berdasarkan Kapasitas Meja</h5>
+                        <canvas id="reservasiKapasitasChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+
  
     </div>
 </div>
