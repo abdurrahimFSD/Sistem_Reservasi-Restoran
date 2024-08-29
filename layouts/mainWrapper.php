@@ -17,6 +17,9 @@
     <!-- Datatable -->
     <link rel="stylesheet" href="./assets/libs/datatable/datatables.min.css">
 
+    <!-- ChartJS -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
     <style>
         html {
             display: none; 
