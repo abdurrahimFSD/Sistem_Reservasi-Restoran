@@ -74,6 +74,106 @@ function getReservasiHariIni() {
     }
 }
 
+// Function untuk mendapatkan data reservasi bulanan
+function getReservasiBulanan() {
+    global $connection;
+
+    // Array untuk nama bulan
+    $namaBulan = [
+        1 => 'Januari',
+        2 => 'Februari',
+        3 => 'Maret',
+        4 => 'April',
+        5 => 'Mei',
+        6 => 'Juni',
+        7 => 'Juli',
+        8 => 'Agustus',
+        9 => 'September',
+        10 => 'Oktober',
+        11 => 'November',
+        12 => 'Desember'
+    ];
+
+    $queryReservasiBulanan = " SELECT MONTH(tanggal_reservasi) as bulan, YEAR(tanggal_reservasi) as tahun, COUNT(id_reservasi) as total 
+                                FROM reservasi 
+                                GROUP BY YEAR(tanggal_reservasi), MONTH(tanggal_reservasi)";
+    $result = mysqli_query($connection, $queryReservasiBulanan);
+
+    $data = [];
+    while ($row = mysqli_fetch_assoc($result)) {
+        $row['bulan'] = $namaBulan[$row['bulan']] . ' ' . $row['tahun'];
+        $data[] = $row;
+    }
+
+    return $data;
+}
+
+
+// Function untuk mendapatkan data reservasi mingguan
+function getReservasiMingguan() {
+    global $connection;
+
+    // Mapping nama hari dari bahasa Inggris ke bahasa Indonesia
+    $namaHari = [
+        'Sunday' => 'Minggu',
+        'Monday' => 'Senin',
+        'Tuesday' => 'Selasa',
+        'Wednesday' => 'Rabu',
+        'Thursday' => 'Kamis',
+        'Friday' => 'Jumat',
+        'Saturday' => 'Sabtu'
+    ];
+
+    $queryReservasiMingguan = " SELECT DATE_FORMAT(tanggal_reservasi, '%Y-%m-%d') as tanggal, DAYNAME(tanggal_reservasi) as hari, COUNT(id_reservasi) as total 
+                                FROM reservasi 
+                                WHERE WEEK(tanggal_reservasi, 1) = WEEK(CURDATE(), 1) 
+                                AND YEAR(tanggal_reservasi) = YEAR(CURDATE())
+                                GROUP BY tanggal, DAYOFWEEK(tanggal_reservasi)";
+                                
+    $result = mysqli_query($connection, $queryReservasiMingguan);
+
+    $data = [
+        'Minggu' => ['total' => 0, 'tanggal' => ''],
+        'Senin' => ['total' => 0, 'tanggal' => ''],
+        'Selasa' => ['total' => 0, 'tanggal' => ''],
+        'Rabu' => ['total' => 0, 'tanggal' => ''],
+        'Kamis' => ['total' => 0, 'tanggal' => ''],
+        'Jumat' => ['total' => 0, 'tanggal' => ''],
+        'Sabtu' => ['total' => 0, 'tanggal' => '']
+    ];
+
+    while ($row = mysqli_fetch_assoc($result)) {
+        $hariDalamBahasaIndonesia = $namaHari[$row['hari']];
+        $data[$hariDalamBahasaIndonesia] = [
+            'total' => $row['total'],
+            'tanggal' => $row['tanggal']
+        ];
+    }
+
+    return $data;
+}
+
+
+// Function untuk mendapatkan data reservasi berdasarkan kapasitas meja
+function getReservasiKapasitas() {
+    global $connection;
+
+    $queryReservasiKapasitas = " SELECT m.kapasitas, COUNT(r.id_reservasi) as total 
+                                FROM reservasi r
+                                JOIN meja m ON r.meja_id = m.id_meja
+                                GROUP BY m.kapasitas
+                                ";
+    $result = mysqli_query($connection, $queryReservasiKapasitas);
+
+    $data = [];
+    while ($row = mysqli_fetch_assoc($result)) {
+        $row['kapasitas'] = 'Kapasitas ' . $row['kapasitas'];
+        $data[] = $row;
+    }
+
+    return $data;
+}
+
 // Function fetchData
 function fetchData($tableName) {
     global $connection;
