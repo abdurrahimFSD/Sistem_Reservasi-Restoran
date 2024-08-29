@@ -56,5 +56,8 @@
 
     <!-- Alert -->
     <script src="./components/alert/alert.js"></script>
+
+    <!-- Chart init -->
+    <?php include('./components/chart/chart.init.php') ?>
 </body>
 </html>
