@@ -22,12 +22,6 @@
                                 </a>
                             </li>
                             <!-- End Searching -->
-                            
-                            <!-- Start Menu topbar -->
-                            <li class="nav-item d-none d-lg-flex">
-                                <a class="nav-link" href="#">Menu Topbar</a>
-                            </li>
-                            <!-- End Menu topbar -->
                         </ul>
                         
                         <!-- Logo Start width <= 992px -->
