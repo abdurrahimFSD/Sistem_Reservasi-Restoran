@@ -6,6 +6,17 @@ if (isset($_SESSION['user_id'])) {
     header("Location: ../../");
     exit();
 }
+
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    $username = $_POST['username'];
+    $password = $_POST['password'];
+    if (signin($username, $password)) {
+        header("Location: ../../");
+        exit();
+    } else {
+        $error = "Username atau Password salah!";
+    }
+}
 ?>
 
 <!DOCTYPE html>
