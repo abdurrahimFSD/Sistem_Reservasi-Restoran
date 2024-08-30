@@ -1,7 +1,7 @@
 <?php
 include('../../config/connection.php');
 
-// Function untuk menangani signup
+// Function signup untuk menangani signup
 function signup($username, $email, $password) {
     global $connection;
 
