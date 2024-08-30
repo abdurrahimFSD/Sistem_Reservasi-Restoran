@@ -35,4 +35,11 @@ function signin($username, $password) {
     }
     return false;
 }
+
+// Function logout untuk menangani logout
+function logout() {
+    session_start();
+    session_unset();
+    session_destroy();
+}
 ?>
