@@ -77,10 +77,10 @@
                                                     <img src="./assets/images/profile/user-1.jpg" class="rounded-circle" width="56" height="56" alt="user-photo" />
                                                     <div>
                                                         <h5 class="mb-0 fs-12">
-                                                            Abdurrahim
+                                                            <?php echo $_SESSION['username']; ?>
                                                         </h5>
                                                         <p class="mb-0 text-dark text-wrap text-break">
-                                                            abdurrahim22student@gmail.com
+                                                            <?php echo $_SESSION['email']; ?>
                                                         </p>
                                                     </div>
                                                 </div>
