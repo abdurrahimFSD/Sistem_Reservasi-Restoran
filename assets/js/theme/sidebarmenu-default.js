@@ -12,10 +12,15 @@ if (layoutType  === "vertical") {
 
     var link = document.getElementById("get-url");
 
-    if (currentURL.includes("/main/index.html")) {
-        link.setAttribute("href", "../main/index.html");
-    } else if (currentURL.includes("/index.html")) {
-        link.setAttribute("href", "./index.html");
+    // Cek halaman mana yang aktif dan set href yang sesuai
+    if (currentURL.includes("/index.php")) {
+        link.setAttribute("href", "./index.php");
+    } else if (currentURL.includes("/pages/meja/mejaRead.php")) {
+        link.setAttribute("href", "./pages/meja/mejaRead.php");
+    } else if (currentURL.includes("/pages/pelanggan/pelangganRead.php")) {
+        link.setAttribute("href", "./pages/pelanggan/pelangganRead.php");
+    } else if (currentURL.includes("/pages/reservasi/reservasiRead.php")) {
+        link.setAttribute("href", "./pages/reservasi/reservasiRead.php");
     } else {
         link.setAttribute("href", "./");
     }
