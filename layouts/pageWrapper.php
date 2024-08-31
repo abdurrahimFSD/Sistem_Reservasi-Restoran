@@ -76,16 +76,19 @@
                                                 <div class="d-flex align-items-center mb-3 pb-3 border-bottom gap-6">
                                                     <img src="./assets/images/profile/user-1.jpg" class="rounded-circle" width="56" height="56" alt="user-photo" />
                                                     <div>
-                                                        <h5 class="mb-0 fs-12">Abdurrahim <span class="text-success fs-11">Pro</span>
+                                                        <h5 class="mb-0 fs-12">
+                                                            Abdurrahim
                                                         </h5>
-                                                        <p class="mb-0 text-dark text-wrap text-break">abdurrahim22student@gmail.com</p>
+                                                        <p class="mb-0 text-dark text-wrap text-break">
+                                                            abdurrahim22student@gmail.com
+                                                        </p>
                                                     </div>
                                                 </div>
                                                 <div class="message-body">
                                                     <a href="#" class="p-2 dropdown-item h6 rounded-1"> My Profile </a>
                                                     </a>
                                                     <a href="#" class="p-2 dropdown-item h6 rounded-1"> Account Settings </a>
-                                                    <a href="#" class="p-2 dropdown-item h6 rounded-1"> Sign Out </a>
+                                                    <a href="./pages/auth/logout.php" class="p-2 dropdown-item h6 rounded-1"> Logout </a>
                                                 </div>
                                             </div>
                                         </div>
