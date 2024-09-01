@@ -74,5 +74,32 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         </div>
     </div>
     
+    <script>
+    document.getElementById('signinForm').addEventListener('submit', function(event) {
+        event.preventDefault(); // Mencegah form dari submit default
+        const signinButton = document.getElementById('signinButton');
+        const signinText = document.getElementById('signinText');
+        const signinIcon = document.getElementById('signinIcon');
+
+        // Menampilkan ikon loading dan mengganti teks tombol
+        signinText.textContent = 'Signing In...';
+        signinIcon.style.display = 'inline-block';
+
+        // Simulasi waktu proses login (1 detik)
+        setTimeout(function() {
+            // Mengubah ikon loading menjadi ikon centang
+            signinIcon.classList.remove('spinner-border', 'spinner-border-sm');
+            signinIcon.classList.add('bi', 'bi-check-lg'); // Menggunakan ikon Bootstrap
+            signinText.textContent = 'Success';
+
+            // Redirect ke halaman utama setelah 1 detik
+            setTimeout(function() {
+                // Form sebenarnya disubmit di sini
+                document.getElementById('signinForm').submit(); 
+            }, 1000);
+        }, 1000);
+    });
+    </script>
+    
 </body>
 </html>
