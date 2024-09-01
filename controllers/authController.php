@@ -21,7 +21,7 @@ function signup($username, $email, $password) {
             return "Email sudah digunakan";
         }
     } else {
-        // Jika username belum ada, lanjutkan dengan proses pendaftaran
+        // Jika username dan email belum ada, lanjutkan dengan proses pendaftaran
         $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
         $query = "INSERT INTO users (username, email, password) VALUES (?, ?, ?)";
         $stmt = $connection->prepare($query);
