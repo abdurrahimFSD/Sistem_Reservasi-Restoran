@@ -16,6 +16,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $error = "Username sudah ada, coba gunakan username lain!";
         echo json_encode(["success" => false, "message" => $error]);
         exit();
+    } elseif ($signupResult === "Email sudah digunakan") {
+        $error = "Email sudah digunakan, coba gunakan email lain!";
+        echo json_encode(["success" => false, "message" => $error]);
     } else {
         $error = "Gagal mendaftar, coba lagi!";
         echo json_encode(["success" => false, "message" => $error]);
