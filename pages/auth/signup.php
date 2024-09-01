@@ -41,7 +41,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                                 <a href="#" class="text-nowrap logo-img text-center d-block mb-4 w-100">
                                     <span class="fw-bolder fs-7">SignUp</span>
                                 </a>
-                                <form method="POST" action="">
+                                <form id="signupForm" method="POST" action="">
                                     <div class="mb-3">
                                         <label for="username" class="form-label">Username</label>
                                         <input type="text" class="form-control" id="username" name="username" placeholder="Enter your username" required>
