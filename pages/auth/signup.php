@@ -1,15 +1,19 @@
 <?php
 include('../../controllers/authController.php');
 
+$error = ""; // Inisialisasi variabel error
+
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $username = $_POST['username'];
     $email = $_POST['email'];
     $password = $_POST['password'];
     if (signup($username, $email, $password)) {
-        header("Location: signin.php");
+        echo json_encode(["success" => true]);
         exit();
     } else {
         $error = "Gagal mendaftar, coba lagi!";
+        echo json_encode(["success" => false, "message" => $error]);
+        exit();
     }
 }
 ?>
