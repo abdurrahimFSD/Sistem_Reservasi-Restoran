@@ -74,5 +74,78 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         </div>
     </div>
     
+    <script>
+    document.getElementById('signupForm').addEventListener('submit', function(event) {
+        event.preventDefault(); // Mencegah form dari submit default
+        const signupButton = document.getElementById('signupButton');
+        const signupText = document.getElementById('signupText');
+        const signupIcon = document.getElementById('signupIcon');
+
+        // Menampilkan ikon loading dan mengganti teks tombol
+        signupText.textContent = 'Signing Up...';
+        signupIcon.style.display = 'inline-block';
+
+        // Mengirim data form via AJAX
+        const formData = new FormData(this);
+
+        fetch('', {
+            method: 'POST',
+            body: formData
+        })
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            return response.json();
+        })
+        .then(data => {
+            setTimeout(() => {
+                if (data.success) {
+                    // Jika pendaftaran berhasil
+                    signupIcon.classList.remove('spinner-border', 'spinner-border-sm');
+                    signupIcon.classList.add('bi', 'bi-check-lg'); // Menggunakan ikon Bootstrap
+                    signupText.textContent = 'Success';
+    
+                    // Redirect ke halaman sign in setelah 1 detik
+                    setTimeout(function() {
+                        window.location.href = "signin.php";
+                    }, 1000);
+                } else {
+                    // Jika pendaftaran gagal
+                    signupIcon.classList.remove('spinner-border', 'spinner-border-sm');
+                    signupIcon.classList.add('bi', 'bi-x-lg'); // Menggunakan ikon gagal
+                    signupText.textContent = 'Failed';
+    
+                    // Tampilkan pesan error
+                    document.querySelector('.text-danger').innerHTML = `<p>${data.message}</p>`;
+    
+                    // Mengembalikan tombol ke keadaan awal setelah 2 detik
+                    setTimeout(function() {
+                        signupIcon.style.display = 'none';
+                        signupIcon.classList.remove('bi-x-lg'); // Menghapus ikon gagal
+                        signupText.textContent = 'Sign Up';
+                    }, 2000);
+                }
+            }, 1000);
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            signupIcon.classList.remove('spinner-border', 'spinner-border-sm');
+            signupIcon.classList.add('bi', 'bi-x-lg'); // Menggunakan ikon gagal
+            signupText.textContent = 'Error';
+
+            // Tampilkan pesan error umum
+            document.querySelector('.text-danger').innerHTML = `<p>Terjadi kesalahan pada koneksi. Silakan coba lagi.</p>`;
+
+            // Mengembalikan tombol ke keadaan awal setelah 2 detik
+            setTimeout(function() {
+                signupIcon.style.display = 'none';
+                signupIcon.classList.remove('bi-x-lg'); // Menghapus ikon gagal
+                signupText.textContent = 'Sign Up';
+            }, 2000);
+        });
+    });
+    </script>
+    
 </body>
 </html>
