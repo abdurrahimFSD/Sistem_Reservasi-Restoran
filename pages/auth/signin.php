@@ -57,7 +57,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                                             <?php if (isset($error)) { echo "<p>$error</p>"; } ?>
                                         </div>
                                     </div>
-                                    <button type="submit" class="btn btn-dark w-100 py-8 mb-4 rounded-2">Sign In</button>
+                                    <button type="submit" id="signinButton" class="btn btn-dark w-100 py-8 mb-4 rounded-2">
+                                        <span id="signinText">Sign In</span>
+                                        <span id="signinIcon" class="spinner-border spinner-border-sm" style="display: none;" role="status" aria-hidden="true"></span>
+                                    </button>
                                     <div class="d-flex align-items-center">
                                         <p class="fs-4 mb-0 text-dark">Don’t have an account yet?</p>
                                         <a class="text-primary fw-medium ms-2" href="./signup.php">Sign Up Now</a>
