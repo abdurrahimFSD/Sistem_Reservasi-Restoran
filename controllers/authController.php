@@ -13,8 +13,11 @@ function signup($username, $email, $password) {
     $result = $stmt->get_result();
 
     if ($result->num_rows > 0) {
-        // Jika username sudah ada, return false
-        return "Username sudah ada";
+        // Jika username atau email sudah ada, return pesan yang sesuai
+        $row = $result->fetch_assoc();
+        if ($row['username'] === $username) {
+            return "Username sudah ada";
+        }
     } else {
         // Jika username belum ada, lanjutkan dengan proses pendaftaran
         $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
