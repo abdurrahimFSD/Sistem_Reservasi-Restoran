@@ -146,6 +146,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     // Tampilkan pesan error
                     if (data.message.includes("Username sudah ada")) {
                         document.getElementById('usernameError').innerHTML = data.message; // Pesan error di bawah input username
+                    } else if (data.message.includes("Email sudah digunakan")) {
+                        document.getElementById('emailError').innerHTML = data.message; // Pesan error di bawah input email
                     } else {
                         document.querySelector('.text-danger').innerHTML = `<p>${data.message}</p>`; // Pesan error umum
                     }
