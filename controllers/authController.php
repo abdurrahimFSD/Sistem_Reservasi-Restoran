@@ -28,7 +28,6 @@ function signin($username, $password) {
     if($result->num_rows > 0) {
         $user = $result->fetch_assoc();
         if(password_verify($password, $user['password'])) {
-            session_start();
             // Menyimpan user_id, username, dan email ke dalam session
             $_SESSION['user_id'] = $user['id_user'];
             $_SESSION['username'] = $user['username'];
