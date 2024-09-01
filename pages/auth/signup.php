@@ -32,6 +32,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     <!-- Bootstrap icon -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+
+    <!-- Sweetalert2 -->
+    <link rel="stylesheet" href="../../assets/libs/sweetalert/sweetalert2.min.css">
+    <script src="../../assets/libs/sweetalert/sweetalert2.all.min.js"></script>
 </head>
 </head>
 <body class="link-sidebar">
@@ -110,10 +114,18 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     signupIcon.classList.add('bi', 'bi-check-lg'); // Menggunakan ikon Bootstrap
                     signupText.textContent = 'Success';
     
-                    // Redirect ke halaman sign in setelah 1 detik
-                    setTimeout(function() {
-                        window.location.href = "signin.php";
-                    }, 1000);
+                     // Tampilkan SweetAlert dengan pesan sukses
+                    Swal.fire({
+                        title: 'Pendaftaran Berhasil!',
+                        text: 'Daftar akun berhasil, silahkan login.',
+                        icon: 'success',
+                        confirmButtonText: 'OK'
+                    }).then((result) => {
+                        if (result.isConfirmed) {
+                            // Redirect ke halaman sign in setelah klik OK
+                            window.location.href = "signin.php";
+                        }
+                    });
                 } else {
                     // Jika pendaftaran gagal
                     signupIcon.classList.remove('spinner-border', 'spinner-border-sm');
