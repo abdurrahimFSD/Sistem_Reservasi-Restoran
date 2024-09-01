@@ -5,14 +5,27 @@ include('../../config/connection.php');
 function signup($username, $email, $password) {
     global $connection;
 
-    $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
-    $query = "INSERT INTO users (username, email, password) VALUES (?, ?, ?)";
+    // Cek apakah username sudah ada di database
+    $query = "SELECT * FROM users WHERE username = ?";
     $stmt = $connection->prepare($query);
-    $stmt->bind_param("sss", $username, $email, $hashedPassword);
-    if($stmt->execute()) {
-        return true;
+    $stmt->bind_param("s", $username);
+    $stmt->execute();
+    $result = $stmt->get_result();
+
+    if ($result->num_rows > 0) {
+        // Jika username sudah ada, return false
+        return "Username sudah ada";
     } else {
-        return false;
+        // Jika username belum ada, lanjutkan dengan proses pendaftaran
+        $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
+        $query = "INSERT INTO users (username, email, password) VALUES (?, ?, ?)";
+        $stmt = $connection->prepare($query);
+        $stmt->bind_param("sss", $username, $email, $hashedPassword);
+        if ($stmt->execute()) {
+            return true;
+        } else {
+            return false;
+        }
     }
 }
 
