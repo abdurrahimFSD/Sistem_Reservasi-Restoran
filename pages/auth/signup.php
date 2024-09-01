@@ -62,12 +62,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                                     <div class="mb-3">
                                         <label for="username" class="form-label">Username</label>
                                         <input type="text" class="form-control" id="username" name="username" placeholder="Enter your username" required>
-                                        <div id="usernameError" class="text-danger mt-1 fw-bold"></div>
+                                        <div id="usernameError" class="text-danger-emphasis mt-1 fw-bold"></div>
                                     </div>
                                     <div class="mb-3">
                                         <label for="email" class="form-label">Email Address</label>
                                         <input type="email" class="form-control" id="email" name="email" placeholder="Enter your email" required>
-                                        <div id="emailError" class="text-danger mt-1 fw-bold"></div>
+                                        <div id="emailError" class="text-danger-emphasis mt-1 fw-bold"></div>
                                     </div>
                                     <div class="mb-4">
                                         <label for="password" class="form-label">Password</label>
