@@ -25,6 +25,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     <!-- Core Css -->
     <link rel="stylesheet" href="../../assets/css/style.css">
+
+    <!-- Bootstrap icon -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+</head>
 </head>
 <body class="link-sidebar">
     <div id="main-wrapper">
