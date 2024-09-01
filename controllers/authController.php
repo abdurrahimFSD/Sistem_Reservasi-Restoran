@@ -5,10 +5,10 @@ include('../../config/connection.php');
 function signup($username, $email, $password) {
     global $connection;
 
-    // Cek apakah username sudah ada di database
-    $query = "SELECT * FROM users WHERE username = ?";
+    // Cek apakah username atau email sudah ada di database
+    $query = "SELECT * FROM users WHERE username = ? OR email = ?";
     $stmt = $connection->prepare($query);
-    $stmt->bind_param("s", $username);
+    $stmt->bind_param("ss", $username, $email);
     $stmt->execute();
     $result = $stmt->get_result();
 
