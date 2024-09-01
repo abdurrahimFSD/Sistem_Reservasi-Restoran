@@ -17,6 +17,8 @@ function signup($username, $email, $password) {
         $row = $result->fetch_assoc();
         if ($row['username'] === $username) {
             return "Username sudah ada";
+        } elseif ($row['email'] === $email) {
+            return "Email sudah digunakan";
         }
     } else {
         // Jika username belum ada, lanjutkan dengan proses pendaftaran
