@@ -7,8 +7,14 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $username = $_POST['username'];
     $email = $_POST['email'];
     $password = $_POST['password'];
-    if (signup($username, $email, $password)) {
+    $signupResult = signup($username, $email, $password);
+
+    if ($signupResult === true) {
         echo json_encode(["success" => true]);
+        exit();
+    } elseif ($signupResult === "Username sudah ada") {
+        $error = "Username sudah ada, coba gunakan username lain!";
+        echo json_encode(["success" => false, "message" => $error]);
         exit();
     } else {
         $error = "Gagal mendaftar, coba lagi!";
@@ -53,6 +59,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                                     <div class="mb-3">
                                         <label for="username" class="form-label">Username</label>
                                         <input type="text" class="form-control" id="username" name="username" placeholder="Enter your username" required>
+                                        <div id="usernameError" class="text-danger mt-1 fw-bold"></div>
                                     </div>
                                     <div class="mb-3">
                                         <label for="email" class="form-label">Email Address</label>
@@ -113,8 +120,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     signupIcon.classList.remove('spinner-border', 'spinner-border-sm');
                     signupIcon.classList.add('bi', 'bi-check-lg'); // Menggunakan ikon Bootstrap
                     signupText.textContent = 'Success';
-    
-                     // Tampilkan SweetAlert dengan pesan sukses
+
+                    // Tampilkan SweetAlert dengan pesan sukses
                     Swal.fire({
                         title: 'Pendaftaran Berhasil!',
                         text: 'Daftar akun berhasil, silahkan login.',
@@ -131,10 +138,14 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     signupIcon.classList.remove('spinner-border', 'spinner-border-sm');
                     signupIcon.classList.add('bi', 'bi-x-lg'); // Menggunakan ikon gagal
                     signupText.textContent = 'Failed';
-    
+
                     // Tampilkan pesan error
-                    document.querySelector('.text-danger').innerHTML = `<p>${data.message}</p>`;
-    
+                    if (data.message.includes("Username sudah ada")) {
+                        document.getElementById('usernameError').innerHTML = data.message; // Pesan error di bawah input username
+                    } else {
+                        document.querySelector('.text-danger').innerHTML = `<p>${data.message}</p>`; // Pesan error umum
+                    }
+
                     // Mengembalikan tombol ke keadaan awal setelah 2 detik
                     setTimeout(function() {
                         signupIcon.style.display = 'none';
