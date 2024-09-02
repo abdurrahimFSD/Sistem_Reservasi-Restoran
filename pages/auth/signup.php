@@ -101,6 +101,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         const signupText = document.getElementById('signupText');
         const signupIcon = document.getElementById('signupIcon');
 
+        // Membersihkan pesan kesalahan sebelumnya
         document.getElementById('usernameError').innerHTML = '';
         document.getElementById('emailError').innerHTML = '';
         document.querySelector('.text-danger').innerHTML = '';
