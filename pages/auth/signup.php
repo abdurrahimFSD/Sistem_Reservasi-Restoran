@@ -103,7 +103,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
         document.getElementById('usernameError').innerHTML = '';
         document.getElementById('emailError').innerHTML = '';
-        
+        document.querySelector('.text-danger').innerHTML = '';
+
         // Menampilkan ikon loading dan mengganti teks tombol
         signupText.textContent = 'Signing Up...';
         signupIcon.style.display = 'inline-block';
