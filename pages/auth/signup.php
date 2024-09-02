@@ -181,6 +181,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             setTimeout(function() {
                 signupIcon.style.display = 'none';
                 signupIcon.classList.remove('bi-x-lg'); // Menghapus ikon gagal
+                signupIcon.classList.add('spinner-border', 'spinner-border-sm'); // Mengembalikan spinner
                 signupText.textContent = 'Sign Up';
             }, 2000);
         });
