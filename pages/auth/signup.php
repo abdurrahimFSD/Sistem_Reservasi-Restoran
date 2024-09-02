@@ -102,7 +102,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         const signupIcon = document.getElementById('signupIcon');
 
         document.getElementById('usernameError').innerHTML = '';
-
+        document.getElementById('emailError').innerHTML = '';
+        
         // Menampilkan ikon loading dan mengganti teks tombol
         signupText.textContent = 'Signing Up...';
         signupIcon.style.display = 'inline-block';
