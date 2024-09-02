@@ -101,6 +101,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         const signupText = document.getElementById('signupText');
         const signupIcon = document.getElementById('signupIcon');
 
+        document.getElementById('usernameError').innerHTML = '';
+
         // Menampilkan ikon loading dan mengganti teks tombol
         signupText.textContent = 'Signing Up...';
         signupIcon.style.display = 'inline-block';
@@ -157,6 +159,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     setTimeout(function() {
                         signupIcon.style.display = 'none';
                         signupIcon.classList.remove('bi-x-lg'); // Menghapus ikon gagal
+                        signupIcon.classList.add('spinner-border', 'spinner-border-sm'); // Mengembalikan spinner
                         signupText.textContent = 'Sign Up';
                     }, 2000);
                 }
