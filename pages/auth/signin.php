@@ -85,6 +85,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         const signinText = document.getElementById('signinText');
         const signinIcon = document.getElementById('signinIcon');
 
+        // Membersihkan pesan kesalahan sebelumnya
         document.querySelector('.text-danger').innerHTML = '';
 
         // Mengatur ulang ikon dan teks tombol sebelum mulai proses login
