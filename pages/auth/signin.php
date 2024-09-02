@@ -85,6 +85,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         const signinText = document.getElementById('signinText');
         const signinIcon = document.getElementById('signinIcon');
 
+        document.querySelector('.text-danger').innerHTML = '';
+
         // Mengatur ulang ikon dan teks tombol sebelum mulai proses login
         signinIcon.classList.remove('bi', 'bi-check-lg', 'bi-x-lg');
         signinIcon.classList.add('spinner-border', 'spinner-border-sm');
