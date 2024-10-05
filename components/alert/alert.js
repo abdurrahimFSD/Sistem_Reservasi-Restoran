@@ -3,18 +3,6 @@ const urlParams = new URLSearchParams(window.location.search);
 const status = urlParams.get('status');
 const noMeja = urlParams.get('no_meja');
 
-// Kode alert untuk create
-if (status === 'successMejaCreate') {
-    Swal.fire({
-        title: 'Berhasil',
-        text: 'Data meja berhasil ditambah',
-        icon: 'success'
-    }).then((result) => {
-        if (result.isConfirmed) {
-            window.location.href = './index.php?page=mejaData';
-        }
-    });
-} 
 
 // Kode Alert untuk operasi create
 if (document.getElementById('mejaCreateForm')) {
