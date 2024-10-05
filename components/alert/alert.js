@@ -34,18 +34,7 @@ if (status === 'successMejaCreate') {
             window.location.href = './index.php?page=reservasiData';
         }
     });
-} else if (status === 'duplicateMejaCreate' && noMeja) {
-    Swal.fire({
-        title: 'Gagal',
-        text: `No Meja ${noMeja} sudah ada, tidak boleh sama`,
-        icon: 'warning'
-    }).then((result) => {
-        if (result.isConfirmed) {
-            history.back();
-        }
-    });
 } 
-
 // Kode Alert untuk operasi create
 if (document.getElementById('mejaCreateForm')) {
     document.getElementById('mejaCreateForm').addEventListener('submit', function(event) {
