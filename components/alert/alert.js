@@ -48,6 +48,48 @@ if (document.getElementById('mejaCreateForm')) {
             });
         });
     });
+} else if (document.getElementById('pelangganCreateForm')) {
+    document.getElementById('pelangganCreateForm').addEventListener('submit', function(event) {
+        // Mencegah form submit secara default (refresh halaman) atau Mencegah form dari submit secara langsung
+        event.preventDefault();
+
+        const form = document.getElementById('pelangganCreateForm');
+        const formData = new FormData(form);
+
+        // Mengirim form melalui AJAX
+        fetch('./controllers/process.php', {
+            method: 'POST',
+            body: formData
+        })
+        .then(response => response.text())
+        .then(response => {
+            if (response === 'successPelangganCreate') {
+                // Jika sukses, tampilkan alert success
+                Swal.fire({
+                    title: 'Berhasil',
+                    text: 'Data pelanggan berhasil ditambahkan',
+                    icon: 'success'
+                }).then(() => {
+                    window.location.href = './index.php?page=pelangganData';
+                });
+            } else if (response === 'errorPelangganCreate') {
+                // Jika gagal, tampilkan alert error
+                Swal.fire({
+                    title: 'Error',
+                    text: 'Gagal menambahkan data meja',
+                    icon: 'error'
+                });
+            } 
+        })
+        .catch(error => {
+            // Penanganan error jika terjadi kesalahan di server atau jaringan
+            Swal.fire({
+                title: 'Error',
+                text: 'Terjadi kesalahan saat memproses permintaan',
+                icon: 'error'
+            });
+        });
+    });
 } 
 
 
