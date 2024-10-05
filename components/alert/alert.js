@@ -66,6 +66,58 @@ if (status === 'successMejaCreate') {
     });
 }
 
+// Kode Alert untuk operasi create
+if (document.getElementById('mejaCreateForm')) {
+    document.getElementById('mejaCreateForm').addEventListener('submit', function(event) {
+        // Mencegah form submit secara default (refresh halaman) atau Mencegah form dari submit secara langsung
+        event.preventDefault();
+
+        const form = document.getElementById('mejaCreateForm');
+        const formData = new FormData(form);
+
+        // Mengirim form melalui AJAX
+        fetch('./controllers/process.php', {
+            method: 'POST',
+            body: formData
+        })
+        .then(response => response.text())
+        .then(response => {
+            if (response === 'successMejaCreate') {
+                // Jika sukses, tampilkan alert success
+                Swal.fire({
+                    title: 'Berhasil',
+                    text: 'Data meja berhasil ditambahkan',
+                    icon: 'success'
+                }).then(() => {
+                    window.location.href = './index.php?page=mejaData';
+                });
+            } else if (response === 'errorMejaCreate') {
+                // Jika gagal, tampilkan alert error
+                Swal.fire({
+                    title: 'Error',
+                    text: 'Gagal menambahkan data meja',
+                    icon: 'error'
+                });
+            } else if (response.startsWith('duplicateNoMeja:')) {
+                const existingNoMeja = response.split(':')[1]; // Mengambil no meja yang sudah ada
+                Swal.fire({
+                    title: 'Gagal',
+                    text: `No Meja ${existingNoMeja} sudah ada, tidak boleh sama`,
+                    icon: 'warning'
+                });
+            }
+        })
+        .catch(error => {
+            // Penanganan error jika terjadi kesalahan di server atau jaringan
+            Swal.fire({
+                title: 'Error',
+                text: 'Terjadi kesalahan saat memproses permintaan',
+                icon: 'error'
+            });
+        });
+    });
+} 
+
 
 // Kode alert untuk update
 function setupUpdateButton(buttonId, formId, successStatus, successRedirectPage, successMessage, errorStatus) {
