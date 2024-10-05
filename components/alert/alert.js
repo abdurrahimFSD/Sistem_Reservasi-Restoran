@@ -1,7 +1,3 @@
-// Mengecek apakah URL mengandung parameter status
-const urlParams = new URLSearchParams(window.location.search);
-
-
 // Kode Alert untuk operasi create
 if (document.getElementById('mejaCreateForm')) {
     document.getElementById('mejaCreateForm').addEventListener('submit', function(event) {
