@@ -37,9 +37,9 @@ if (isset($_POST['simpan'])) {
 
         // Jika proses create berhasil
         if ($result == 'success') {
-            header("Location: ../index.php?page=pelangganCreate&status=successPelangganCreate");
-        } else {
-            header("Location: ../index.php?page=PelangganCreate&status=errorPelangganCreate");
+            echo 'successPelangganCreate';
+        } elseif ($result == 'error') {
+            echo 'errorPelangganCreate';
         }
     } elseif ($_POST['simpan'] == 'pelangganUpdate') {  // Jika tombol simpan adalah pelangganUpdate
         // Memanggil fungsi pelangganUpdate
