@@ -24,16 +24,6 @@ if (status === 'successMejaCreate') {
             window.location.href = './index.php?page=pelangganData';
         }
     });
-} else if (status === 'successReservasiCreate') {
-    Swal.fire({
-        title: 'Berhasil',
-        text: 'Data reservasi berhasil ditambah',
-        icon: 'success'
-    }).then((result) => {
-        if (result.isConfirmed) {
-            window.location.href = './index.php?page=reservasiData';
-        }
-    });
 } 
 // Kode Alert untuk operasi create
 if (document.getElementById('mejaCreateForm')) {
