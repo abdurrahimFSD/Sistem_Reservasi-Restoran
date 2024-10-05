@@ -1,7 +1,6 @@
 // Mengecek apakah URL mengandung parameter status
 const urlParams = new URLSearchParams(window.location.search);
 const status = urlParams.get('status');
-const noMeja = urlParams.get('no_meja');
 
 
 // Kode Alert untuk operasi create
