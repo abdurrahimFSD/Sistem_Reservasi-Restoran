@@ -62,7 +62,8 @@
                     <a href="?page=pelangganData" class="d-inline-flex justify-content-center align-items-center btn btn-outline-secondary me-2">
                         <iconify-icon icon="fluent:arrow-left-24-filled" class="me-1 fs-5 d-inline-flex align-items-center"></iconify-icon>Kembali
                     </a>
-                    <button type="submit" name="simpan" value="pelangganCreate" class="d-inline-flex justify-content-center align-items-center btn btn-primary">
+                    <input type="hidden" name="simpan" value="pelangganCreate">
+                    <button type="submit" class="d-inline-flex justify-content-center align-items-center btn btn-primary">
                         <iconify-icon icon="fluent:save-24-regular" class="me-1 fs-5 d-inline-flex align-items-center"></iconify-icon>Simpan
                     </button>
                 </form>
