@@ -14,17 +14,8 @@ if (status === 'successMejaCreate') {
             window.location.href = './index.php?page=mejaData';
         }
     });
-} else if (status === 'successPelangganCreate') {
-    Swal.fire({
-        title: 'Berhasil',
-        text: 'Data pelanggan berhasil ditambah',
-        icon: 'success'
-    }).then((result) => {
-        if (result.isConfirmed) {
-            window.location.href = './index.php?page=pelangganData';
-        }
-    });
 } 
+
 // Kode Alert untuk operasi create
 if (document.getElementById('mejaCreateForm')) {
     document.getElementById('mejaCreateForm').addEventListener('submit', function(event) {
