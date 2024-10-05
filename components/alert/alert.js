@@ -1,6 +1,5 @@
 // Mengecek apakah URL mengandung parameter status
 const urlParams = new URLSearchParams(window.location.search);
-const status = urlParams.get('status');
 
 
 // Kode Alert untuk operasi create
