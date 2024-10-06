@@ -64,11 +64,11 @@ $resultPelanggan = mysqli_query($connection, $queryPelanggan);
                     </div>
                     <div class="mb-3">
                         <label for="waktuMulai" class="form-label">Waktu Mulai</label>
-                        <input type="time" class="form-control" name="waktuMulai" id="waktuMulai" required>
+                        <input type="time" class="form-control" name="waktuMulai" id="waktuMulai" onfocus="this.showPicker()" required>
                     </div>
                     <div class="mb-3">
                         <label for="waktuSelesai" class="form-label">Waktu Selesai</label>
-                        <input type="time" class="form-control" name="waktuSelesai" id="waktuSelesai" required>
+                        <input type="time" class="form-control" name="waktuSelesai" id="waktuSelesai" onfocus="this.showPicker()" required>
                     </div>
                     <div class="mb-3">
                         <label for="noMeja" class="form-label">No Meja</label>
