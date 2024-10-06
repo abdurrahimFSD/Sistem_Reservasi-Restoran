@@ -91,7 +91,9 @@ if (document.getElementById('mejaCreateForm')) {
         });
     });
 } else if (document.getElementById('reservasiCreateForm')) {
-    
+    document.getElementById('reservasiCreateForm').addEventListener('submit', function(event) {
+        event.preventDefault();
+    })
 }
 
 
