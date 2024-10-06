@@ -96,6 +96,11 @@ if (document.getElementById('mejaCreateForm')) {
 
         const form = document.getElementById('reservasiCreateForm');
         const formData = new FormData(form);
+
+        fetch('./controllers/process.php', {
+            method: 'POST',
+            body: formData
+        })
     })
 }
 
