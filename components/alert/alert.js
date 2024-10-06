@@ -93,6 +93,9 @@ if (document.getElementById('mejaCreateForm')) {
 } else if (document.getElementById('reservasiCreateForm')) {
     document.getElementById('reservasiCreateForm').addEventListener('submit', function(event) {
         event.preventDefault();
+
+        const form = document.getElementById('reservasiCreateForm');
+        const formData = new FormData(form);
     })
 }
 
