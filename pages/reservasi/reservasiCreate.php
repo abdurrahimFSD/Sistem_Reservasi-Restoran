@@ -57,7 +57,7 @@ $resultPelanggan = mysqli_query($connection, $queryPelanggan);
             <div class="card card-body">
                 <h4 class="card-title mb-0">Masukkan Data Reservasi</h4>
                 <hr class="mb-4">
-                <form class="form-horizontal" action="./controllers/process.php" method="post">
+                <form id="reservasiCreateForm">
                     <div class="mb-3">
                         <label for="tanggalReservasi" class="form-label">Tanggal Reservasi</label>
                         <input type="date" class="form-control" name="tanggalReservasi" id="tanggalReservasi" required>
