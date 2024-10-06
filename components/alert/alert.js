@@ -103,7 +103,16 @@ if (document.getElementById('mejaCreateForm')) {
         })
         .then(response => response.text())
         .then(response => {
-            
+            if (response === 'successReservasiCreate') {
+                // Jika sukses, tampilkan alert success
+                Swal.fire({
+                    title: 'Berhasil',
+                    text: 'Data reservasi berhasil ditambahkan',
+                    icon: 'success'
+                }).then(() => {
+                    window.location.href = './index.php?page=reservasiData';
+                });
+            }
         })
     })
 }
