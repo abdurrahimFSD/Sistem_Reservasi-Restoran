@@ -141,6 +141,13 @@ if (document.getElementById('mejaCreateForm')) {
 if (document.getElementById('mejaUpdateForm')) {
     document.getElementById('mejaUpdateForm').addEventListener('submit', function(event) {
         event.preventDefault();
+
+        Swal.fire({
+            title: 'Apakah anda ingin menyimpan perubahan ini',
+            showCancelButton: true,
+            confirmButtonText: 'Simpan',
+            cancelButtonText: 'Batal'
+        })
     })
 }
 
