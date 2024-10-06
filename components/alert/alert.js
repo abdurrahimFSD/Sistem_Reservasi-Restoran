@@ -149,7 +149,35 @@ if (document.getElementById('mejaUpdateForm')) {
             cancelButtonText: 'Batal'
         }).then((result) => {
             if (result.isConfirmed) {
-                
+                const form = document.getElementById('mejaUpdateForm');
+                const formData = new FormData(form);
+
+                fetch('./controllers/process.php', {
+                    method: 'POST',
+                    body: formData
+                })
+                .then(response => response.text())
+                .then(response => {
+                    if (response === 'successMejaUpdate') {
+                        Swal.fire('Tersimpan', '', 'success').then(() => {
+                            window.location.href = './index.php?page=mejaData';
+                        });
+                    } else if (response.startsWith('duplicateNoMeja:')) {
+                        const existingNoMeja = response.split(':')[1];
+                        Swal.fire({
+                            title: 'Gagal',
+                            text: `No meja ${existingNoMeja} sudah ada, tidak boleh sama`,
+                            icon: 'warning'
+                        });
+                    } else if (response === 'errorMejaUpdate') {
+                        Swal.fire('Gagal', 'Gagal memperbarui data meja', 'error');
+                    }
+                })
+                .catch(error => {
+                    Swal.fire('Gagal', 'Terjadi Kesalahan', 'error');
+                })
+            } else if (result.isDismissed) {
+                Swal.fire('Perubahan dibatalkan', '', 'info');
             }
         })
     })
