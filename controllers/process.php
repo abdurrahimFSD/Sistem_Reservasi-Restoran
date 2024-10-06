@@ -60,8 +60,8 @@ if (isset($_POST['simpan'])) {
             echo 'successReservasiCreate';
         } elseif ($result == 'bentrokWaktu') {
             echo 'bentrokWaktu';
-        } else {
-            header("Location: ../index.php?page=reservasiCreate&status=errorReservasiCreate");
+        } elseif ($result == 'error') {
+            echo 'errorReservasiCreate';
         }
     } elseif ($_POST['simpan'] == 'reservasiUpdate') {  // Jika tombol simpan adalah reservasiUpdate
         // Memanggail fungsi reservasiUpdate
