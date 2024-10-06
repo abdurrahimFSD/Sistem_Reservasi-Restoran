@@ -112,7 +112,13 @@ if (document.getElementById('mejaCreateForm')) {
                 }).then(() => {
                     window.location.href = './index.php?page=reservasiData';
                 });
-            }
+            } else if (response === 'bentrokWaktu') {
+                Swal.fire({
+                    title: 'Gagal',
+                    text: 'Maaf, meja ini sudah dipesan pada rentang waktu yang dipilih',
+                    icon: 'warning'
+                });
+            } 
         })
     })
 }
