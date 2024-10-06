@@ -229,12 +229,12 @@ function mejaUpdate($data) {
     $posisi = $data['posisi'];
 
     // Mengecek apakah ada no meja yg sama
-    $queryCheckNoMeja = "SELECT COUNT(*) AS count FROM meja WHERE no_meja = '$noMeja' AND id_meja != '$idMeja'";
-    $resultCheckNoMeja = mysqli_query($connection, $queryCheckNoMeja);
-    $rowCheckNoMeja = mysqli_fetch_assoc($resultCheckNoMeja);
+    $queryCheckNoMeja = "SELECT * FROM meja WHERE no_meja = '$noMeja' AND id_meja != '$idMeja'";
+    $resultCheckNoMejaUpdate = mysqli_query($connection, $queryCheckNoMeja);
 
-    if ($rowCheckNoMeja['count'] > 0) {
-        return $rowCheckNoMeja['no_meja'];
+    if (mysqli_num_rows($resultCheckNoMejaUpdate) > 0) {
+        $existingMeja = mysqli_fetch_assoc($resultCheckNoMejaUpdate);
+        return $existingMeja['no_meja'];
     } else {
         // Query SQL untuk mengedit data meja
         $queryUpdateMeja = "UPDATE meja SET no_meja='$noMeja', kapasitas='$kapasitas', posisi='$posisi' WHERE id_meja = $idMeja";
