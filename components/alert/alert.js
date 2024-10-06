@@ -101,6 +101,10 @@ if (document.getElementById('mejaCreateForm')) {
             method: 'POST',
             body: formData
         })
+        .then(response => response.text())
+        .then(response => {
+            
+        })
     })
 }
 
