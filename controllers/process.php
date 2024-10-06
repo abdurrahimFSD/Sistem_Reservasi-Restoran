@@ -26,10 +26,10 @@ if (isset($_POST['simpan'])) {
         // Jika proses update berhasil
         if ($result == 'success') {
             echo 'successMejaUpdate';
-        } elseif (is_string($result)) { 
-            echo 'duplicateNoMeja:' . $result; 
         } elseif ($result == 'error') {
             echo 'errorMejaUpdate';
+        } elseif (is_string($result)) { 
+            echo 'duplicateNoMeja:' . $result; 
         }
     } elseif ($_POST['simpan'] == 'pelangganCreate') {  // Jika tombol simpan adalah pelangganCreate
         // Memanggil fungsi pelangganCreate
