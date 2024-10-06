@@ -57,7 +57,7 @@ if (isset($_POST['simpan'])) {
 
         // Jika proses create berhasil
         if ($result == 'success') {
-            header("Location: ../index.php?page=reservasiCreate&status=successReservasiCreate");
+            echo 'successReservasiCreate';
         } elseif ($result == 'bentrokWaktu') {
             header("Location: ../index.php?page=reservasiCreate&status=bentrokWaktu");
         } else {
