@@ -118,6 +118,12 @@ if (document.getElementById('mejaCreateForm')) {
                     text: 'Maaf, meja ini sudah dipesan pada rentang waktu yang dipilih',
                     icon: 'warning'
                 });
+            } else if (response === 'errorReservasiCreate') {
+                Swal.fire({
+                    title: 'Error',
+                    text: 'Gagal menambahkan data reservasi',
+                    icon: 'error'
+                });
             } 
         })
     })
