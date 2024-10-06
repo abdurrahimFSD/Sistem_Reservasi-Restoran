@@ -59,7 +59,7 @@ if (isset($_POST['simpan'])) {
         if ($result == 'success') {
             echo 'successReservasiCreate';
         } elseif ($result == 'bentrokWaktu') {
-            header("Location: ../index.php?page=reservasiCreate&status=bentrokWaktu");
+            echo 'bentrokWaktu';
         } else {
             header("Location: ../index.php?page=reservasiCreate&status=errorReservasiCreate");
         }
