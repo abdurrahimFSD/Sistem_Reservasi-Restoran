@@ -162,6 +162,8 @@ if (document.getElementById('mejaUpdateForm')) {
                         Swal.fire('Tersimpan', '', 'success').then(() => {
                             window.location.href = './index.php?page=mejaData';
                         });
+                    } else if (response === 'errorMejaUpdate') {
+                        Swal.fire('Gagal', 'Gagal memperbarui data meja', 'error');
                     } else if (response.startsWith('duplicateNoMeja:')) {
                         const existingNoMeja = response.split(':')[1];
                         Swal.fire({
@@ -169,8 +171,6 @@ if (document.getElementById('mejaUpdateForm')) {
                             text: `No meja ${existingNoMeja} sudah ada, tidak boleh sama`,
                             icon: 'warning'
                         });
-                    } else if (response === 'errorMejaUpdate') {
-                        Swal.fire('Gagal', 'Gagal memperbarui data meja', 'error');
                     }
                 })
                 .catch(error => {
