@@ -137,6 +137,12 @@ if (document.getElementById('mejaCreateForm')) {
     })
 }
 
+// Kode Alert untuk operasi update
+if (document.getElementById('mejaUpdateForm')) {
+    document.getElementById('mejaUpdateForm').addEventListener('submit', function(event) {
+        event.preventDefault();
+    })
+}
 
 // Kode alert untuk update
 function setupUpdateButton(buttonId, formId, successStatus, successRedirectPage, successMessage, errorStatus) {
