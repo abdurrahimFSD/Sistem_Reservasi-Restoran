@@ -234,7 +234,7 @@ function mejaUpdate($data) {
     $rowCheckNoMeja = mysqli_fetch_assoc($resultCheckNoMeja);
 
     if ($rowCheckNoMeja['count'] > 0) {
-        return 'duplicate|' . $noMeja;
+        return $rowCheckNoMeja['no_meja'];
     } else {
         // Query SQL untuk mengedit data meja
         $queryUpdateMeja = "UPDATE meja SET no_meja='$noMeja', kapasitas='$kapasitas', posisi='$posisi' WHERE id_meja = $idMeja";
