@@ -90,7 +90,9 @@ if (document.getElementById('mejaCreateForm')) {
             });
         });
     });
-} 
+} else if (document.getElementById('reservasiCreateForm')) {
+    
+}
 
 
 // Kode alert untuk update
