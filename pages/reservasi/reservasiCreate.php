@@ -60,7 +60,7 @@ $resultPelanggan = mysqli_query($connection, $queryPelanggan);
                 <form id="reservasiCreateForm">
                     <div class="mb-3">
                         <label for="tanggalReservasi" class="form-label">Tanggal Reservasi</label>
-                        <input type="date" class="form-control" name="tanggalReservasi" id="tanggalReservasi" required>
+                        <input type="date" class="form-control" name="tanggalReservasi" id="tanggalReservasi" onfocus="this.showPicker()" required>
                     </div>
                     <div class="mb-3">
                         <label for="waktuMulai" class="form-label">Waktu Mulai</label>
