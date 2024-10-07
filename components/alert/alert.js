@@ -182,7 +182,9 @@ if (document.getElementById('mejaUpdateForm')) {
         })
     })
 } else if (document.getElementById('pelangganUpdateForm')) {
-    
+    document.getElementById('pelangganUpdateForm').addEventListener('submit', function(event) {
+        event.preventDefault();
+    })
 }
 
 // Kode alert untuk update
