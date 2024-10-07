@@ -205,6 +205,8 @@ if (document.getElementById('mejaUpdateForm')) {
                         Swal.fire('Tersimpan', '', 'success').then(() => {
                             window.location.href = './index.php?page=pelangganData';
                         });
+                    } else if (response === 'errorPelangganUpdate') {
+                        Swal.fire('Gagal', 'Gagal memperbarui data pelanggan', 'error');
                     }
                 })
             }
