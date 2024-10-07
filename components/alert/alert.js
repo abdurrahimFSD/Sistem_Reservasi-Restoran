@@ -247,6 +247,8 @@ if (document.getElementById('mejaUpdateForm')) {
                             text: 'Maaf, meja ini sudah dipesan pada rentang waktu yang dipilih',
                             icon: 'warning'
                         });
+                    } else if (response === 'errorReservasiUpdate') {
+                        Swal.fire('Gagal', 'Gagal memperbarui data reservasi', 'error');
                     }
                 })       
             }
