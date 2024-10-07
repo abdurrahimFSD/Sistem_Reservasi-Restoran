@@ -184,6 +184,13 @@ if (document.getElementById('mejaUpdateForm')) {
 } else if (document.getElementById('pelangganUpdateForm')) {
     document.getElementById('pelangganUpdateForm').addEventListener('submit', function(event) {
         event.preventDefault();
+
+        Swal.fire({
+            title: 'Apakah anda ingin menyimpan perubahan ini',
+            showCancelButton: true,
+            confirmButtonText: 'Simpan',
+            cancelButtonText: 'Batal'
+        })
     })
 }
 
