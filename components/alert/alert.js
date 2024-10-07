@@ -192,7 +192,8 @@ if (document.getElementById('mejaUpdateForm')) {
             cancelButtonText: 'Batal'
         }).then((result) => {
             if (result.isConfirmed) {
-                
+                const form = document.getElementById('pelangganUpdateForm');
+                const formData = new FormData(form);
             }
         })
     })
