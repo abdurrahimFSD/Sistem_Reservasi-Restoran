@@ -194,6 +194,11 @@ if (document.getElementById('mejaUpdateForm')) {
             if (result.isConfirmed) {
                 const form = document.getElementById('pelangganUpdateForm');
                 const formData = new FormData(form);
+
+                fetch('./controllers/process.php', {
+                    method: 'POST',
+                    body: formData
+                })
             }
         })
     })
