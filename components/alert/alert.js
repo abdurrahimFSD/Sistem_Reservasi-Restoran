@@ -241,6 +241,12 @@ if (document.getElementById('mejaUpdateForm')) {
                         Swal.fire('Tersimpan', '', 'success').then(() => {
                             window.location.href = './index.php?page=pelangganData';
                         });
+                    } else if (response === 'bentrokWaktuReservasiUpdate') {
+                        Swal.fire({
+                            title: 'Gagal',
+                            text: 'Maaf, meja ini sudah dipesan pada rentang waktu yang dipilih',
+                            icon: 'warning'
+                        });
                     }
                 })       
             }
