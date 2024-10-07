@@ -209,6 +209,9 @@ if (document.getElementById('mejaUpdateForm')) {
                         Swal.fire('Gagal', 'Gagal memperbarui data pelanggan', 'error');
                     }
                 })
+                .catch(error => {
+                    Swal.fire('Gagal', 'Terjadi Kesalahan', 'error');
+                })
             }
         })
     })
