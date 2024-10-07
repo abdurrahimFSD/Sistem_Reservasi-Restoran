@@ -181,6 +181,8 @@ if (document.getElementById('mejaUpdateForm')) {
             }
         })
     })
+} else if (document.getElementById('pelangganUpdateForm')) {
+    
 }
 
 // Kode alert untuk update
