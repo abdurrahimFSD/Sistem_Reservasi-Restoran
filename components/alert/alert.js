@@ -220,6 +220,13 @@ if (document.getElementById('mejaUpdateForm')) {
 } else if (document.getElementById('reservasiUpdateForm')) {
     document.getElementById('reservasiUpdateForm').addEventListener('submit', function(event) {
         event.preventDefault();
+
+        Swal.fire({
+            title: 'Apakah anda ingin menyimpan perubahan ini',
+            showCancelButton: true,
+            confirmButtonText: 'Simpan',
+            cancelButtonText: 'Batal'
+        })
     })
 }
 
