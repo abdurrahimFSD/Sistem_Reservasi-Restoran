@@ -234,7 +234,15 @@ if (document.getElementById('mejaUpdateForm')) {
                 fetch('./controllers/process.php', {
                     method: 'POST',
                     body: formData
-                })                
+                })         
+                .then(response => response.text())
+                .then(response => {
+                    if (response === 'successReservasiUpdate') {
+                        Swal.fire('Tersimpan', '', 'success').then(() => {
+                            window.location.href = './index.php?page=pelangganData';
+                        });
+                    }
+                })       
             }
         })
     })
