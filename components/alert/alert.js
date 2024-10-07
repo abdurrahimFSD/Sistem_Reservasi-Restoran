@@ -226,6 +226,10 @@ if (document.getElementById('mejaUpdateForm')) {
             showCancelButton: true,
             confirmButtonText: 'Simpan',
             cancelButtonText: 'Batal'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                
+            }
         })
     })
 }
