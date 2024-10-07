@@ -217,6 +217,8 @@ if (document.getElementById('mejaUpdateForm')) {
             }
         })
     })
+} else if (document.getElementById('reservasiUpdateForm')) {
+    
 }
 
 // Kode alert untuk update
