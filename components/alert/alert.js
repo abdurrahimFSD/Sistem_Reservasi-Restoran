@@ -261,63 +261,6 @@ if (document.getElementById('mejaUpdateForm')) {
     })
 }
 
-// Kode alert untuk update
-function setupUpdateButton(buttonId, formId, successStatus, successRedirectPage, successMessage, errorStatus) {
-    const button = document.getElementById(buttonId);
-    if (button) {
-        button.addEventListener('click', function() {
-            Swal.fire({
-                title: 'Apakah Anda ingin menyimpan perubahan ini?',
-                showCancelButton: true,
-                confirmButtonText: 'Simpan',
-                cancelButtonText: 'Batal'
-            }).then((result) => {
-                if (result.isConfirmed) {
-                    // Jika pengguna mengkonfirmasi "Simpan", kirim formulir melalui AJAX
-                    const form = document.getElementById(formId);
-                    const formData = new FormData(form);
-
-                    fetch('./controllers/process.php', {
-                        method: 'POST',
-                        body: formData
-                    })
-                    .then(response => response.text())
-                    .then(response => {
-                        if (response === successStatus) {
-                            Swal.fire('Tersimpan', successMessage, 'success').then(() => {
-                                window.location.href = `./index.php?page=${successRedirectPage}`;
-                            });
-                        } else if (response.startsWith('duplicate|')) {    // Jika user memasukkan no meja yg sama
-                            const parts = response.split('|');
-                            const noMeja = parts[1]; // Mengambil nomor meja dari respons
-                            Swal.fire('Gagal', `No meja ${noMeja} sudah ada, tidak boleh sama`, 'warning');
-                        } else if (response === "bentrokWaktuReservasiUpdate") {
-                            Swal.fire('Gagal', 'Maaf, meja ini sudah dipesan pada rentang waktu yang dipilih', 'error');
-                        } else if (response === errorStatus) {
-                            Swal.fire('Gagal!', '', 'error');
-                        }
-                    })
-                    .catch(error => {
-                        Swal.fire('Gagal!', 'Terjadi kesalahan.', 'error');
-                    });
-                } else if (result.isDismissed) {
-                    Swal.fire('Perubahan dibatalkan', '', 'info');
-                }
-            });
-        });
-    }
-}
-
-// Mengatur tombol update untuk meja
-setupUpdateButton('simpanMejaUpdate', 'mejaUpdateForm', 'successMejaUpdate' ,'mejaData', 'Data meja berhasil diedit', 'errorMejaUpdate');
-
-// Mengatur tombol update untuk pelanggan
-setupUpdateButton('simpanPelangganUpdate', 'pelangganUpdateForm', 'successPelangganUpdate' ,'pelangganData', 'Data pelanggan berhasil diedit', 'errorPelangganUpdate');
-
-// Mengatur tombol update untuk reservasi
-setupUpdateButton('simpanReservasiUpdate', 'reservasiUpdateForm', 'successReservasiUpdate' ,'reservasiData', 'Data reservasi berhasil diedit', 'errorReservasiUpdate');
-
-
 // Kode alert untuk delete
 if (document.getElementById('deleteButtonMeja') || 
     document.getElementById('deleteButtonPelanggan') || 
