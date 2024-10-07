@@ -250,7 +250,10 @@ if (document.getElementById('mejaUpdateForm')) {
                     } else if (response === 'errorReservasiUpdate') {
                         Swal.fire('Gagal', 'Gagal memperbarui data reservasi', 'error');
                     }
-                })       
+                })    
+                .catch(error => {
+                    Swal.fire('Gagal', 'Terjadi Kesalahan', 'error');
+                })   
             }
         })
     })
