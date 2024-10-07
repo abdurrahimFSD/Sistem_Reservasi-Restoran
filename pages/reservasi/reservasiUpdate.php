@@ -74,11 +74,11 @@ if (isset($_GET['id_reservasi'])) {
                     </div>
                     <div class="mb-3">
                         <label for="waktuMulai" class="form-label">Waktu Mulai</label>
-                        <input type="time" class="form-control" name="waktuMulai" id="waktuMulai" value="<?= $dataReservasi['waktu_mulai']; ?>" required>
+                        <input type="time" class="form-control" name="waktuMulai" id="waktuMulai" onfocus="this.showPicker()" value="<?= $dataReservasi['waktu_mulai']; ?>" required>
                     </div>
                     <div class="mb-3">
                         <label for="waktuSelesai" class="form-label">Waktu Selesai</label>
-                        <input type="time" class="form-control" name="waktuSelesai" id="waktuSelesai" value="<?= $dataReservasi['waktu_selesai']; ?>" required>
+                        <input type="time" class="form-control" name="waktuSelesai" id="waktuSelesai" onfocus="this.showPicker()" value="<?= $dataReservasi['waktu_selesai']; ?>" required>
                     </div>
                     <div class="mb-3">  
                         <label for="noMeja" class="form-label">No Meja</label>
