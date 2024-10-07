@@ -201,7 +201,11 @@ if (document.getElementById('mejaUpdateForm')) {
                 })
                 .then(response => response.text())
                 .then(response => {
-                    
+                    if (response === 'successPelangganUpdate') {
+                        Swal.fire('Tersimpan', '', 'success').then(() => {
+                            window.location.href = './index.php?page=pelangganData';
+                        });
+                    }
                 })
             }
         })
