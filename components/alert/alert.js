@@ -199,6 +199,10 @@ if (document.getElementById('mejaUpdateForm')) {
                     method: 'POST',
                     body: formData
                 })
+                .then(response => response.text())
+                .then(response => {
+                    
+                })
             }
         })
     })
