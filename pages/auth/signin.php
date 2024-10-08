@@ -62,8 +62,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                                         </div>
                                     </div>
                                     <button type="submit" id="signinButton" class="btn btn-dark w-100 py-8 mb-4 rounded-2">
-                                        <span id="signinText">Sign In</span>
                                         <span id="signinIcon" class="spinner-border spinner-border-sm" style="display: none;" role="status" aria-hidden="true"></span>
+                                        <span id="signinText">Sign In</span>
                                     </button>
                                     <div class="d-flex align-items-center">
                                         <p class="fs-4 mb-0 text-dark">Don’t have an account yet?</p>
@@ -92,7 +92,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         signinIcon.classList.remove('bi', 'bi-check-lg', 'bi-x-lg');
         signinIcon.classList.add('spinner-border', 'spinner-border-sm');
         signinIcon.style.display = 'inline-block';
-        signinText.textContent = 'Signing In...';
+        signinText.textContent = 'Signing In';
 
         // Mengirim data form via AJAX
         const formData = new FormData(this);
